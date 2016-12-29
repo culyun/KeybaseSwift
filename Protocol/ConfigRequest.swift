@@ -5,7 +5,7 @@
 //
 //  ConfigRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,23 +20,23 @@ import SwiftyJSON
 public class ConfigRequest: Request {
 
   public func getCurrentStatus() throws -> GetCurrentStatusRes {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.config.getCurrentStatus", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.config.getCurrentStatus", args: args)
+    try checkNull(response: response)
     return GetCurrentStatusRes.fromJSON(JSON(response))
   }
 
   public func getExtendedStatus() throws -> ExtendedStatus {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.config.getExtendedStatus", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.config.getExtendedStatus", args: args)
+    try checkNull(response: response)
     return ExtendedStatus.fromJSON(JSON(response))
   }
 
   public func getConfig() throws -> Config {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.config.getConfig", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.config.getConfig", args: args)
+    try checkNull(response: response)
     return Config.fromJSON(JSON(response))
   }
 
@@ -46,35 +46,55 @@ public class ConfigRequest: Request {
  key=picture.source, value=twitter (or github)
  */
   public func setUserConfig(username: String, key: String, value: String) throws {
-    let args: [String: AnyObject] = ["username": username, "key": key, "value": value]
-    try self.sendRequest("keybase.1.config.setUserConfig", args: args)
+    let args: [String: Any] = ["username": username, "key": key, "value": value]
+    _ = try self.sendRequest(method: "keybase.1.config.setUserConfig", args: args)
   }
 
   public func setPath(path: String) throws {
-    let args: [String: AnyObject] = ["path": path]
-    try self.sendRequest("keybase.1.config.setPath", args: args)
+    let args: [String: Any] = ["path": path]
+    _ = try self.sendRequest(method: "keybase.1.config.setPath", args: args)
   }
 
   public func helloIAm(details: ClientDetails) throws {
-    let args: [String: AnyObject] = ["details": details]
-    try self.sendRequest("keybase.1.config.helloIAm", args: args)
+    let args: [String: Any] = ["details": details]
+    _ = try self.sendRequest(method: "keybase.1.config.helloIAm", args: args)
   }
 
   public func setValue(path: String, value: ConfigValue) throws {
-    let args: [String: AnyObject] = ["path": path, "value": value]
-    try self.sendRequest("keybase.1.config.setValue", args: args)
+    let args: [String: Any] = ["path": path, "value": value]
+    _ = try self.sendRequest(method: "keybase.1.config.setValue", args: args)
   }
 
   public func clearValue(path: String) throws {
-    let args: [String: AnyObject] = ["path": path]
-    try self.sendRequest("keybase.1.config.clearValue", args: args)
+    let args: [String: Any] = ["path": path]
+    _ = try self.sendRequest(method: "keybase.1.config.clearValue", args: args)
   }
 
   public func getValue(path: String) throws -> ConfigValue {
-    let args: [String: AnyObject] = ["path": path]
-    let response = try self.sendRequest("keybase.1.config.getValue", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["path": path]
+    let response = try self.sendRequest(method: "keybase.1.config.getValue", args: args)
+    try checkNull(response: response)
     return ConfigValue.fromJSON(JSON(response))
+  }
+
+/*!
+ Check whether the API server has told us we're out of date.
+ */
+  public func checkAPIServerOutOfDateWarning() throws -> OutOfDateInfo {
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.config.checkAPIServerOutOfDateWarning", args: args)
+    try checkNull(response: response)
+    return OutOfDateInfo.fromJSON(JSON(response))
+  }
+
+/*!
+ Wait for client type to connect to service.
+ */
+  public func waitForClient(clientType: ClientType, timeout: Double) throws -> Bool {
+    let args: [String: Any] = ["clientType": clientType.rawValue, "timeout": timeout]
+    let response = try self.sendRequest(method: "keybase.1.config.waitForClient", args: args)
+    try checkNull(response: response)
+    return JSON(response).boolValue
   }
 
 }

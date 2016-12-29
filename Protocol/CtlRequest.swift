@@ -5,7 +5,7 @@
 //
 //  CtlRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,23 +20,28 @@ import SwiftyJSON
 public class CtlRequest: Request {
 
   public func stop(exitCode: ExitCode) throws {
-    let args: [String: AnyObject] = ["exitCode": exitCode.rawValue]
-    try self.sendRequest("keybase.1.ctl.stop", args: args)
+    let args: [String: Any] = ["exitCode": exitCode.rawValue]
+    _ = try self.sendRequest(method: "keybase.1.ctl.stop", args: args)
   }
 
   public func logRotate() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.ctl.logRotate", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.ctl.logRotate", args: args)
   }
 
   public func reload() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.ctl.reload", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.ctl.reload", args: args)
   }
 
   public func dbNuke() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.ctl.dbNuke", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.ctl.dbNuke", args: args)
+  }
+
+  public func appExit() throws {
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.ctl.appExit", args: args)
   }
 
 }

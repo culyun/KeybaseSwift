@@ -5,7 +5,7 @@
 //
 //  Signup.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,9 +20,9 @@ import SwiftyJSON
 
 public class SignupRes {
 
-	public let passphraseOk: Bool
-	public let postOk: Bool
-	public let writeOk: Bool
+	public let passphraseOk: Bool?
+	public let postOk: Bool?
+	public let writeOk: Bool?
 
   public init(passphraseOk: Bool, postOk: Bool, writeOk: Bool) {
     self.passphraseOk = passphraseOk
@@ -30,11 +30,13 @@ public class SignupRes {
 		self.writeOk = writeOk
   }
 
-  public class func fromJSON(json: JSON) -> SignupRes {
+  public class func fromJSON(_ json: JSON) -> SignupRes {
     return SignupRes(passphraseOk: json["passphraseOk"].boolValue, postOk: json["postOk"].boolValue, writeOk: json["writeOk"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SignupRes] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SignupRes] {
     return json.map { fromJSON($0) }
   }
+
 }
+

@@ -5,7 +5,7 @@
 //
 //  Favorite.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,21 +20,49 @@ import SwiftyJSON
 
 public class Folder {
 
-	public let name: String
-	public let isPrivate: Bool
-	public let notificationsOn: Bool
+	public let name: String?
+	public let isPrivate: Bool?
+	public let notificationsOn: Bool?
+	public let created: Bool?
 
-  public init(name: String, isPrivate: Bool, notificationsOn: Bool) {
+  public init(name: String, isPrivate: Bool, notificationsOn: Bool, created: Bool) {
     self.name = name
 		self.isPrivate = isPrivate
 		self.notificationsOn = notificationsOn
+		self.created = created
   }
 
-  public class func fromJSON(json: JSON) -> Folder {
-    return Folder(name: json["name"].stringValue, isPrivate: json["isPrivate"].boolValue, notificationsOn: json["notificationsOn"].boolValue)
+  public class func fromJSON(_ json: JSON) -> Folder {
+    return Folder(name: json["name"].stringValue, isPrivate: json["isPrivate"].boolValue, notificationsOn: json["notificationsOn"].boolValue, created: json["created"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [Folder] {
+  public class func fromJSONArray(_ json: [JSON]) -> [Folder] {
     return json.map { fromJSON($0) }
   }
+
 }
+
+
+
+public class FavoritesResult {
+
+	public let favoriteFolders: [Folder]?
+	public let ignoredFolders: [Folder]?
+	public let newFolders: [Folder]?
+
+  public init(favoriteFolders: [Folder], ignoredFolders: [Folder], newFolders: [Folder]) {
+    self.favoriteFolders = favoriteFolders
+		self.ignoredFolders = ignoredFolders
+		self.newFolders = newFolders
+  }
+
+  public class func fromJSON(_ json: JSON) -> FavoritesResult {
+    return FavoritesResult(favoriteFolders: Folder.fromJSONArray(json["favoriteFolders"].arrayValue), ignoredFolders: Folder.fromJSONArray(json["ignoredFolders"].arrayValue), newFolders: Folder.fromJSONArray(json["newFolders"].arrayValue))
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [FavoritesResult] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+

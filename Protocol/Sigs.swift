@@ -5,7 +5,7 @@
 //
 //  Sigs.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,15 +20,15 @@ import SwiftyJSON
 
 public class Sig {
 
-	public let seqno: Int
-	public let sigID: String
-	public let sigIDDisplay: String
-	public let type: String
-	public let cTime: Int64
-	public let revoked: Bool
-	public let active: Bool
-	public let key: String
-	public let body: String
+	public let seqno: Int?
+	public let sigID: String?
+	public let sigIDDisplay: String?
+	public let type: String?
+	public let cTime: Int64?
+	public let revoked: Bool?
+	public let active: Bool?
+	public let key: String?
+	public let body: String?
 
   public init(seqno: Int, sigID: String, sigIDDisplay: String, type: String, cTime: Int64, revoked: Bool, active: Bool, key: String, body: String) {
     self.seqno = seqno
@@ -42,22 +42,24 @@ public class Sig {
 		self.body = body
   }
 
-  public class func fromJSON(json: JSON) -> Sig {
+  public class func fromJSON(_ json: JSON) -> Sig {
     return Sig(seqno: json["seqno"].intValue, sigID: json["sigID"].stringValue, sigIDDisplay: json["sigIDDisplay"].stringValue, type: json["type"].stringValue, cTime: json["cTime"].int64Value, revoked: json["revoked"].boolValue, active: json["active"].boolValue, key: json["key"].stringValue, body: json["body"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [Sig] {
+  public class func fromJSONArray(_ json: [JSON]) -> [Sig] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class SigTypes {
 
-	public let track: Bool
-	public let proof: Bool
-	public let cryptocurrency: Bool
-	public let isSelf: Bool
+	public let track: Bool?
+	public let proof: Bool?
+	public let cryptocurrency: Bool?
+	public let isSelf: Bool?
 
   public init(track: Bool, proof: Bool, cryptocurrency: Bool, isSelf: Bool) {
     self.track = track
@@ -66,25 +68,27 @@ public class SigTypes {
 		self.isSelf = isSelf
   }
 
-  public class func fromJSON(json: JSON) -> SigTypes {
+  public class func fromJSON(_ json: JSON) -> SigTypes {
     return SigTypes(track: json["track"].boolValue, proof: json["proof"].boolValue, cryptocurrency: json["cryptocurrency"].boolValue, isSelf: json["isSelf"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SigTypes] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SigTypes] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class SigListArgs {
 
-	public let sessionID: Int
-	public let username: String
-	public let allKeys: Bool
-	public let types: SigTypes?
-	public let filterx: String
-	public let verbose: Bool
-	public let revoked: Bool
+	public let sessionID: Int?
+	public let username: String?
+	public let allKeys: Bool?
+	public let types: SigTypes??
+	public let filterx: String?
+	public let verbose: Bool?
+	public let revoked: Bool?
 
   public init(sessionID: Int, username: String, allKeys: Bool, types: SigTypes?, filterx: String, verbose: Bool, revoked: Bool) {
     self.sessionID = sessionID
@@ -96,11 +100,13 @@ public class SigListArgs {
 		self.revoked = revoked
   }
 
-  public class func fromJSON(json: JSON) -> SigListArgs {
+  public class func fromJSON(_ json: JSON) -> SigListArgs {
     return SigListArgs(sessionID: json["sessionID"].intValue, username: json["username"].stringValue, allKeys: json["allKeys"].boolValue, types: SigTypes.fromJSON(json["types"]), filterx: json["filterx"].stringValue, verbose: json["verbose"].boolValue, revoked: json["revoked"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SigListArgs] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SigListArgs] {
     return json.map { fromJSON($0) }
   }
+
 }
+

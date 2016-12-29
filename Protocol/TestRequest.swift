@@ -5,7 +5,7 @@
 //
 //  TestRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -25,9 +25,9 @@ public class TestRequest: Request {
  returned Test object, reply property.
  */
   public func test(name: String) throws -> Test {
-    let args: [String: AnyObject] = ["name": name]
-    let response = try self.sendRequest("keybase.1.test.test", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["name": name]
+    let response = try self.sendRequest(method: "keybase.1.test.test", args: args)
+    try checkNull(response: response)
     return Test.fromJSON(JSON(response))
   }
 
@@ -36,9 +36,9 @@ public class TestRequest: Request {
  The name param is what was passed into test.
  */
   public func testCallback(name: String) throws -> String {
-    let args: [String: AnyObject] = ["name": name]
-    let response = try self.sendRequest("keybase.1.test.testCallback", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["name": name]
+    let response = try self.sendRequest(method: "keybase.1.test.testCallback", args: args)
+    try checkNull(response: response)
     return JSON(response).stringValue
   }
 
@@ -46,8 +46,8 @@ public class TestRequest: Request {
  For testing crashes.
  */
   public func panic(message: String) throws {
-    let args: [String: AnyObject] = ["message": message]
-    try self.sendRequest("keybase.1.test.panic", args: args)
+    let args: [String: Any] = ["message": message]
+    _ = try self.sendRequest(method: "keybase.1.test.panic", args: args)
   }
 
 }

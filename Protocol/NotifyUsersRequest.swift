@@ -5,7 +5,7 @@
 //
 //  NotifyUsersRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,8 @@ import SwiftyJSON
 public class NotifyUsersRequest: Request {
 
   public func userChanged(uid: String) throws {
-    let args: [String: AnyObject] = ["uid": uid]
-    try self.sendRequest("keybase.1.NotifyUsers.userChanged", args: args)
+    let args: [String: Any] = ["uid": uid]
+    _ = try self.sendRequest(method: "keybase.1.NotifyUsers.userChanged", args: args)
   }
 
 }

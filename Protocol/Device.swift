@@ -5,7 +5,7 @@
 //
 //  Device.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -16,4 +16,37 @@ import SwiftyJSON
 //
 // Device
 //
+
+
+public class DeviceDetail {
+
+	public let device: Device?
+	public let eldest: Bool?
+	public let provisioner: Device??
+	public let provisionedAt: Int64??
+	public let revokedAt: Int64??
+	public let revokedBy: String?
+	public let revokedByDevice: Device??
+	public let currentDevice: Bool?
+
+  public init(device: Device, eldest: Bool, provisioner: Device?, provisionedAt: Int64?, revokedAt: Int64?, revokedBy: String, revokedByDevice: Device?, currentDevice: Bool) {
+    self.device = device
+		self.eldest = eldest
+		self.provisioner = provisioner
+		self.provisionedAt = provisionedAt
+		self.revokedAt = revokedAt
+		self.revokedBy = revokedBy
+		self.revokedByDevice = revokedByDevice
+		self.currentDevice = currentDevice
+  }
+
+  public class func fromJSON(_ json: JSON) -> DeviceDetail {
+    return DeviceDetail(device: Device.fromJSON(json["device"]), eldest: json["eldest"].boolValue, provisioner: Device.fromJSON(json["provisioner"]), provisionedAt: json["provisionedAt"].int64Value, revokedAt: json["revokedAt"].int64Value, revokedBy: json["revokedBy"].stringValue, revokedByDevice: Device.fromJSON(json["revokedByDevice"]), currentDevice: json["currentDevice"].boolValue)
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [DeviceDetail] {
+    return json.map { fromJSON($0) }
+  }
+
+}
 

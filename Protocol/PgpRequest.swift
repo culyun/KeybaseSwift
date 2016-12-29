@@ -5,7 +5,7 @@
 //
 //  PgpRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,8 @@ import SwiftyJSON
 public class PgpRequest: Request {
 
   public func pgpSign(source: Stream, sink: Stream, opts: PGPSignOptions) throws {
-    let args: [String: AnyObject] = ["source": source, "sink": sink, "opts": opts]
-    try self.sendRequest("keybase.1.pgp.pgpSign", args: args)
+    let args: [String: Any] = ["source": source, "sink": sink, "opts": opts]
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpSign", args: args)
   }
 
 /*!
@@ -29,82 +29,102 @@ public class PgpRequest: Request {
  If usernames is nonempty, update only those users.
  */
   public func pgpPull(userAsserts: [String]) throws {
-    let args: [String: AnyObject] = ["userAsserts": userAsserts]
-    try self.sendRequest("keybase.1.pgp.pgpPull", args: args)
+    let args: [String: Any] = ["userAsserts": userAsserts]
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpPull", args: args)
   }
 
   public func pgpEncrypt(source: Stream, sink: Stream, opts: PGPEncryptOptions) throws {
-    let args: [String: AnyObject] = ["source": source, "sink": sink, "opts": opts]
-    try self.sendRequest("keybase.1.pgp.pgpEncrypt", args: args)
+    let args: [String: Any] = ["source": source, "sink": sink, "opts": opts]
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpEncrypt", args: args)
   }
 
   public func pgpDecrypt(source: Stream, sink: Stream, opts: PGPDecryptOptions) throws -> PGPSigVerification {
-    let args: [String: AnyObject] = ["source": source, "sink": sink, "opts": opts]
-    let response = try self.sendRequest("keybase.1.pgp.pgpDecrypt", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["source": source, "sink": sink, "opts": opts]
+    let response = try self.sendRequest(method: "keybase.1.pgp.pgpDecrypt", args: args)
+    try checkNull(response: response)
     return PGPSigVerification.fromJSON(JSON(response))
   }
 
   public func pgpVerify(source: Stream, opts: PGPVerifyOptions) throws -> PGPSigVerification {
-    let args: [String: AnyObject] = ["source": source, "opts": opts]
-    let response = try self.sendRequest("keybase.1.pgp.pgpVerify", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["source": source, "opts": opts]
+    let response = try self.sendRequest(method: "keybase.1.pgp.pgpVerify", args: args)
+    try checkNull(response: response)
     return PGPSigVerification.fromJSON(JSON(response))
   }
 
   public func pgpImport(key: NSData, pushSecret: Bool) throws {
-    let args: [String: AnyObject] = ["key": key, "pushSecret": pushSecret]
-    try self.sendRequest("keybase.1.pgp.pgpImport", args: args)
+    let args: [String: Any] = ["key": key, "pushSecret": pushSecret]
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpImport", args: args)
   }
 
 /*!
  Exports active PGP keys. Only allows armored export.
  */
   public func pgpExport(options: PGPQuery) throws -> [KeyInfo] {
-    let args: [String: AnyObject] = ["options": options]
-    let response = try self.sendRequest("keybase.1.pgp.pgpExport", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["options": options]
+    let response = try self.sendRequest(method: "keybase.1.pgp.pgpExport", args: args)
+  try checkNull(response: response)
   return KeyInfo.fromJSONArray(JSON(response).arrayValue)
   }
 
   public func pgpExportByFingerprint(options: PGPQuery) throws -> [KeyInfo] {
-    let args: [String: AnyObject] = ["options": options]
-    let response = try self.sendRequest("keybase.1.pgp.pgpExportByFingerprint", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["options": options]
+    let response = try self.sendRequest(method: "keybase.1.pgp.pgpExportByFingerprint", args: args)
+  try checkNull(response: response)
   return KeyInfo.fromJSONArray(JSON(response).arrayValue)
   }
 
   public func pgpExportByKID(options: PGPQuery) throws -> [KeyInfo] {
-    let args: [String: AnyObject] = ["options": options]
-    let response = try self.sendRequest("keybase.1.pgp.pgpExportByKID", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["options": options]
+    let response = try self.sendRequest(method: "keybase.1.pgp.pgpExportByKID", args: args)
+  try checkNull(response: response)
   return KeyInfo.fromJSONArray(JSON(response).arrayValue)
   }
 
   public func pgpKeyGen(primaryBits: Int, subkeyBits: Int, createUids: PGPCreateUids, allowMulti: Bool, doExport: Bool, pushSecret: Bool) throws {
-    let args: [String: AnyObject] = ["primaryBits": NSNumber(integer: primaryBits), "subkeyBits": NSNumber(integer: subkeyBits), "createUids": createUids, "allowMulti": allowMulti, "doExport": doExport, "pushSecret": pushSecret]
-    try self.sendRequest("keybase.1.pgp.pgpKeyGen", args: args)
+    let args: [String: Any] = ["primaryBits": NSNumber(value: primaryBits), "subkeyBits": NSNumber(value: subkeyBits), "createUids": createUids, "allowMulti": allowMulti, "doExport": doExport, "pushSecret": pushSecret]
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpKeyGen", args: args)
+  }
+
+  public func pgpKeyGenDefault(createUids: PGPCreateUids) throws {
+    let args: [String: Any] = ["createUids": createUids]
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpKeyGenDefault", args: args)
   }
 
   public func pgpDeletePrimary() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.pgp.pgpDeletePrimary", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpDeletePrimary", args: args)
   }
 
 /*!
  Select an existing key and add to Keybase.
  */
   public func pgpSelect(fingerprintQuery: String, allowMulti: Bool, skipImport: Bool, onlyImport: Bool) throws {
-    let args: [String: AnyObject] = ["fingerprintQuery": fingerprintQuery, "allowMulti": allowMulti, "skipImport": skipImport, "onlyImport": onlyImport]
-    try self.sendRequest("keybase.1.pgp.pgpSelect", args: args)
+    let args: [String: Any] = ["fingerprintQuery": fingerprintQuery, "allowMulti": allowMulti, "skipImport": skipImport, "onlyImport": onlyImport]
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpSelect", args: args)
   }
 
 /*!
  Push updated key(s) to the server.
  */
   public func pgpUpdate(all: Bool, fingerprints: [String]) throws {
-    let args: [String: AnyObject] = ["all": all, "fingerprints": fingerprints]
-    try self.sendRequest("keybase.1.pgp.pgpUpdate", args: args)
+    let args: [String: Any] = ["all": all, "fingerprints": fingerprints]
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpUpdate", args: args)
+  }
+
+  public func pgpPurge(doPurge: Bool) throws -> PGPPurgeRes {
+    let args: [String: Any] = ["doPurge": doPurge]
+    let response = try self.sendRequest(method: "keybase.1.pgp.pgpPurge", args: args)
+    try checkNull(response: response)
+    return PGPPurgeRes.fromJSON(JSON(response))
+  }
+
+/*!
+ Dismiss the PGP unlock via secret_store_file notification.
+ */
+  public func pgpStorageDismiss() throws {
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.pgp.pgpStorageDismiss", args: args)
   }
 
 }

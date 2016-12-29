@@ -5,7 +5,7 @@
 //
 //  Config.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,11 +20,11 @@ import SwiftyJSON
 
 public class GetCurrentStatusRes {
 
-	public let configured: Bool
-	public let registered: Bool
-	public let loggedIn: Bool
-	public let sessionIsValid: Bool
-	public let user: User?
+	public let configured: Bool?
+	public let registered: Bool?
+	public let loggedIn: Bool?
+	public let sessionIsValid: Bool?
+	public let user: User??
 
   public init(configured: Bool, registered: Bool, loggedIn: Bool, sessionIsValid: Bool, user: User?) {
     self.configured = configured
@@ -34,23 +34,25 @@ public class GetCurrentStatusRes {
 		self.user = user
   }
 
-  public class func fromJSON(json: JSON) -> GetCurrentStatusRes {
+  public class func fromJSON(_ json: JSON) -> GetCurrentStatusRes {
     return GetCurrentStatusRes(configured: json["configured"].boolValue, registered: json["registered"].boolValue, loggedIn: json["loggedIn"].boolValue, sessionIsValid: json["sessionIsValid"].boolValue, user: User.fromJSON(json["user"]))
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [GetCurrentStatusRes] {
+  public class func fromJSONArray(_ json: [JSON]) -> [GetCurrentStatusRes] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class SessionStatus {
 
-	public let SessionFor: String
-	public let Loaded: Bool
-	public let Cleared: Bool
-	public let SaltOnly: Bool
-	public let Expired: Bool
+	public let SessionFor: String?
+	public let Loaded: Bool?
+	public let Cleared: Bool?
+	public let SaltOnly: Bool?
+	public let Expired: Bool?
 
   public init(SessionFor: String, Loaded: Bool, Cleared: Bool, SaltOnly: Bool, Expired: Bool) {
     self.SessionFor = SessionFor
@@ -60,23 +62,25 @@ public class SessionStatus {
 		self.Expired = Expired
   }
 
-  public class func fromJSON(json: JSON) -> SessionStatus {
+  public class func fromJSON(_ json: JSON) -> SessionStatus {
     return SessionStatus(SessionFor: json["SessionFor"].stringValue, Loaded: json["Loaded"].boolValue, Cleared: json["Cleared"].boolValue, SaltOnly: json["SaltOnly"].boolValue, Expired: json["Expired"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SessionStatus] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SessionStatus] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class ClientDetails {
 
-	public let pid: Int
-	public let clientType: ClientType
-	public let argv: [String]
-	public let desc: String
-	public let version: String
+	public let pid: Int?
+	public let clientType: ClientType?
+	public let argv: [String]?
+	public let desc: String?
+	public let version: String?
 
   public init(pid: Int, clientType: ClientType, argv: [String], desc: String, version: String) {
     self.pid = pid
@@ -86,96 +90,142 @@ public class ClientDetails {
 		self.version = version
   }
 
-  public class func fromJSON(json: JSON) -> ClientDetails {
+  public class func fromJSON(_ json: JSON) -> ClientDetails {
     return ClientDetails(pid: json["pid"].intValue, clientType: ClientType(rawValue: json["clientType"].intValue)!, argv: String.fromJSONArray(json["argv"].arrayValue), desc: json["desc"].stringValue, version: json["version"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [ClientDetails] {
+  public class func fromJSONArray(_ json: [JSON]) -> [ClientDetails] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class PlatformInfo {
 
-	public let os: String
-	public let arch: String
-	public let goVersion: String
+	public let os: String?
+	public let osVersion: String?
+	public let arch: String?
+	public let goVersion: String?
 
-  public init(os: String, arch: String, goVersion: String) {
+  public init(os: String, osVersion: String, arch: String, goVersion: String) {
     self.os = os
+		self.osVersion = osVersion
 		self.arch = arch
 		self.goVersion = goVersion
   }
 
-  public class func fromJSON(json: JSON) -> PlatformInfo {
-    return PlatformInfo(os: json["os"].stringValue, arch: json["arch"].stringValue, goVersion: json["goVersion"].stringValue)
+  public class func fromJSON(_ json: JSON) -> PlatformInfo {
+    return PlatformInfo(os: json["os"].stringValue, osVersion: json["osVersion"].stringValue, arch: json["arch"].stringValue, goVersion: json["goVersion"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [PlatformInfo] {
+  public class func fromJSONArray(_ json: [JSON]) -> [PlatformInfo] {
     return json.map { fromJSON($0) }
   }
+
 }
+
+
+
+public class LoadDeviceErr {
+
+	public let whereValue: String?
+	public let desc: String?
+
+  public init(whereValue: String, desc: String) {
+    self.whereValue = whereValue
+		self.desc = desc
+  }
+
+  public class func fromJSON(_ json: JSON) -> LoadDeviceErr {
+    return LoadDeviceErr(whereValue: json["whereValue"].stringValue, desc: json["desc"].stringValue)
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [LoadDeviceErr] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+
 
 
 public class ExtendedStatus {
 
-	public let standalone: Bool
-	public let passphraseStreamCached: Bool
-	public let lksecLoaded: Bool
-	public let device: Device?
-	public let logDir: String
-	public let session: SessionStatus?
-	public let defaultUsername: String
-	public let provisionedUsernames: [String]
-	public let Clients: [ClientDetails]
-	public let platformInfo: PlatformInfo
+	public let standalone: Bool?
+	public let passphraseStreamCached: Bool?
+	public let tsecCached: Bool?
+	public let deviceSigKeyCached: Bool?
+	public let deviceEncKeyCached: Bool?
+	public let paperSigKeyCached: Bool?
+	public let paperEncKeyCached: Bool?
+	public let storedSecret: Bool?
+	public let secretPromptSkip: Bool?
+	public let device: Device??
+	public let deviceErr: LoadDeviceErr??
+	public let logDir: String?
+	public let session: SessionStatus??
+	public let defaultUsername: String?
+	public let provisionedUsernames: [String]?
+	public let Clients: [ClientDetails]?
+	public let platformInfo: PlatformInfo?
+	public let defaultDeviceID: String?
 
-  public init(standalone: Bool, passphraseStreamCached: Bool, lksecLoaded: Bool, device: Device?, logDir: String, session: SessionStatus?, defaultUsername: String, provisionedUsernames: [String], Clients: [ClientDetails], platformInfo: PlatformInfo) {
+  public init(standalone: Bool, passphraseStreamCached: Bool, tsecCached: Bool, deviceSigKeyCached: Bool, deviceEncKeyCached: Bool, paperSigKeyCached: Bool, paperEncKeyCached: Bool, storedSecret: Bool, secretPromptSkip: Bool, device: Device?, deviceErr: LoadDeviceErr?, logDir: String, session: SessionStatus?, defaultUsername: String, provisionedUsernames: [String], Clients: [ClientDetails], platformInfo: PlatformInfo, defaultDeviceID: String) {
     self.standalone = standalone
 		self.passphraseStreamCached = passphraseStreamCached
-		self.lksecLoaded = lksecLoaded
+		self.tsecCached = tsecCached
+		self.deviceSigKeyCached = deviceSigKeyCached
+		self.deviceEncKeyCached = deviceEncKeyCached
+		self.paperSigKeyCached = paperSigKeyCached
+		self.paperEncKeyCached = paperEncKeyCached
+		self.storedSecret = storedSecret
+		self.secretPromptSkip = secretPromptSkip
 		self.device = device
+		self.deviceErr = deviceErr
 		self.logDir = logDir
 		self.session = session
 		self.defaultUsername = defaultUsername
 		self.provisionedUsernames = provisionedUsernames
 		self.Clients = Clients
 		self.platformInfo = platformInfo
+		self.defaultDeviceID = defaultDeviceID
   }
 
-  public class func fromJSON(json: JSON) -> ExtendedStatus {
-    return ExtendedStatus(standalone: json["standalone"].boolValue, passphraseStreamCached: json["passphraseStreamCached"].boolValue, lksecLoaded: json["lksecLoaded"].boolValue, device: Device.fromJSON(json["device"]), logDir: json["logDir"].stringValue, session: SessionStatus.fromJSON(json["session"]), defaultUsername: json["defaultUsername"].stringValue, provisionedUsernames: String.fromJSONArray(json["provisionedUsernames"].arrayValue), Clients: ClientDetails.fromJSONArray(json["Clients"].arrayValue), platformInfo: PlatformInfo.fromJSON(json["platformInfo"]))
+  public class func fromJSON(_ json: JSON) -> ExtendedStatus {
+    return ExtendedStatus(standalone: json["standalone"].boolValue, passphraseStreamCached: json["passphraseStreamCached"].boolValue, tsecCached: json["tsecCached"].boolValue, deviceSigKeyCached: json["deviceSigKeyCached"].boolValue, deviceEncKeyCached: json["deviceEncKeyCached"].boolValue, paperSigKeyCached: json["paperSigKeyCached"].boolValue, paperEncKeyCached: json["paperEncKeyCached"].boolValue, storedSecret: json["storedSecret"].boolValue, secretPromptSkip: json["secretPromptSkip"].boolValue, device: Device.fromJSON(json["device"]), deviceErr: LoadDeviceErr.fromJSON(json["deviceErr"]), logDir: json["logDir"].stringValue, session: SessionStatus.fromJSON(json["session"]), defaultUsername: json["defaultUsername"].stringValue, provisionedUsernames: String.fromJSONArray(json["provisionedUsernames"].arrayValue), Clients: ClientDetails.fromJSONArray(json["Clients"].arrayValue), platformInfo: PlatformInfo.fromJSON(json["platformInfo"]), defaultDeviceID: json["defaultDeviceID"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [ExtendedStatus] {
+  public class func fromJSONArray(_ json: [JSON]) -> [ExtendedStatus] {
     return json.map { fromJSON($0) }
   }
+
 }
 
+
 public enum ForkType: Int {
-	case None = 0
-	case Auto = 1
-	case Watchdog = 2
-	case Launchd = 3
+	case none = 0
+	case auto = 1
+	case watchdog = 2
+	case launchd = 3
 }
 
 
 public class Config {
 
-	public let serverURI: String
-	public let socketFile: String
-	public let label: String
-	public let runMode: String
-	public let gpgExists: Bool
-	public let gpgPath: String
-	public let version: String
-	public let path: String
-	public let configPath: String
-	public let versionShort: String
-	public let versionFull: String
-	public let isAutoForked: Bool
-	public let forkType: ForkType
+	public let serverURI: String?
+	public let socketFile: String?
+	public let label: String?
+	public let runMode: String?
+	public let gpgExists: Bool?
+	public let gpgPath: String?
+	public let version: String?
+	public let path: String?
+	public let configPath: String?
+	public let versionShort: String?
+	public let versionFull: String?
+	public let isAutoForked: Bool?
+	public let forkType: ForkType?
 
   public init(serverURI: String, socketFile: String, label: String, runMode: String, gpgExists: Bool, gpgPath: String, version: String, path: String, configPath: String, versionShort: String, versionFull: String, isAutoForked: Bool, forkType: ForkType) {
     self.serverURI = serverURI
@@ -193,23 +243,25 @@ public class Config {
 		self.forkType = forkType
   }
 
-  public class func fromJSON(json: JSON) -> Config {
+  public class func fromJSON(_ json: JSON) -> Config {
     return Config(serverURI: json["serverURI"].stringValue, socketFile: json["socketFile"].stringValue, label: json["label"].stringValue, runMode: json["runMode"].stringValue, gpgExists: json["gpgExists"].boolValue, gpgPath: json["gpgPath"].stringValue, version: json["version"].stringValue, path: json["path"].stringValue, configPath: json["configPath"].stringValue, versionShort: json["versionShort"].stringValue, versionFull: json["versionFull"].stringValue, isAutoForked: json["isAutoForked"].boolValue, forkType: ForkType(rawValue: json["forkType"].intValue)!)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [Config] {
+  public class func fromJSONArray(_ json: [JSON]) -> [Config] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class ConfigValue {
 
-	public let isNull: Bool
-	public let b: Bool?
-	public let i: Int?
-	public let s: String?
-	public let o: String?
+	public let isNull: Bool?
+	public let b: Bool??
+	public let i: Int??
+	public let s: String??
+	public let o: String??
 
   public init(isNull: Bool, b: Bool?, i: Int?, s: String?, o: String?) {
     self.isNull = isNull
@@ -219,11 +271,39 @@ public class ConfigValue {
 		self.o = o
   }
 
-  public class func fromJSON(json: JSON) -> ConfigValue {
+  public class func fromJSON(_ json: JSON) -> ConfigValue {
     return ConfigValue(isNull: json["isNull"].boolValue, b: json["b"].boolValue, i: json["i"].intValue, s: json["s"].stringValue, o: json["o"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [ConfigValue] {
+  public class func fromJSONArray(_ json: [JSON]) -> [ConfigValue] {
     return json.map { fromJSON($0) }
   }
+
 }
+
+
+
+public class OutOfDateInfo {
+
+	public let upgradeTo: String?
+	public let upgradeURI: String?
+	public let customMessage: String?
+	public let criticalClockSkew: Int64?
+
+  public init(upgradeTo: String, upgradeURI: String, customMessage: String, criticalClockSkew: Int64) {
+    self.upgradeTo = upgradeTo
+		self.upgradeURI = upgradeURI
+		self.customMessage = customMessage
+		self.criticalClockSkew = criticalClockSkew
+  }
+
+  public class func fromJSON(_ json: JSON) -> OutOfDateInfo {
+    return OutOfDateInfo(upgradeTo: json["upgradeTo"].stringValue, upgradeURI: json["upgradeURI"].stringValue, customMessage: json["customMessage"].stringValue, criticalClockSkew: json["criticalClockSkew"].int64Value)
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [OutOfDateInfo] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+

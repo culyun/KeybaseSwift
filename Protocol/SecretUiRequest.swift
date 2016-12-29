@@ -3,9 +3,9 @@
 //
 
 //
-//  SecretUiRequest.swift
+//  SecretUIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,15 +14,15 @@ import SwiftyJSON
 
 
 //
-// SecretUi
+// SecretUI
 //
 
-public class SecretUiRequest: Request {
+public class SecretUIRequest: Request {
 
   public func getPassphrase(pinentry: GUIEntryArg, terminal: SecretEntryArg?) throws -> GetPassphraseRes {
-    let args: [String: AnyObject] = ["pinentry": pinentry, "terminal": wrapNull(terminal)]
-    let response = try self.sendRequest("keybase.1.secretUi.getPassphrase", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["pinentry": pinentry, "terminal": wrapNull(terminal)]
+    let response = try self.sendRequest(method: "keybase.1.secretUi.getPassphrase", args: args)
+    try checkNull(response: response)
     return GetPassphraseRes.fromJSON(JSON(response))
   }
 

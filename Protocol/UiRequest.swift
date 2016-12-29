@@ -3,9 +3,9 @@
 //
 
 //
-//  UiRequest.swift
+//  UIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,15 +14,15 @@ import SwiftyJSON
 
 
 //
-// Ui
+// UI
 //
 
-public class UiRequest: Request {
+public class UIRequest: Request {
 
   public func promptYesNo(text: Text, promptDefault: PromptDefault) throws -> Bool {
-    let args: [String: AnyObject] = ["text": text, "promptDefault": promptDefault.rawValue]
-    let response = try self.sendRequest("keybase.1.ui.promptYesNo", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["text": text, "promptDefault": promptDefault.rawValue]
+    let response = try self.sendRequest(method: "keybase.1.ui.promptYesNo", args: args)
+    try checkNull(response: response)
     return JSON(response).boolValue
   }
 

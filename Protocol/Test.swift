@@ -5,7 +5,7 @@
 //
 //  Test.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,17 +20,19 @@ import SwiftyJSON
 
 public class Test {
 
-	public let reply: String
+	public let reply: String?
 
   public init(reply: String) {
     self.reply = reply
   }
 
-  public class func fromJSON(json: JSON) -> Test {
+  public class func fromJSON(_ json: JSON) -> Test {
     return Test(reply: json["reply"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [Test] {
+  public class func fromJSONArray(_ json: [JSON]) -> [Test] {
     return json.map { fromJSON($0) }
   }
+
 }
+

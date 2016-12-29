@@ -3,9 +3,9 @@
 //
 
 //
-//  SaltpackUi.swift
+//  SaltpackUI.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,24 +14,24 @@ import SwiftyJSON
 
 
 //
-// SaltpackUi
+// SaltpackUI
 //
 
 public enum SaltpackSenderType: Int {
-	case NotTracked = 0
-	case Unknown = 1
-	case Anonymous = 2
-	case TrackingBroke = 3
-	case TrackingOk = 4
-	case VSelf = 5
+	case notTracked = 0
+	case unknown = 1
+	case anonymous = 2
+	case trackingBroke = 3
+	case trackingOk = 4
+	case selfValue = 5
 }
 
 
 public class SaltpackSender {
 
-	public let uid: String
-	public let username: String
-	public let senderType: SaltpackSenderType
+	public let uid: String?
+	public let username: String?
+	public let senderType: SaltpackSenderType?
 
   public init(uid: String, username: String, senderType: SaltpackSenderType) {
     self.uid = uid
@@ -39,11 +39,13 @@ public class SaltpackSender {
 		self.senderType = senderType
   }
 
-  public class func fromJSON(json: JSON) -> SaltpackSender {
+  public class func fromJSON(_ json: JSON) -> SaltpackSender {
     return SaltpackSender(uid: json["uid"].stringValue, username: json["username"].stringValue, senderType: SaltpackSenderType(rawValue: json["senderType"].intValue)!)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SaltpackSender] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SaltpackSender] {
     return json.map { fromJSON($0) }
   }
+
 }
+

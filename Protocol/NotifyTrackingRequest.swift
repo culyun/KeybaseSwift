@@ -5,7 +5,7 @@
 //
 //  NotifyTrackingRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,8 @@ import SwiftyJSON
 public class NotifyTrackingRequest: Request {
 
   public func trackingChanged(uid: String, username: String) throws {
-    let args: [String: AnyObject] = ["uid": uid, "username": username]
-    try self.sendRequest("keybase.1.NotifyTracking.trackingChanged", args: args)
+    let args: [String: Any] = ["uid": uid, "username": username]
+    _ = try self.sendRequest(method: "keybase.1.NotifyTracking.trackingChanged", args: args)
   }
 
 }

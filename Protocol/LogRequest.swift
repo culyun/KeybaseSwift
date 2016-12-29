@@ -5,7 +5,7 @@
 //
 //  LogRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,8 @@ import SwiftyJSON
 public class LogRequest: Request {
 
   public func registerLogger(name: String, level: LogLevel) throws {
-    let args: [String: AnyObject] = ["name": name, "level": level.rawValue]
-    try self.sendRequest("keybase.1.log.registerLogger", args: args)
+    let args: [String: Any] = ["name": name, "level": level.rawValue]
+    _ = try self.sendRequest(method: "keybase.1.log.registerLogger", args: args)
   }
 
 }

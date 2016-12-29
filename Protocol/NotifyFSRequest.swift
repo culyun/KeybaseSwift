@@ -5,7 +5,7 @@
 //
 //  NotifyFSRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,23 @@ import SwiftyJSON
 public class NotifyFSRequest: Request {
 
   public func fSActivity(notification: FSNotification) throws {
-    let args: [String: AnyObject] = ["notification": notification]
-    try self.sendRequest("keybase.1.NotifyFS.FSActivity", args: args)
+    let args: [String: Any] = ["notification": notification]
+    _ = try self.sendRequest(method: "keybase.1.NotifyFS.FSActivity", args: args)
+  }
+
+  public func fSSyncActivity(status: FSPathSyncStatus) throws {
+    let args: [String: Any] = ["status": status]
+    _ = try self.sendRequest(method: "keybase.1.NotifyFS.FSSyncActivity", args: args)
+  }
+
+  public func fSEditListResponse(edits: [FSNotification], requestID: Int) throws {
+    let args: [String: Any] = ["edits": edits, "requestID": NSNumber(value: requestID)]
+    _ = try self.sendRequest(method: "keybase.1.NotifyFS.FSEditListResponse", args: args)
+  }
+
+  public func fSSyncStatusResponse(status: FSSyncStatus, requestID: Int) throws {
+    let args: [String: Any] = ["status": status, "requestID": NSNumber(value: requestID)]
+    _ = try self.sendRequest(method: "keybase.1.NotifyFS.FSSyncStatusResponse", args: args)
   }
 
 }

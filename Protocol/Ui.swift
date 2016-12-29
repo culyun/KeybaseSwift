@@ -3,9 +3,9 @@
 //
 
 //
-//  Ui.swift
+//  UI.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,11 +14,11 @@ import SwiftyJSON
 
 
 //
-// Ui
+// UI
 //
 
 public enum PromptDefault: Int {
-	case None = 0
-	case Yes = 1
-	case No = 2
+	case none = 0
+	case yes = 1
+	case no = 2
 }

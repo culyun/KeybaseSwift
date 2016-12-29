@@ -5,7 +5,7 @@
 //
 //  TrackRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -25,31 +25,39 @@ public class TrackRequest: Request {
  (otherwise a cache is used).
  */
   public func track(userAssertion: String, options: TrackOptions, forceRemoteCheck: Bool) throws {
-    let args: [String: AnyObject] = ["userAssertion": userAssertion, "options": options, "forceRemoteCheck": forceRemoteCheck]
-    try self.sendRequest("keybase.1.track.track", args: args)
+    let args: [String: Any] = ["userAssertion": userAssertion, "options": options, "forceRemoteCheck": forceRemoteCheck]
+    _ = try self.sendRequest(method: "keybase.1.track.track", args: args)
   }
 
 /*!
  Track with token returned from identify.
  */
   public func trackWithToken(trackToken: String, options: TrackOptions) throws {
-    let args: [String: AnyObject] = ["trackToken": trackToken, "options": options]
-    try self.sendRequest("keybase.1.track.trackWithToken", args: args)
+    let args: [String: Any] = ["trackToken": trackToken, "options": options]
+    _ = try self.sendRequest(method: "keybase.1.track.trackWithToken", args: args)
+  }
+
+/*!
+ Called by the UI when the user decides *not* to track, to e.g. dismiss gregor items.
+ */
+  public func dismissWithToken(trackToken: String) throws {
+    let args: [String: Any] = ["trackToken": trackToken]
+    _ = try self.sendRequest(method: "keybase.1.track.dismissWithToken", args: args)
   }
 
   public func untrack(username: String) throws {
-    let args: [String: AnyObject] = ["username": username]
-    try self.sendRequest("keybase.1.track.untrack", args: args)
+    let args: [String: Any] = ["username": username]
+    _ = try self.sendRequest(method: "keybase.1.track.untrack", args: args)
   }
 
   public func checkTracking() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.track.checkTracking", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.track.checkTracking", args: args)
   }
 
   public func fakeTrackingChanged(username: String) throws {
-    let args: [String: AnyObject] = ["username": username]
-    try self.sendRequest("keybase.1.track.fakeTrackingChanged", args: args)
+    let args: [String: Any] = ["username": username]
+    _ = try self.sendRequest(method: "keybase.1.track.fakeTrackingChanged", args: args)
   }
 
 }

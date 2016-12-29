@@ -8,21 +8,21 @@
 
 import Foundation
 
-enum RequestError: ErrorType {
+enum RequestError: Error {
   case InvalidResponse
 }
 
 public typealias RequestCompletion = (NSError?, AnyObject?) -> Void
 
 @objc public protocol Client: class {
-  func sendRequestWithMethod(method: String, args: [String: AnyObject], messageId: Int, timeout: NSTimeInterval) throws -> AnyObject
+  func sendRequestWithMethod(method: String, args: [String: Any], messageId: Int, timeout: TimeInterval) throws -> AnyObject
 }
 
 public class Request: NSObject {
 
   var client: Client
   var messageId: Int
-  var timeout: NSTimeInterval
+  var timeout: TimeInterval
 
   @objc public init(client: Client) {
     self.client = client
@@ -36,13 +36,13 @@ public class Request: NSObject {
     return gMessageId
   }
 
-  public func sendRequest(method: String, args: [String: AnyObject]) throws -> AnyObject {
-    var sargs: [String: AnyObject] = args
+  public func sendRequest(method: String, args: [String: Any]) throws -> AnyObject {
+    var sargs: [String: Any] = args
     sargs["sessionID"] = self.messageId
-    return try self.client.sendRequestWithMethod(method, args: sargs, messageId: self.messageId, timeout: self.timeout)
+    return try self.client.sendRequestWithMethod(method: method, args: sargs, messageId: self.messageId, timeout: self.timeout)
   }
 
-  func wrapNull(obj: AnyObject?) -> AnyObject {
+  func wrapNull(_ obj: AnyObject?) -> AnyObject {
     guard obj != nil else { return NSNull() }
     return obj!
   }

@@ -5,7 +5,7 @@
 //
 //  Debugging.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,17 +20,19 @@ import SwiftyJSON
 
 public class FirstStepResult {
 
-	public let valPlusTwo: Int
+	public let valPlusTwo: Int?
 
   public init(valPlusTwo: Int) {
     self.valPlusTwo = valPlusTwo
   }
 
-  public class func fromJSON(json: JSON) -> FirstStepResult {
+  public class func fromJSON(_ json: JSON) -> FirstStepResult {
     return FirstStepResult(valPlusTwo: json["valPlusTwo"].intValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [FirstStepResult] {
+  public class func fromJSONArray(_ json: [JSON]) -> [FirstStepResult] {
     return json.map { fromJSON($0) }
   }
+
 }
+

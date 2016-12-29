@@ -5,7 +5,7 @@
 //
 //  SigsRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,16 +20,16 @@ import SwiftyJSON
 public class SigsRequest: Request {
 
   public func sigList(arg: SigListArgs) throws -> [Sig] {
-    let args: [String: AnyObject] = ["arg": arg]
-    let response = try self.sendRequest("keybase.1.sigs.sigList", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["arg": arg]
+    let response = try self.sendRequest(method: "keybase.1.sigs.sigList", args: args)
+  try checkNull(response: response)
   return Sig.fromJSONArray(JSON(response).arrayValue)
   }
 
   public func sigListJSON(arg: SigListArgs) throws -> String {
-    let args: [String: AnyObject] = ["arg": arg]
-    let response = try self.sendRequest("keybase.1.sigs.sigListJSON", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["arg": arg]
+    let response = try self.sendRequest(method: "keybase.1.sigs.sigListJSON", args: args)
+    try checkNull(response: response)
     return JSON(response).stringValue
   }
 

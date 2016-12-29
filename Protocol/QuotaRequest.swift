@@ -5,7 +5,7 @@
 //
 //  QuotaRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,9 +20,9 @@ import SwiftyJSON
 public class QuotaRequest: Request {
 
   public func verifySession(session: String) throws -> VerifySessionRes {
-    let args: [String: AnyObject] = ["session": session]
-    let response = try self.sendRequest("keybase.1.quota.verifySession", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["session": session]
+    let response = try self.sendRequest(method: "keybase.1.quota.verifySession", args: args)
+    try checkNull(response: response)
     return VerifySessionRes.fromJSON(JSON(response))
   }
 

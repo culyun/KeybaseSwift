@@ -8,111 +8,136 @@
 
 /* Begin PBXBuildFile section */
 		002AA1171CC41B71004885A5 /* KeybaseSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 002AA1161CC41B71004885A5 /* KeybaseSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		002AA1921CC41BBC004885A5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA12E1CC41BBC004885A5 /* Account.swift */; };
-		002AA1931CC41BBC004885A5 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA12F1CC41BBC004885A5 /* AccountRequest.swift */; };
-		002AA1941CC41BBC004885A5 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1301CC41BBC004885A5 /* Block.swift */; };
-		002AA1951CC41BBC004885A5 /* BlockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1311CC41BBC004885A5 /* BlockRequest.swift */; };
-		002AA1961CC41BBC004885A5 /* BTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1321CC41BBC004885A5 /* BTC.swift */; };
-		002AA1971CC41BBC004885A5 /* BTCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1331CC41BBC004885A5 /* BTCRequest.swift */; };
-		002AA1981CC41BBC004885A5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1341CC41BBC004885A5 /* Config.swift */; };
-		002AA1991CC41BBC004885A5 /* ConfigRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1351CC41BBC004885A5 /* ConfigRequest.swift */; };
-		002AA19A1CC41BBC004885A5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1361CC41BBC004885A5 /* Constants.swift */; };
-		002AA19B1CC41BBC004885A5 /* ConstantsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1371CC41BBC004885A5 /* ConstantsRequest.swift */; };
-		002AA19C1CC41BBC004885A5 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1381CC41BBC004885A5 /* Crypto.swift */; };
-		002AA19D1CC41BBC004885A5 /* CryptoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1391CC41BBC004885A5 /* CryptoRequest.swift */; };
-		002AA19E1CC41BBC004885A5 /* Ctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA13A1CC41BBC004885A5 /* Ctl.swift */; };
-		002AA19F1CC41BBC004885A5 /* CtlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA13B1CC41BBC004885A5 /* CtlRequest.swift */; };
-		002AA1A01CC41BBC004885A5 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA13C1CC41BBC004885A5 /* Debugging.swift */; };
-		002AA1A11CC41BBC004885A5 /* DebuggingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA13D1CC41BBC004885A5 /* DebuggingRequest.swift */; };
-		002AA1A21CC41BBC004885A5 /* DelegateUiCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA13E1CC41BBC004885A5 /* DelegateUiCtl.swift */; };
-		002AA1A31CC41BBC004885A5 /* DelegateUiCtlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA13F1CC41BBC004885A5 /* DelegateUiCtlRequest.swift */; };
-		002AA1A41CC41BBC004885A5 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1401CC41BBC004885A5 /* Device.swift */; };
-		002AA1A51CC41BBC004885A5 /* DeviceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1411CC41BBC004885A5 /* DeviceRequest.swift */; };
-		002AA1A61CC41BBC004885A5 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1421CC41BBC004885A5 /* Favorite.swift */; };
-		002AA1A71CC41BBC004885A5 /* FavoriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1431CC41BBC004885A5 /* FavoriteRequest.swift */; };
-		002AA1A81CC41BBC004885A5 /* GpgUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1441CC41BBC004885A5 /* GpgUi.swift */; };
-		002AA1A91CC41BBC004885A5 /* GpgUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1451CC41BBC004885A5 /* GpgUiRequest.swift */; };
-		002AA1AA1CC41BBC004885A5 /* Identify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1461CC41BBC004885A5 /* Identify.swift */; };
-		002AA1AB1CC41BBC004885A5 /* IdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1471CC41BBC004885A5 /* IdentifyRequest.swift */; };
-		002AA1AC1CC41BBC004885A5 /* IdentifyUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1481CC41BBC004885A5 /* IdentifyUi.swift */; };
-		002AA1AD1CC41BBC004885A5 /* IdentifyUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1491CC41BBC004885A5 /* IdentifyUiRequest.swift */; };
-		002AA1AE1CC41BBC004885A5 /* Install.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA14A1CC41BBC004885A5 /* Install.swift */; };
-		002AA1AF1CC41BBC004885A5 /* InstallRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA14B1CC41BBC004885A5 /* InstallRequest.swift */; };
-		002AA1B01CC41BBC004885A5 /* Kbfs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA14C1CC41BBC004885A5 /* Kbfs.swift */; };
-		002AA1B11CC41BBC004885A5 /* KbfsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA14D1CC41BBC004885A5 /* KbfsRequest.swift */; };
-		002AA1B21CC41BBC004885A5 /* Kex2Provisionee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA14E1CC41BBC004885A5 /* Kex2Provisionee.swift */; };
-		002AA1B31CC41BBC004885A5 /* Kex2ProvisioneeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA14F1CC41BBC004885A5 /* Kex2ProvisioneeRequest.swift */; };
-		002AA1B41CC41BBC004885A5 /* Kex2Provisioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1501CC41BBC004885A5 /* Kex2Provisioner.swift */; };
-		002AA1B51CC41BBC004885A5 /* Kex2ProvisionerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1511CC41BBC004885A5 /* Kex2ProvisionerRequest.swift */; };
-		002AA1B61CC41BBC004885A5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1521CC41BBC004885A5 /* Log.swift */; };
-		002AA1B71CC41BBC004885A5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1531CC41BBC004885A5 /* Login.swift */; };
-		002AA1B81CC41BBC004885A5 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1541CC41BBC004885A5 /* LoginRequest.swift */; };
-		002AA1B91CC41BBC004885A5 /* LoginUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1551CC41BBC004885A5 /* LoginUi.swift */; };
-		002AA1BA1CC41BBC004885A5 /* LoginUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1561CC41BBC004885A5 /* LoginUiRequest.swift */; };
-		002AA1BB1CC41BBC004885A5 /* LogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1571CC41BBC004885A5 /* LogRequest.swift */; };
-		002AA1BC1CC41BBC004885A5 /* LogUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1581CC41BBC004885A5 /* LogUi.swift */; };
-		002AA1BD1CC41BBC004885A5 /* LogUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1591CC41BBC004885A5 /* LogUiRequest.swift */; };
-		002AA1BE1CC41BBC004885A5 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA15A1CC41BBC004885A5 /* Metadata.swift */; };
-		002AA1BF1CC41BBC004885A5 /* MetadataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA15B1CC41BBC004885A5 /* MetadataRequest.swift */; };
-		002AA1C01CC41BBC004885A5 /* MetadataUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA15C1CC41BBC004885A5 /* MetadataUpdate.swift */; };
-		002AA1C11CC41BBC004885A5 /* MetadataUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA15D1CC41BBC004885A5 /* MetadataUpdateRequest.swift */; };
-		002AA1C21CC41BBC004885A5 /* NotifyCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA15E1CC41BBC004885A5 /* NotifyCtl.swift */; };
-		002AA1C31CC41BBC004885A5 /* NotifyCtlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA15F1CC41BBC004885A5 /* NotifyCtlRequest.swift */; };
-		002AA1C41CC41BBC004885A5 /* NotifyFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1601CC41BBC004885A5 /* NotifyFS.swift */; };
-		002AA1C51CC41BBC004885A5 /* NotifyFSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1611CC41BBC004885A5 /* NotifyFSRequest.swift */; };
-		002AA1C61CC41BBC004885A5 /* NotifySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1621CC41BBC004885A5 /* NotifySession.swift */; };
-		002AA1C71CC41BBC004885A5 /* NotifySessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1631CC41BBC004885A5 /* NotifySessionRequest.swift */; };
-		002AA1C81CC41BBC004885A5 /* NotifyTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1641CC41BBC004885A5 /* NotifyTracking.swift */; };
-		002AA1C91CC41BBC004885A5 /* NotifyTrackingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1651CC41BBC004885A5 /* NotifyTrackingRequest.swift */; };
-		002AA1CA1CC41BBC004885A5 /* NotifyUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1661CC41BBC004885A5 /* NotifyUsers.swift */; };
-		002AA1CB1CC41BBC004885A5 /* NotifyUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1671CC41BBC004885A5 /* NotifyUsersRequest.swift */; };
-		002AA1CC1CC41BBC004885A5 /* Pgp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1681CC41BBC004885A5 /* Pgp.swift */; };
-		002AA1CD1CC41BBC004885A5 /* PgpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1691CC41BBC004885A5 /* PgpRequest.swift */; };
-		002AA1CE1CC41BBC004885A5 /* PgpUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA16A1CC41BBC004885A5 /* PgpUi.swift */; };
-		002AA1CF1CC41BBC004885A5 /* PgpUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA16B1CC41BBC004885A5 /* PgpUiRequest.swift */; };
-		002AA1D01CC41BBC004885A5 /* Prove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA16C1CC41BBC004885A5 /* Prove.swift */; };
-		002AA1D11CC41BBC004885A5 /* ProveRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA16D1CC41BBC004885A5 /* ProveRequest.swift */; };
-		002AA1D21CC41BBC004885A5 /* ProveUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA16E1CC41BBC004885A5 /* ProveUi.swift */; };
-		002AA1D31CC41BBC004885A5 /* ProveUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA16F1CC41BBC004885A5 /* ProveUiRequest.swift */; };
-		002AA1D41CC41BBC004885A5 /* ProvisionUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1701CC41BBC004885A5 /* ProvisionUi.swift */; };
-		002AA1D51CC41BBC004885A5 /* ProvisionUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1711CC41BBC004885A5 /* ProvisionUiRequest.swift */; };
-		002AA1D61CC41BBC004885A5 /* Quota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1721CC41BBC004885A5 /* Quota.swift */; };
-		002AA1D71CC41BBC004885A5 /* QuotaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1731CC41BBC004885A5 /* QuotaRequest.swift */; };
-		002AA1D81CC41BBC004885A5 /* Revoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1741CC41BBC004885A5 /* Revoke.swift */; };
-		002AA1D91CC41BBC004885A5 /* RevokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1751CC41BBC004885A5 /* RevokeRequest.swift */; };
-		002AA1DA1CC41BBC004885A5 /* Saltpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1761CC41BBC004885A5 /* Saltpack.swift */; };
-		002AA1DB1CC41BBC004885A5 /* SaltpackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1771CC41BBC004885A5 /* SaltpackRequest.swift */; };
-		002AA1DC1CC41BBC004885A5 /* SaltpackUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1781CC41BBC004885A5 /* SaltpackUi.swift */; };
-		002AA1DD1CC41BBC004885A5 /* SaltpackUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1791CC41BBC004885A5 /* SaltpackUiRequest.swift */; };
-		002AA1DE1CC41BBC004885A5 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA17A1CC41BBC004885A5 /* SecretKeys.swift */; };
-		002AA1DF1CC41BBC004885A5 /* SecretKeysRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA17B1CC41BBC004885A5 /* SecretKeysRequest.swift */; };
-		002AA1E01CC41BBC004885A5 /* SecretUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA17C1CC41BBC004885A5 /* SecretUi.swift */; };
-		002AA1E11CC41BBC004885A5 /* SecretUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA17D1CC41BBC004885A5 /* SecretUiRequest.swift */; };
-		002AA1E21CC41BBC004885A5 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA17E1CC41BBC004885A5 /* Session.swift */; };
-		002AA1E31CC41BBC004885A5 /* SessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA17F1CC41BBC004885A5 /* SessionRequest.swift */; };
-		002AA1E41CC41BBC004885A5 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1801CC41BBC004885A5 /* Signup.swift */; };
-		002AA1E51CC41BBC004885A5 /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1811CC41BBC004885A5 /* SignupRequest.swift */; };
-		002AA1E61CC41BBC004885A5 /* Sigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1821CC41BBC004885A5 /* Sigs.swift */; };
-		002AA1E71CC41BBC004885A5 /* SigsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1831CC41BBC004885A5 /* SigsRequest.swift */; };
-		002AA1E81CC41BBC004885A5 /* StreamUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1841CC41BBC004885A5 /* StreamUi.swift */; };
-		002AA1E91CC41BBC004885A5 /* StreamUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1851CC41BBC004885A5 /* StreamUiRequest.swift */; };
-		002AA1EA1CC41BBC004885A5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1861CC41BBC004885A5 /* Test.swift */; };
-		002AA1EB1CC41BBC004885A5 /* TestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1871CC41BBC004885A5 /* TestRequest.swift */; };
-		002AA1EC1CC41BBC004885A5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1881CC41BBC004885A5 /* Track.swift */; };
-		002AA1ED1CC41BBC004885A5 /* TrackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1891CC41BBC004885A5 /* TrackRequest.swift */; };
-		002AA1EE1CC41BBC004885A5 /* Ui.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA18A1CC41BBC004885A5 /* Ui.swift */; };
-		002AA1EF1CC41BBC004885A5 /* UiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA18B1CC41BBC004885A5 /* UiRequest.swift */; };
-		002AA1F01CC41BBC004885A5 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA18C1CC41BBC004885A5 /* Update.swift */; };
-		002AA1F11CC41BBC004885A5 /* UpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA18D1CC41BBC004885A5 /* UpdateRequest.swift */; };
-		002AA1F21CC41BBC004885A5 /* UpdateUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA18E1CC41BBC004885A5 /* UpdateUi.swift */; };
-		002AA1F31CC41BBC004885A5 /* UpdateUiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA18F1CC41BBC004885A5 /* UpdateUiRequest.swift */; };
-		002AA1F41CC41BBC004885A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1901CC41BBC004885A5 /* User.swift */; };
-		002AA1F51CC41BBC004885A5 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1911CC41BBC004885A5 /* UserRequest.swift */; };
 		002AA1F71CC41CC0004885A5 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002AA1F61CC41CC0004885A5 /* SwiftyJSON.framework */; };
 		002AA1F91CC41D52004885A5 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1F81CC41D52004885A5 /* Request.swift */; };
 		002AA1FB1CC41F9B004885A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AA1FA1CC41F9B004885A5 /* Extensions.swift */; };
 		002AA2081CC42C51004885A5 /* MPMessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002AA2061CC42C51004885A5 /* MPMessagePack.framework */; };
 		002AA2091CC42C51004885A5 /* GHODictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002AA2071CC42C51004885A5 /* GHODictionary.framework */; };
+		00DDA3A31E159E2700B8820C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3261E159E2700B8820C /* Account.swift */; };
+		00DDA3A41E159E2700B8820C /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3271E159E2700B8820C /* AccountRequest.swift */; };
+		00DDA3A51E159E2700B8820C /* Apiserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3281E159E2700B8820C /* Apiserver.swift */; };
+		00DDA3A61E159E2700B8820C /* ApiserverRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3291E159E2700B8820C /* ApiserverRequest.swift */; };
+		00DDA3A71E159E2700B8820C /* BackendCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA32A1E159E2700B8820C /* BackendCommon.swift */; };
+		00DDA3A81E159E2700B8820C /* BackendCommonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA32B1E159E2700B8820C /* BackendCommonRequest.swift */; };
+		00DDA3A91E159E2700B8820C /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA32C1E159E2700B8820C /* Block.swift */; };
+		00DDA3AA1E159E2700B8820C /* BlockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA32D1E159E2700B8820C /* BlockRequest.swift */; };
+		00DDA3AB1E159E2700B8820C /* BTCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA32E1E159E2700B8820C /* BTCRequest.swift */; };
+		00DDA3AC1E159E2700B8820C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA32F1E159E2700B8820C /* Common.swift */; };
+		00DDA3AD1E159E2700B8820C /* CommonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3301E159E2700B8820C /* CommonRequest.swift */; };
+		00DDA3AE1E159E2700B8820C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3311E159E2700B8820C /* Config.swift */; };
+		00DDA3AF1E159E2700B8820C /* ConfigRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3321E159E2700B8820C /* ConfigRequest.swift */; };
+		00DDA3B01E159E2700B8820C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3331E159E2700B8820C /* Constants.swift */; };
+		00DDA3B11E159E2700B8820C /* ConstantsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3341E159E2700B8820C /* ConstantsRequest.swift */; };
+		00DDA3B21E159E2700B8820C /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3351E159E2700B8820C /* Crypto.swift */; };
+		00DDA3B31E159E2700B8820C /* Cryptocurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3361E159E2700B8820C /* Cryptocurrency.swift */; };
+		00DDA3B41E159E2700B8820C /* CryptocurrencyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3371E159E2700B8820C /* CryptocurrencyRequest.swift */; };
+		00DDA3B51E159E2700B8820C /* CryptoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3381E159E2700B8820C /* CryptoRequest.swift */; };
+		00DDA3B61E159E2700B8820C /* Ctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3391E159E2700B8820C /* Ctl.swift */; };
+		00DDA3B71E159E2700B8820C /* CtlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA33A1E159E2700B8820C /* CtlRequest.swift */; };
+		00DDA3B81E159E2700B8820C /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA33B1E159E2700B8820C /* Debugging.swift */; };
+		00DDA3B91E159E2700B8820C /* DebuggingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA33C1E159E2700B8820C /* DebuggingRequest.swift */; };
+		00DDA3BA1E159E2700B8820C /* DelegateUICtlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA33D1E159E2700B8820C /* DelegateUICtlRequest.swift */; };
+		00DDA3BB1E159E2700B8820C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA33E1E159E2700B8820C /* Device.swift */; };
+		00DDA3BC1E159E2700B8820C /* DeviceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA33F1E159E2700B8820C /* DeviceRequest.swift */; };
+		00DDA3BD1E159E2700B8820C /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3401E159E2700B8820C /* Favorite.swift */; };
+		00DDA3BE1E159E2700B8820C /* FavoriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3411E159E2700B8820C /* FavoriteRequest.swift */; };
+		00DDA3BF1E159E2700B8820C /* Fs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3421E159E2700B8820C /* Fs.swift */; };
+		00DDA3C01E159E2700B8820C /* FsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3431E159E2700B8820C /* FsRequest.swift */; };
+		00DDA3C11E159E2700B8820C /* GpgCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3441E159E2700B8820C /* GpgCommon.swift */; };
+		00DDA3C21E159E2700B8820C /* GpgCommonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3451E159E2700B8820C /* GpgCommonRequest.swift */; };
+		00DDA3C31E159E2700B8820C /* GpgUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3461E159E2700B8820C /* GpgUI.swift */; };
+		00DDA3C41E159E2700B8820C /* GpgUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3471E159E2700B8820C /* GpgUIRequest.swift */; };
+		00DDA3C51E159E2700B8820C /* Identify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3481E159E2700B8820C /* Identify.swift */; };
+		00DDA3C61E159E2700B8820C /* IdentifyCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3491E159E2700B8820C /* IdentifyCommon.swift */; };
+		00DDA3C71E159E2700B8820C /* IdentifyCommonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA34A1E159E2700B8820C /* IdentifyCommonRequest.swift */; };
+		00DDA3C81E159E2700B8820C /* IdentifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA34B1E159E2700B8820C /* IdentifyRequest.swift */; };
+		00DDA3C91E159E2700B8820C /* IdentifyUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA34C1E159E2700B8820C /* IdentifyUI.swift */; };
+		00DDA3CA1E159E2700B8820C /* IdentifyUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA34D1E159E2700B8820C /* IdentifyUIRequest.swift */; };
+		00DDA3CB1E159E2700B8820C /* Install.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA34E1E159E2700B8820C /* Install.swift */; };
+		00DDA3CC1E159E2700B8820C /* InstallRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA34F1E159E2700B8820C /* InstallRequest.swift */; };
+		00DDA3CD1E159E2700B8820C /* KbfsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3501E159E2700B8820C /* KbfsCommon.swift */; };
+		00DDA3CE1E159E2700B8820C /* KbfsCommonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3511E159E2700B8820C /* KbfsCommonRequest.swift */; };
+		00DDA3CF1E159E2700B8820C /* KbfsMountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3521E159E2700B8820C /* KbfsMountRequest.swift */; };
+		00DDA3D01E159E2700B8820C /* KbfsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3531E159E2700B8820C /* KbfsRequest.swift */; };
+		00DDA3D11E159E2700B8820C /* Kex2Provisionee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3541E159E2700B8820C /* Kex2Provisionee.swift */; };
+		00DDA3D21E159E2700B8820C /* Kex2Provisionee2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3551E159E2700B8820C /* Kex2Provisionee2.swift */; };
+		00DDA3D31E159E2700B8820C /* Kex2Provisionee2Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3561E159E2700B8820C /* Kex2Provisionee2Request.swift */; };
+		00DDA3D41E159E2700B8820C /* Kex2ProvisioneeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3571E159E2700B8820C /* Kex2ProvisioneeRequest.swift */; };
+		00DDA3D51E159E2700B8820C /* Kex2ProvisionerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3581E159E2700B8820C /* Kex2ProvisionerRequest.swift */; };
+		00DDA3D61E159E2700B8820C /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3591E159E2700B8820C /* Login.swift */; };
+		00DDA3D71E159E2700B8820C /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA35A1E159E2700B8820C /* LoginRequest.swift */; };
+		00DDA3D81E159E2700B8820C /* LoginUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA35B1E159E2700B8820C /* LoginUIRequest.swift */; };
+		00DDA3D91E159E2700B8820C /* LogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA35C1E159E2700B8820C /* LogRequest.swift */; };
+		00DDA3DA1E159E2700B8820C /* LogUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA35D1E159E2700B8820C /* LogUIRequest.swift */; };
+		00DDA3DB1E159E2700B8820C /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA35E1E159E2700B8820C /* Metadata.swift */; };
+		00DDA3DC1E159E2700B8820C /* MetadataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA35F1E159E2700B8820C /* MetadataRequest.swift */; };
+		00DDA3DD1E159E2700B8820C /* MetadataUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3601E159E2700B8820C /* MetadataUpdateRequest.swift */; };
+		00DDA3DE1E159E2700B8820C /* NotifyAppRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3611E159E2700B8820C /* NotifyAppRequest.swift */; };
+		00DDA3DF1E159E2700B8820C /* NotifyBadges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3621E159E2700B8820C /* NotifyBadges.swift */; };
+		00DDA3E01E159E2700B8820C /* NotifyBadgesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3631E159E2700B8820C /* NotifyBadgesRequest.swift */; };
+		00DDA3E11E159E2700B8820C /* NotifyCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3641E159E2700B8820C /* NotifyCtl.swift */; };
+		00DDA3E21E159E2700B8820C /* NotifyCtlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3651E159E2700B8820C /* NotifyCtlRequest.swift */; };
+		00DDA3E31E159E2700B8820C /* NotifyFavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3661E159E2700B8820C /* NotifyFavoritesRequest.swift */; };
+		00DDA3E41E159E2700B8820C /* NotifyFSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3671E159E2700B8820C /* NotifyFSRequest.swift */; };
+		00DDA3E51E159E2700B8820C /* NotifyFSRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3681E159E2700B8820C /* NotifyFSRequestRequest.swift */; };
+		00DDA3E61E159E2700B8820C /* NotifyKeyfamilyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3691E159E2700B8820C /* NotifyKeyfamilyRequest.swift */; };
+		00DDA3E71E159E2700B8820C /* NotifyPaperKeyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA36A1E159E2700B8820C /* NotifyPaperKeyRequest.swift */; };
+		00DDA3E81E159E2700B8820C /* NotifyPGPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA36B1E159E2700B8820C /* NotifyPGPRequest.swift */; };
+		00DDA3E91E159E2700B8820C /* NotifyServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA36C1E159E2700B8820C /* NotifyServiceRequest.swift */; };
+		00DDA3EA1E159E2700B8820C /* NotifySessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA36D1E159E2700B8820C /* NotifySessionRequest.swift */; };
+		00DDA3EB1E159E2700B8820C /* NotifyTrackingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA36E1E159E2700B8820C /* NotifyTrackingRequest.swift */; };
+		00DDA3EC1E159E2700B8820C /* NotifyUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA36F1E159E2700B8820C /* NotifyUsersRequest.swift */; };
+		00DDA3ED1E159E2700B8820C /* PaperprovisionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3701E159E2700B8820C /* PaperprovisionRequest.swift */; };
+		00DDA3EE1E159E2700B8820C /* PassphraseCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3711E159E2700B8820C /* PassphraseCommon.swift */; };
+		00DDA3EF1E159E2700B8820C /* PassphraseCommonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3721E159E2700B8820C /* PassphraseCommonRequest.swift */; };
+		00DDA3F01E159E2700B8820C /* Pgp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3731E159E2700B8820C /* Pgp.swift */; };
+		00DDA3F11E159E2700B8820C /* PgpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3741E159E2700B8820C /* PgpRequest.swift */; };
+		00DDA3F21E159E2700B8820C /* PgpUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3751E159E2700B8820C /* PgpUIRequest.swift */; };
+		00DDA3F31E159E2700B8820C /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3761E159E2700B8820C /* Process.swift */; };
+		00DDA3F41E159E2700B8820C /* ProcessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3771E159E2700B8820C /* ProcessRequest.swift */; };
+		00DDA3F51E159E2700B8820C /* Prove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3781E159E2700B8820C /* Prove.swift */; };
+		00DDA3F61E159E2700B8820C /* ProveCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3791E159E2700B8820C /* ProveCommon.swift */; };
+		00DDA3F71E159E2700B8820C /* ProveCommonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA37A1E159E2700B8820C /* ProveCommonRequest.swift */; };
+		00DDA3F81E159E2700B8820C /* ProveRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA37B1E159E2700B8820C /* ProveRequest.swift */; };
+		00DDA3F91E159E2700B8820C /* ProveUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA37C1E159E2700B8820C /* ProveUI.swift */; };
+		00DDA3FA1E159E2700B8820C /* ProveUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA37D1E159E2700B8820C /* ProveUIRequest.swift */; };
+		00DDA3FB1E159E2700B8820C /* ProvisionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA37E1E159E2700B8820C /* ProvisionUI.swift */; };
+		00DDA3FC1E159E2700B8820C /* ProvisionUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA37F1E159E2700B8820C /* ProvisionUIRequest.swift */; };
+		00DDA3FD1E159E2700B8820C /* Quota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3801E159E2700B8820C /* Quota.swift */; };
+		00DDA3FE1E159E2700B8820C /* QuotaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3811E159E2700B8820C /* QuotaRequest.swift */; };
+		00DDA3FF1E159E2700B8820C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3821E159E2700B8820C /* Reachability.swift */; };
+		00DDA4001E159E2700B8820C /* ReachabilityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3831E159E2700B8820C /* ReachabilityRequest.swift */; };
+		00DDA4011E159E2700B8820C /* Rekey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3841E159E2700B8820C /* Rekey.swift */; };
+		00DDA4021E159E2700B8820C /* RekeyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3851E159E2700B8820C /* RekeyRequest.swift */; };
+		00DDA4031E159E2700B8820C /* RekeyUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3861E159E2700B8820C /* RekeyUI.swift */; };
+		00DDA4041E159E2700B8820C /* RekeyUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3871E159E2700B8820C /* RekeyUIRequest.swift */; };
+		00DDA4051E159E2700B8820C /* RevokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3881E159E2700B8820C /* RevokeRequest.swift */; };
+		00DDA4061E159E2700B8820C /* Saltpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3891E159E2700B8820C /* Saltpack.swift */; };
+		00DDA4071E159E2700B8820C /* SaltpackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA38A1E159E2700B8820C /* SaltpackRequest.swift */; };
+		00DDA4081E159E2700B8820C /* SaltpackUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA38B1E159E2700B8820C /* SaltpackUI.swift */; };
+		00DDA4091E159E2700B8820C /* SaltpackUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA38C1E159E2700B8820C /* SaltpackUIRequest.swift */; };
+		00DDA40A1E159E2700B8820C /* ScanProofsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA38D1E159E2700B8820C /* ScanProofsRequest.swift */; };
+		00DDA40B1E159E2700B8820C /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA38E1E159E2700B8820C /* SecretKeys.swift */; };
+		00DDA40C1E159E2700B8820C /* SecretKeysRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA38F1E159E2700B8820C /* SecretKeysRequest.swift */; };
+		00DDA40D1E159E2700B8820C /* SecretUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3901E159E2700B8820C /* SecretUI.swift */; };
+		00DDA40E1E159E2700B8820C /* SecretUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3911E159E2700B8820C /* SecretUIRequest.swift */; };
+		00DDA40F1E159E2700B8820C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3921E159E2700B8820C /* Session.swift */; };
+		00DDA4101E159E2700B8820C /* SessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3931E159E2700B8820C /* SessionRequest.swift */; };
+		00DDA4111E159E2700B8820C /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3941E159E2700B8820C /* Signup.swift */; };
+		00DDA4121E159E2700B8820C /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3951E159E2700B8820C /* SignupRequest.swift */; };
+		00DDA4131E159E2700B8820C /* Sigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3961E159E2700B8820C /* Sigs.swift */; };
+		00DDA4141E159E2700B8820C /* SigsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3971E159E2700B8820C /* SigsRequest.swift */; };
+		00DDA4151E159E2700B8820C /* StreamUIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3981E159E2700B8820C /* StreamUIRequest.swift */; };
+		00DDA4161E159E2700B8820C /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3991E159E2700B8820C /* Test.swift */; };
+		00DDA4171E159E2700B8820C /* TestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA39A1E159E2700B8820C /* TestRequest.swift */; };
+		00DDA4181E159E2700B8820C /* TlfKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA39B1E159E2700B8820C /* TlfKeys.swift */; };
+		00DDA4191E159E2700B8820C /* TlfKeysRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA39C1E159E2700B8820C /* TlfKeysRequest.swift */; };
+		00DDA41A1E159E2700B8820C /* TlfRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA39D1E159E2700B8820C /* TlfRequest.swift */; };
+		00DDA41B1E159E2700B8820C /* TrackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA39E1E159E2700B8820C /* TrackRequest.swift */; };
+		00DDA41C1E159E2700B8820C /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA39F1E159E2700B8820C /* UI.swift */; };
+		00DDA41D1E159E2700B8820C /* UIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3A01E159E2700B8820C /* UIRequest.swift */; };
+		00DDA41E1E159E2700B8820C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3A11E159E2700B8820C /* User.swift */; };
+		00DDA41F1E159E2700B8820C /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDA3A21E159E2700B8820C /* UserRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,106 +145,6 @@
 		002AA1161CC41B71004885A5 /* KeybaseSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeybaseSwift.h; sourceTree = "<group>"; };
 		002AA1181CC41B71004885A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		002AA1241CC41B72004885A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		002AA12E1CC41BBC004885A5 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		002AA12F1CC41BBC004885A5 /* AccountRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
-		002AA1301CC41BBC004885A5 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
-		002AA1311CC41BBC004885A5 /* BlockRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockRequest.swift; sourceTree = "<group>"; };
-		002AA1321CC41BBC004885A5 /* BTC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTC.swift; sourceTree = "<group>"; };
-		002AA1331CC41BBC004885A5 /* BTCRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCRequest.swift; sourceTree = "<group>"; };
-		002AA1341CC41BBC004885A5 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		002AA1351CC41BBC004885A5 /* ConfigRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigRequest.swift; sourceTree = "<group>"; };
-		002AA1361CC41BBC004885A5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		002AA1371CC41BBC004885A5 /* ConstantsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsRequest.swift; sourceTree = "<group>"; };
-		002AA1381CC41BBC004885A5 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
-		002AA1391CC41BBC004885A5 /* CryptoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoRequest.swift; sourceTree = "<group>"; };
-		002AA13A1CC41BBC004885A5 /* Ctl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ctl.swift; sourceTree = "<group>"; };
-		002AA13B1CC41BBC004885A5 /* CtlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CtlRequest.swift; sourceTree = "<group>"; };
-		002AA13C1CC41BBC004885A5 /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
-		002AA13D1CC41BBC004885A5 /* DebuggingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebuggingRequest.swift; sourceTree = "<group>"; };
-		002AA13E1CC41BBC004885A5 /* DelegateUiCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateUiCtl.swift; sourceTree = "<group>"; };
-		002AA13F1CC41BBC004885A5 /* DelegateUiCtlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateUiCtlRequest.swift; sourceTree = "<group>"; };
-		002AA1401CC41BBC004885A5 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		002AA1411CC41BBC004885A5 /* DeviceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceRequest.swift; sourceTree = "<group>"; };
-		002AA1421CC41BBC004885A5 /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
-		002AA1431CC41BBC004885A5 /* FavoriteRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteRequest.swift; sourceTree = "<group>"; };
-		002AA1441CC41BBC004885A5 /* GpgUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpgUi.swift; sourceTree = "<group>"; };
-		002AA1451CC41BBC004885A5 /* GpgUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpgUiRequest.swift; sourceTree = "<group>"; };
-		002AA1461CC41BBC004885A5 /* Identify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identify.swift; sourceTree = "<group>"; };
-		002AA1471CC41BBC004885A5 /* IdentifyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyRequest.swift; sourceTree = "<group>"; };
-		002AA1481CC41BBC004885A5 /* IdentifyUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyUi.swift; sourceTree = "<group>"; };
-		002AA1491CC41BBC004885A5 /* IdentifyUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyUiRequest.swift; sourceTree = "<group>"; };
-		002AA14A1CC41BBC004885A5 /* Install.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Install.swift; sourceTree = "<group>"; };
-		002AA14B1CC41BBC004885A5 /* InstallRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallRequest.swift; sourceTree = "<group>"; };
-		002AA14C1CC41BBC004885A5 /* Kbfs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kbfs.swift; sourceTree = "<group>"; };
-		002AA14D1CC41BBC004885A5 /* KbfsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KbfsRequest.swift; sourceTree = "<group>"; };
-		002AA14E1CC41BBC004885A5 /* Kex2Provisionee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2Provisionee.swift; sourceTree = "<group>"; };
-		002AA14F1CC41BBC004885A5 /* Kex2ProvisioneeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2ProvisioneeRequest.swift; sourceTree = "<group>"; };
-		002AA1501CC41BBC004885A5 /* Kex2Provisioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2Provisioner.swift; sourceTree = "<group>"; };
-		002AA1511CC41BBC004885A5 /* Kex2ProvisionerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2ProvisionerRequest.swift; sourceTree = "<group>"; };
-		002AA1521CC41BBC004885A5 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		002AA1531CC41BBC004885A5 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		002AA1541CC41BBC004885A5 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		002AA1551CC41BBC004885A5 /* LoginUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUi.swift; sourceTree = "<group>"; };
-		002AA1561CC41BBC004885A5 /* LoginUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUiRequest.swift; sourceTree = "<group>"; };
-		002AA1571CC41BBC004885A5 /* LogRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRequest.swift; sourceTree = "<group>"; };
-		002AA1581CC41BBC004885A5 /* LogUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUi.swift; sourceTree = "<group>"; };
-		002AA1591CC41BBC004885A5 /* LogUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUiRequest.swift; sourceTree = "<group>"; };
-		002AA15A1CC41BBC004885A5 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
-		002AA15B1CC41BBC004885A5 /* MetadataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataRequest.swift; sourceTree = "<group>"; };
-		002AA15C1CC41BBC004885A5 /* MetadataUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataUpdate.swift; sourceTree = "<group>"; };
-		002AA15D1CC41BBC004885A5 /* MetadataUpdateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataUpdateRequest.swift; sourceTree = "<group>"; };
-		002AA15E1CC41BBC004885A5 /* NotifyCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyCtl.swift; sourceTree = "<group>"; };
-		002AA15F1CC41BBC004885A5 /* NotifyCtlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyCtlRequest.swift; sourceTree = "<group>"; };
-		002AA1601CC41BBC004885A5 /* NotifyFS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyFS.swift; sourceTree = "<group>"; };
-		002AA1611CC41BBC004885A5 /* NotifyFSRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyFSRequest.swift; sourceTree = "<group>"; };
-		002AA1621CC41BBC004885A5 /* NotifySession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifySession.swift; sourceTree = "<group>"; };
-		002AA1631CC41BBC004885A5 /* NotifySessionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifySessionRequest.swift; sourceTree = "<group>"; };
-		002AA1641CC41BBC004885A5 /* NotifyTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyTracking.swift; sourceTree = "<group>"; };
-		002AA1651CC41BBC004885A5 /* NotifyTrackingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyTrackingRequest.swift; sourceTree = "<group>"; };
-		002AA1661CC41BBC004885A5 /* NotifyUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyUsers.swift; sourceTree = "<group>"; };
-		002AA1671CC41BBC004885A5 /* NotifyUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyUsersRequest.swift; sourceTree = "<group>"; };
-		002AA1681CC41BBC004885A5 /* Pgp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pgp.swift; sourceTree = "<group>"; };
-		002AA1691CC41BBC004885A5 /* PgpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PgpRequest.swift; sourceTree = "<group>"; };
-		002AA16A1CC41BBC004885A5 /* PgpUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PgpUi.swift; sourceTree = "<group>"; };
-		002AA16B1CC41BBC004885A5 /* PgpUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PgpUiRequest.swift; sourceTree = "<group>"; };
-		002AA16C1CC41BBC004885A5 /* Prove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prove.swift; sourceTree = "<group>"; };
-		002AA16D1CC41BBC004885A5 /* ProveRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProveRequest.swift; sourceTree = "<group>"; };
-		002AA16E1CC41BBC004885A5 /* ProveUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProveUi.swift; sourceTree = "<group>"; };
-		002AA16F1CC41BBC004885A5 /* ProveUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProveUiRequest.swift; sourceTree = "<group>"; };
-		002AA1701CC41BBC004885A5 /* ProvisionUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisionUi.swift; sourceTree = "<group>"; };
-		002AA1711CC41BBC004885A5 /* ProvisionUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisionUiRequest.swift; sourceTree = "<group>"; };
-		002AA1721CC41BBC004885A5 /* Quota.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quota.swift; sourceTree = "<group>"; };
-		002AA1731CC41BBC004885A5 /* QuotaRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaRequest.swift; sourceTree = "<group>"; };
-		002AA1741CC41BBC004885A5 /* Revoke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Revoke.swift; sourceTree = "<group>"; };
-		002AA1751CC41BBC004885A5 /* RevokeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeRequest.swift; sourceTree = "<group>"; };
-		002AA1761CC41BBC004885A5 /* Saltpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saltpack.swift; sourceTree = "<group>"; };
-		002AA1771CC41BBC004885A5 /* SaltpackRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltpackRequest.swift; sourceTree = "<group>"; };
-		002AA1781CC41BBC004885A5 /* SaltpackUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltpackUi.swift; sourceTree = "<group>"; };
-		002AA1791CC41BBC004885A5 /* SaltpackUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltpackUiRequest.swift; sourceTree = "<group>"; };
-		002AA17A1CC41BBC004885A5 /* SecretKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
-		002AA17B1CC41BBC004885A5 /* SecretKeysRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretKeysRequest.swift; sourceTree = "<group>"; };
-		002AA17C1CC41BBC004885A5 /* SecretUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretUi.swift; sourceTree = "<group>"; };
-		002AA17D1CC41BBC004885A5 /* SecretUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretUiRequest.swift; sourceTree = "<group>"; };
-		002AA17E1CC41BBC004885A5 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		002AA17F1CC41BBC004885A5 /* SessionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRequest.swift; sourceTree = "<group>"; };
-		002AA1801CC41BBC004885A5 /* Signup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
-		002AA1811CC41BBC004885A5 /* SignupRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
-		002AA1821CC41BBC004885A5 /* Sigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sigs.swift; sourceTree = "<group>"; };
-		002AA1831CC41BBC004885A5 /* SigsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigsRequest.swift; sourceTree = "<group>"; };
-		002AA1841CC41BBC004885A5 /* StreamUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamUi.swift; sourceTree = "<group>"; };
-		002AA1851CC41BBC004885A5 /* StreamUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamUiRequest.swift; sourceTree = "<group>"; };
-		002AA1861CC41BBC004885A5 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		002AA1871CC41BBC004885A5 /* TestRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRequest.swift; sourceTree = "<group>"; };
-		002AA1881CC41BBC004885A5 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		002AA1891CC41BBC004885A5 /* TrackRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackRequest.swift; sourceTree = "<group>"; };
-		002AA18A1CC41BBC004885A5 /* Ui.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ui.swift; sourceTree = "<group>"; };
-		002AA18B1CC41BBC004885A5 /* UiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiRequest.swift; sourceTree = "<group>"; };
-		002AA18C1CC41BBC004885A5 /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
-		002AA18D1CC41BBC004885A5 /* UpdateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateRequest.swift; sourceTree = "<group>"; };
-		002AA18E1CC41BBC004885A5 /* UpdateUi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUi.swift; sourceTree = "<group>"; };
-		002AA18F1CC41BBC004885A5 /* UpdateUiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUiRequest.swift; sourceTree = "<group>"; };
-		002AA1901CC41BBC004885A5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		002AA1911CC41BBC004885A5 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		002AA1F61CC41CC0004885A5 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		002AA1F81CC41D52004885A5 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		002AA1FA1CC41F9B004885A5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -230,6 +155,131 @@
 		002AA2061CC42C51004885A5 /* MPMessagePack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MPMessagePack.framework; path = Carthage/Build/Mac/MPMessagePack.framework; sourceTree = "<group>"; };
 		002AA2071CC42C51004885A5 /* GHODictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHODictionary.framework; path = Carthage/Build/Mac/GHODictionary.framework; sourceTree = "<group>"; };
 		002AA2141CC471FA004885A5 /* KeybaseSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeybaseSwiftTests.swift; sourceTree = "<group>"; };
+		00DDA3261E159E2700B8820C /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		00DDA3271E159E2700B8820C /* AccountRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
+		00DDA3281E159E2700B8820C /* Apiserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apiserver.swift; sourceTree = "<group>"; };
+		00DDA3291E159E2700B8820C /* ApiserverRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiserverRequest.swift; sourceTree = "<group>"; };
+		00DDA32A1E159E2700B8820C /* BackendCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendCommon.swift; sourceTree = "<group>"; };
+		00DDA32B1E159E2700B8820C /* BackendCommonRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendCommonRequest.swift; sourceTree = "<group>"; };
+		00DDA32C1E159E2700B8820C /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		00DDA32D1E159E2700B8820C /* BlockRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockRequest.swift; sourceTree = "<group>"; };
+		00DDA32E1E159E2700B8820C /* BTCRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCRequest.swift; sourceTree = "<group>"; };
+		00DDA32F1E159E2700B8820C /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		00DDA3301E159E2700B8820C /* CommonRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonRequest.swift; sourceTree = "<group>"; };
+		00DDA3311E159E2700B8820C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		00DDA3321E159E2700B8820C /* ConfigRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigRequest.swift; sourceTree = "<group>"; };
+		00DDA3331E159E2700B8820C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00DDA3341E159E2700B8820C /* ConstantsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsRequest.swift; sourceTree = "<group>"; };
+		00DDA3351E159E2700B8820C /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		00DDA3361E159E2700B8820C /* Cryptocurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cryptocurrency.swift; sourceTree = "<group>"; };
+		00DDA3371E159E2700B8820C /* CryptocurrencyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptocurrencyRequest.swift; sourceTree = "<group>"; };
+		00DDA3381E159E2700B8820C /* CryptoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoRequest.swift; sourceTree = "<group>"; };
+		00DDA3391E159E2700B8820C /* Ctl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ctl.swift; sourceTree = "<group>"; };
+		00DDA33A1E159E2700B8820C /* CtlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CtlRequest.swift; sourceTree = "<group>"; };
+		00DDA33B1E159E2700B8820C /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
+		00DDA33C1E159E2700B8820C /* DebuggingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebuggingRequest.swift; sourceTree = "<group>"; };
+		00DDA33D1E159E2700B8820C /* DelegateUICtlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateUICtlRequest.swift; sourceTree = "<group>"; };
+		00DDA33E1E159E2700B8820C /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		00DDA33F1E159E2700B8820C /* DeviceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceRequest.swift; sourceTree = "<group>"; };
+		00DDA3401E159E2700B8820C /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		00DDA3411E159E2700B8820C /* FavoriteRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteRequest.swift; sourceTree = "<group>"; };
+		00DDA3421E159E2700B8820C /* Fs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fs.swift; sourceTree = "<group>"; };
+		00DDA3431E159E2700B8820C /* FsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FsRequest.swift; sourceTree = "<group>"; };
+		00DDA3441E159E2700B8820C /* GpgCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpgCommon.swift; sourceTree = "<group>"; };
+		00DDA3451E159E2700B8820C /* GpgCommonRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpgCommonRequest.swift; sourceTree = "<group>"; };
+		00DDA3461E159E2700B8820C /* GpgUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpgUI.swift; sourceTree = "<group>"; };
+		00DDA3471E159E2700B8820C /* GpgUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpgUIRequest.swift; sourceTree = "<group>"; };
+		00DDA3481E159E2700B8820C /* Identify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identify.swift; sourceTree = "<group>"; };
+		00DDA3491E159E2700B8820C /* IdentifyCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyCommon.swift; sourceTree = "<group>"; };
+		00DDA34A1E159E2700B8820C /* IdentifyCommonRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyCommonRequest.swift; sourceTree = "<group>"; };
+		00DDA34B1E159E2700B8820C /* IdentifyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyRequest.swift; sourceTree = "<group>"; };
+		00DDA34C1E159E2700B8820C /* IdentifyUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyUI.swift; sourceTree = "<group>"; };
+		00DDA34D1E159E2700B8820C /* IdentifyUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifyUIRequest.swift; sourceTree = "<group>"; };
+		00DDA34E1E159E2700B8820C /* Install.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Install.swift; sourceTree = "<group>"; };
+		00DDA34F1E159E2700B8820C /* InstallRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallRequest.swift; sourceTree = "<group>"; };
+		00DDA3501E159E2700B8820C /* KbfsCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KbfsCommon.swift; sourceTree = "<group>"; };
+		00DDA3511E159E2700B8820C /* KbfsCommonRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KbfsCommonRequest.swift; sourceTree = "<group>"; };
+		00DDA3521E159E2700B8820C /* KbfsMountRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KbfsMountRequest.swift; sourceTree = "<group>"; };
+		00DDA3531E159E2700B8820C /* KbfsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KbfsRequest.swift; sourceTree = "<group>"; };
+		00DDA3541E159E2700B8820C /* Kex2Provisionee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2Provisionee.swift; sourceTree = "<group>"; };
+		00DDA3551E159E2700B8820C /* Kex2Provisionee2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2Provisionee2.swift; sourceTree = "<group>"; };
+		00DDA3561E159E2700B8820C /* Kex2Provisionee2Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2Provisionee2Request.swift; sourceTree = "<group>"; };
+		00DDA3571E159E2700B8820C /* Kex2ProvisioneeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2ProvisioneeRequest.swift; sourceTree = "<group>"; };
+		00DDA3581E159E2700B8820C /* Kex2ProvisionerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kex2ProvisionerRequest.swift; sourceTree = "<group>"; };
+		00DDA3591E159E2700B8820C /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		00DDA35A1E159E2700B8820C /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		00DDA35B1E159E2700B8820C /* LoginUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUIRequest.swift; sourceTree = "<group>"; };
+		00DDA35C1E159E2700B8820C /* LogRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRequest.swift; sourceTree = "<group>"; };
+		00DDA35D1E159E2700B8820C /* LogUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUIRequest.swift; sourceTree = "<group>"; };
+		00DDA35E1E159E2700B8820C /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		00DDA35F1E159E2700B8820C /* MetadataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataRequest.swift; sourceTree = "<group>"; };
+		00DDA3601E159E2700B8820C /* MetadataUpdateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataUpdateRequest.swift; sourceTree = "<group>"; };
+		00DDA3611E159E2700B8820C /* NotifyAppRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyAppRequest.swift; sourceTree = "<group>"; };
+		00DDA3621E159E2700B8820C /* NotifyBadges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyBadges.swift; sourceTree = "<group>"; };
+		00DDA3631E159E2700B8820C /* NotifyBadgesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyBadgesRequest.swift; sourceTree = "<group>"; };
+		00DDA3641E159E2700B8820C /* NotifyCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyCtl.swift; sourceTree = "<group>"; };
+		00DDA3651E159E2700B8820C /* NotifyCtlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyCtlRequest.swift; sourceTree = "<group>"; };
+		00DDA3661E159E2700B8820C /* NotifyFavoritesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyFavoritesRequest.swift; sourceTree = "<group>"; };
+		00DDA3671E159E2700B8820C /* NotifyFSRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyFSRequest.swift; sourceTree = "<group>"; };
+		00DDA3681E159E2700B8820C /* NotifyFSRequestRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyFSRequestRequest.swift; sourceTree = "<group>"; };
+		00DDA3691E159E2700B8820C /* NotifyKeyfamilyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyKeyfamilyRequest.swift; sourceTree = "<group>"; };
+		00DDA36A1E159E2700B8820C /* NotifyPaperKeyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyPaperKeyRequest.swift; sourceTree = "<group>"; };
+		00DDA36B1E159E2700B8820C /* NotifyPGPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyPGPRequest.swift; sourceTree = "<group>"; };
+		00DDA36C1E159E2700B8820C /* NotifyServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyServiceRequest.swift; sourceTree = "<group>"; };
+		00DDA36D1E159E2700B8820C /* NotifySessionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifySessionRequest.swift; sourceTree = "<group>"; };
+		00DDA36E1E159E2700B8820C /* NotifyTrackingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyTrackingRequest.swift; sourceTree = "<group>"; };
+		00DDA36F1E159E2700B8820C /* NotifyUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyUsersRequest.swift; sourceTree = "<group>"; };
+		00DDA3701E159E2700B8820C /* PaperprovisionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperprovisionRequest.swift; sourceTree = "<group>"; };
+		00DDA3711E159E2700B8820C /* PassphraseCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassphraseCommon.swift; sourceTree = "<group>"; };
+		00DDA3721E159E2700B8820C /* PassphraseCommonRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassphraseCommonRequest.swift; sourceTree = "<group>"; };
+		00DDA3731E159E2700B8820C /* Pgp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pgp.swift; sourceTree = "<group>"; };
+		00DDA3741E159E2700B8820C /* PgpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PgpRequest.swift; sourceTree = "<group>"; };
+		00DDA3751E159E2700B8820C /* PgpUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PgpUIRequest.swift; sourceTree = "<group>"; };
+		00DDA3761E159E2700B8820C /* Process.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		00DDA3771E159E2700B8820C /* ProcessRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessRequest.swift; sourceTree = "<group>"; };
+		00DDA3781E159E2700B8820C /* Prove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prove.swift; sourceTree = "<group>"; };
+		00DDA3791E159E2700B8820C /* ProveCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProveCommon.swift; sourceTree = "<group>"; };
+		00DDA37A1E159E2700B8820C /* ProveCommonRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProveCommonRequest.swift; sourceTree = "<group>"; };
+		00DDA37B1E159E2700B8820C /* ProveRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProveRequest.swift; sourceTree = "<group>"; };
+		00DDA37C1E159E2700B8820C /* ProveUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProveUI.swift; sourceTree = "<group>"; };
+		00DDA37D1E159E2700B8820C /* ProveUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProveUIRequest.swift; sourceTree = "<group>"; };
+		00DDA37E1E159E2700B8820C /* ProvisionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisionUI.swift; sourceTree = "<group>"; };
+		00DDA37F1E159E2700B8820C /* ProvisionUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisionUIRequest.swift; sourceTree = "<group>"; };
+		00DDA3801E159E2700B8820C /* Quota.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quota.swift; sourceTree = "<group>"; };
+		00DDA3811E159E2700B8820C /* QuotaRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaRequest.swift; sourceTree = "<group>"; };
+		00DDA3821E159E2700B8820C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		00DDA3831E159E2700B8820C /* ReachabilityRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityRequest.swift; sourceTree = "<group>"; };
+		00DDA3841E159E2700B8820C /* Rekey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rekey.swift; sourceTree = "<group>"; };
+		00DDA3851E159E2700B8820C /* RekeyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RekeyRequest.swift; sourceTree = "<group>"; };
+		00DDA3861E159E2700B8820C /* RekeyUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RekeyUI.swift; sourceTree = "<group>"; };
+		00DDA3871E159E2700B8820C /* RekeyUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RekeyUIRequest.swift; sourceTree = "<group>"; };
+		00DDA3881E159E2700B8820C /* RevokeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeRequest.swift; sourceTree = "<group>"; };
+		00DDA3891E159E2700B8820C /* Saltpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saltpack.swift; sourceTree = "<group>"; };
+		00DDA38A1E159E2700B8820C /* SaltpackRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltpackRequest.swift; sourceTree = "<group>"; };
+		00DDA38B1E159E2700B8820C /* SaltpackUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltpackUI.swift; sourceTree = "<group>"; };
+		00DDA38C1E159E2700B8820C /* SaltpackUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltpackUIRequest.swift; sourceTree = "<group>"; };
+		00DDA38D1E159E2700B8820C /* ScanProofsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanProofsRequest.swift; sourceTree = "<group>"; };
+		00DDA38E1E159E2700B8820C /* SecretKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
+		00DDA38F1E159E2700B8820C /* SecretKeysRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretKeysRequest.swift; sourceTree = "<group>"; };
+		00DDA3901E159E2700B8820C /* SecretUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretUI.swift; sourceTree = "<group>"; };
+		00DDA3911E159E2700B8820C /* SecretUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretUIRequest.swift; sourceTree = "<group>"; };
+		00DDA3921E159E2700B8820C /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		00DDA3931E159E2700B8820C /* SessionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRequest.swift; sourceTree = "<group>"; };
+		00DDA3941E159E2700B8820C /* Signup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		00DDA3951E159E2700B8820C /* SignupRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
+		00DDA3961E159E2700B8820C /* Sigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sigs.swift; sourceTree = "<group>"; };
+		00DDA3971E159E2700B8820C /* SigsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigsRequest.swift; sourceTree = "<group>"; };
+		00DDA3981E159E2700B8820C /* StreamUIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamUIRequest.swift; sourceTree = "<group>"; };
+		00DDA3991E159E2700B8820C /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		00DDA39A1E159E2700B8820C /* TestRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRequest.swift; sourceTree = "<group>"; };
+		00DDA39B1E159E2700B8820C /* TlfKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TlfKeys.swift; sourceTree = "<group>"; };
+		00DDA39C1E159E2700B8820C /* TlfKeysRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TlfKeysRequest.swift; sourceTree = "<group>"; };
+		00DDA39D1E159E2700B8820C /* TlfRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TlfRequest.swift; sourceTree = "<group>"; };
+		00DDA39E1E159E2700B8820C /* TrackRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackRequest.swift; sourceTree = "<group>"; };
+		00DDA39F1E159E2700B8820C /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		00DDA3A01E159E2700B8820C /* UIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRequest.swift; sourceTree = "<group>"; };
+		00DDA3A11E159E2700B8820C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00DDA3A21E159E2700B8820C /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +301,7 @@
 			children = (
 				002AA2021CC429A3004885A5 /* Cartfile */,
 				002AA1151CC41B71004885A5 /* KeybaseSwift */,
-				002AA12D1CC41BBC004885A5 /* Protocol */,
+				00DDA3251E159E2700B8820C /* Protocol */,
 				002AA1211CC41B72004885A5 /* KeybaseSwiftTests */,
 				002AA20A1CC42C59004885A5 /* Frameworks */,
 				002AA1141CC41B71004885A5 /* Products */,
@@ -289,113 +339,6 @@
 			path = KeybaseSwiftTests;
 			sourceTree = "<group>";
 		};
-		002AA12D1CC41BBC004885A5 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				002AA12E1CC41BBC004885A5 /* Account.swift */,
-				002AA12F1CC41BBC004885A5 /* AccountRequest.swift */,
-				002AA1301CC41BBC004885A5 /* Block.swift */,
-				002AA1311CC41BBC004885A5 /* BlockRequest.swift */,
-				002AA1321CC41BBC004885A5 /* BTC.swift */,
-				002AA1331CC41BBC004885A5 /* BTCRequest.swift */,
-				002AA1341CC41BBC004885A5 /* Config.swift */,
-				002AA1351CC41BBC004885A5 /* ConfigRequest.swift */,
-				002AA1361CC41BBC004885A5 /* Constants.swift */,
-				002AA1371CC41BBC004885A5 /* ConstantsRequest.swift */,
-				002AA1381CC41BBC004885A5 /* Crypto.swift */,
-				002AA1391CC41BBC004885A5 /* CryptoRequest.swift */,
-				002AA13A1CC41BBC004885A5 /* Ctl.swift */,
-				002AA13B1CC41BBC004885A5 /* CtlRequest.swift */,
-				002AA13C1CC41BBC004885A5 /* Debugging.swift */,
-				002AA13D1CC41BBC004885A5 /* DebuggingRequest.swift */,
-				002AA13E1CC41BBC004885A5 /* DelegateUiCtl.swift */,
-				002AA13F1CC41BBC004885A5 /* DelegateUiCtlRequest.swift */,
-				002AA1401CC41BBC004885A5 /* Device.swift */,
-				002AA1411CC41BBC004885A5 /* DeviceRequest.swift */,
-				002AA1421CC41BBC004885A5 /* Favorite.swift */,
-				002AA1431CC41BBC004885A5 /* FavoriteRequest.swift */,
-				002AA1441CC41BBC004885A5 /* GpgUi.swift */,
-				002AA1451CC41BBC004885A5 /* GpgUiRequest.swift */,
-				002AA1461CC41BBC004885A5 /* Identify.swift */,
-				002AA1471CC41BBC004885A5 /* IdentifyRequest.swift */,
-				002AA1481CC41BBC004885A5 /* IdentifyUi.swift */,
-				002AA1491CC41BBC004885A5 /* IdentifyUiRequest.swift */,
-				002AA14A1CC41BBC004885A5 /* Install.swift */,
-				002AA14B1CC41BBC004885A5 /* InstallRequest.swift */,
-				002AA14C1CC41BBC004885A5 /* Kbfs.swift */,
-				002AA14D1CC41BBC004885A5 /* KbfsRequest.swift */,
-				002AA14E1CC41BBC004885A5 /* Kex2Provisionee.swift */,
-				002AA14F1CC41BBC004885A5 /* Kex2ProvisioneeRequest.swift */,
-				002AA1501CC41BBC004885A5 /* Kex2Provisioner.swift */,
-				002AA1511CC41BBC004885A5 /* Kex2ProvisionerRequest.swift */,
-				002AA1521CC41BBC004885A5 /* Log.swift */,
-				002AA1531CC41BBC004885A5 /* Login.swift */,
-				002AA1541CC41BBC004885A5 /* LoginRequest.swift */,
-				002AA1551CC41BBC004885A5 /* LoginUi.swift */,
-				002AA1561CC41BBC004885A5 /* LoginUiRequest.swift */,
-				002AA1571CC41BBC004885A5 /* LogRequest.swift */,
-				002AA1581CC41BBC004885A5 /* LogUi.swift */,
-				002AA1591CC41BBC004885A5 /* LogUiRequest.swift */,
-				002AA15A1CC41BBC004885A5 /* Metadata.swift */,
-				002AA15B1CC41BBC004885A5 /* MetadataRequest.swift */,
-				002AA15C1CC41BBC004885A5 /* MetadataUpdate.swift */,
-				002AA15D1CC41BBC004885A5 /* MetadataUpdateRequest.swift */,
-				002AA15E1CC41BBC004885A5 /* NotifyCtl.swift */,
-				002AA15F1CC41BBC004885A5 /* NotifyCtlRequest.swift */,
-				002AA1601CC41BBC004885A5 /* NotifyFS.swift */,
-				002AA1611CC41BBC004885A5 /* NotifyFSRequest.swift */,
-				002AA1621CC41BBC004885A5 /* NotifySession.swift */,
-				002AA1631CC41BBC004885A5 /* NotifySessionRequest.swift */,
-				002AA1641CC41BBC004885A5 /* NotifyTracking.swift */,
-				002AA1651CC41BBC004885A5 /* NotifyTrackingRequest.swift */,
-				002AA1661CC41BBC004885A5 /* NotifyUsers.swift */,
-				002AA1671CC41BBC004885A5 /* NotifyUsersRequest.swift */,
-				002AA1681CC41BBC004885A5 /* Pgp.swift */,
-				002AA1691CC41BBC004885A5 /* PgpRequest.swift */,
-				002AA16A1CC41BBC004885A5 /* PgpUi.swift */,
-				002AA16B1CC41BBC004885A5 /* PgpUiRequest.swift */,
-				002AA16C1CC41BBC004885A5 /* Prove.swift */,
-				002AA16D1CC41BBC004885A5 /* ProveRequest.swift */,
-				002AA16E1CC41BBC004885A5 /* ProveUi.swift */,
-				002AA16F1CC41BBC004885A5 /* ProveUiRequest.swift */,
-				002AA1701CC41BBC004885A5 /* ProvisionUi.swift */,
-				002AA1711CC41BBC004885A5 /* ProvisionUiRequest.swift */,
-				002AA1721CC41BBC004885A5 /* Quota.swift */,
-				002AA1731CC41BBC004885A5 /* QuotaRequest.swift */,
-				002AA1741CC41BBC004885A5 /* Revoke.swift */,
-				002AA1751CC41BBC004885A5 /* RevokeRequest.swift */,
-				002AA1761CC41BBC004885A5 /* Saltpack.swift */,
-				002AA1771CC41BBC004885A5 /* SaltpackRequest.swift */,
-				002AA1781CC41BBC004885A5 /* SaltpackUi.swift */,
-				002AA1791CC41BBC004885A5 /* SaltpackUiRequest.swift */,
-				002AA17A1CC41BBC004885A5 /* SecretKeys.swift */,
-				002AA17B1CC41BBC004885A5 /* SecretKeysRequest.swift */,
-				002AA17C1CC41BBC004885A5 /* SecretUi.swift */,
-				002AA17D1CC41BBC004885A5 /* SecretUiRequest.swift */,
-				002AA17E1CC41BBC004885A5 /* Session.swift */,
-				002AA17F1CC41BBC004885A5 /* SessionRequest.swift */,
-				002AA1801CC41BBC004885A5 /* Signup.swift */,
-				002AA1811CC41BBC004885A5 /* SignupRequest.swift */,
-				002AA1821CC41BBC004885A5 /* Sigs.swift */,
-				002AA1831CC41BBC004885A5 /* SigsRequest.swift */,
-				002AA1841CC41BBC004885A5 /* StreamUi.swift */,
-				002AA1851CC41BBC004885A5 /* StreamUiRequest.swift */,
-				002AA1861CC41BBC004885A5 /* Test.swift */,
-				002AA1871CC41BBC004885A5 /* TestRequest.swift */,
-				002AA1881CC41BBC004885A5 /* Track.swift */,
-				002AA1891CC41BBC004885A5 /* TrackRequest.swift */,
-				002AA18A1CC41BBC004885A5 /* Ui.swift */,
-				002AA18B1CC41BBC004885A5 /* UiRequest.swift */,
-				002AA18C1CC41BBC004885A5 /* Update.swift */,
-				002AA18D1CC41BBC004885A5 /* UpdateRequest.swift */,
-				002AA18E1CC41BBC004885A5 /* UpdateUi.swift */,
-				002AA18F1CC41BBC004885A5 /* UpdateUiRequest.swift */,
-				002AA1901CC41BBC004885A5 /* User.swift */,
-				002AA1911CC41BBC004885A5 /* UserRequest.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		002AA20A1CC42C59004885A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +347,138 @@
 				002AA1F61CC41CC0004885A5 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00DDA3251E159E2700B8820C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				00DDA3261E159E2700B8820C /* Account.swift */,
+				00DDA3271E159E2700B8820C /* AccountRequest.swift */,
+				00DDA3281E159E2700B8820C /* Apiserver.swift */,
+				00DDA3291E159E2700B8820C /* ApiserverRequest.swift */,
+				00DDA32A1E159E2700B8820C /* BackendCommon.swift */,
+				00DDA32B1E159E2700B8820C /* BackendCommonRequest.swift */,
+				00DDA32C1E159E2700B8820C /* Block.swift */,
+				00DDA32D1E159E2700B8820C /* BlockRequest.swift */,
+				00DDA32E1E159E2700B8820C /* BTCRequest.swift */,
+				00DDA32F1E159E2700B8820C /* Common.swift */,
+				00DDA3301E159E2700B8820C /* CommonRequest.swift */,
+				00DDA3311E159E2700B8820C /* Config.swift */,
+				00DDA3321E159E2700B8820C /* ConfigRequest.swift */,
+				00DDA3331E159E2700B8820C /* Constants.swift */,
+				00DDA3341E159E2700B8820C /* ConstantsRequest.swift */,
+				00DDA3351E159E2700B8820C /* Crypto.swift */,
+				00DDA3361E159E2700B8820C /* Cryptocurrency.swift */,
+				00DDA3371E159E2700B8820C /* CryptocurrencyRequest.swift */,
+				00DDA3381E159E2700B8820C /* CryptoRequest.swift */,
+				00DDA3391E159E2700B8820C /* Ctl.swift */,
+				00DDA33A1E159E2700B8820C /* CtlRequest.swift */,
+				00DDA33B1E159E2700B8820C /* Debugging.swift */,
+				00DDA33C1E159E2700B8820C /* DebuggingRequest.swift */,
+				00DDA33D1E159E2700B8820C /* DelegateUICtlRequest.swift */,
+				00DDA33E1E159E2700B8820C /* Device.swift */,
+				00DDA33F1E159E2700B8820C /* DeviceRequest.swift */,
+				00DDA3401E159E2700B8820C /* Favorite.swift */,
+				00DDA3411E159E2700B8820C /* FavoriteRequest.swift */,
+				00DDA3421E159E2700B8820C /* Fs.swift */,
+				00DDA3431E159E2700B8820C /* FsRequest.swift */,
+				00DDA3441E159E2700B8820C /* GpgCommon.swift */,
+				00DDA3451E159E2700B8820C /* GpgCommonRequest.swift */,
+				00DDA3461E159E2700B8820C /* GpgUI.swift */,
+				00DDA3471E159E2700B8820C /* GpgUIRequest.swift */,
+				00DDA3481E159E2700B8820C /* Identify.swift */,
+				00DDA3491E159E2700B8820C /* IdentifyCommon.swift */,
+				00DDA34A1E159E2700B8820C /* IdentifyCommonRequest.swift */,
+				00DDA34B1E159E2700B8820C /* IdentifyRequest.swift */,
+				00DDA34C1E159E2700B8820C /* IdentifyUI.swift */,
+				00DDA34D1E159E2700B8820C /* IdentifyUIRequest.swift */,
+				00DDA34E1E159E2700B8820C /* Install.swift */,
+				00DDA34F1E159E2700B8820C /* InstallRequest.swift */,
+				00DDA3501E159E2700B8820C /* KbfsCommon.swift */,
+				00DDA3511E159E2700B8820C /* KbfsCommonRequest.swift */,
+				00DDA3521E159E2700B8820C /* KbfsMountRequest.swift */,
+				00DDA3531E159E2700B8820C /* KbfsRequest.swift */,
+				00DDA3541E159E2700B8820C /* Kex2Provisionee.swift */,
+				00DDA3551E159E2700B8820C /* Kex2Provisionee2.swift */,
+				00DDA3561E159E2700B8820C /* Kex2Provisionee2Request.swift */,
+				00DDA3571E159E2700B8820C /* Kex2ProvisioneeRequest.swift */,
+				00DDA3581E159E2700B8820C /* Kex2ProvisionerRequest.swift */,
+				00DDA3591E159E2700B8820C /* Login.swift */,
+				00DDA35A1E159E2700B8820C /* LoginRequest.swift */,
+				00DDA35B1E159E2700B8820C /* LoginUIRequest.swift */,
+				00DDA35C1E159E2700B8820C /* LogRequest.swift */,
+				00DDA35D1E159E2700B8820C /* LogUIRequest.swift */,
+				00DDA35E1E159E2700B8820C /* Metadata.swift */,
+				00DDA35F1E159E2700B8820C /* MetadataRequest.swift */,
+				00DDA3601E159E2700B8820C /* MetadataUpdateRequest.swift */,
+				00DDA3611E159E2700B8820C /* NotifyAppRequest.swift */,
+				00DDA3621E159E2700B8820C /* NotifyBadges.swift */,
+				00DDA3631E159E2700B8820C /* NotifyBadgesRequest.swift */,
+				00DDA3641E159E2700B8820C /* NotifyCtl.swift */,
+				00DDA3651E159E2700B8820C /* NotifyCtlRequest.swift */,
+				00DDA3661E159E2700B8820C /* NotifyFavoritesRequest.swift */,
+				00DDA3671E159E2700B8820C /* NotifyFSRequest.swift */,
+				00DDA3681E159E2700B8820C /* NotifyFSRequestRequest.swift */,
+				00DDA3691E159E2700B8820C /* NotifyKeyfamilyRequest.swift */,
+				00DDA36A1E159E2700B8820C /* NotifyPaperKeyRequest.swift */,
+				00DDA36B1E159E2700B8820C /* NotifyPGPRequest.swift */,
+				00DDA36C1E159E2700B8820C /* NotifyServiceRequest.swift */,
+				00DDA36D1E159E2700B8820C /* NotifySessionRequest.swift */,
+				00DDA36E1E159E2700B8820C /* NotifyTrackingRequest.swift */,
+				00DDA36F1E159E2700B8820C /* NotifyUsersRequest.swift */,
+				00DDA3701E159E2700B8820C /* PaperprovisionRequest.swift */,
+				00DDA3711E159E2700B8820C /* PassphraseCommon.swift */,
+				00DDA3721E159E2700B8820C /* PassphraseCommonRequest.swift */,
+				00DDA3731E159E2700B8820C /* Pgp.swift */,
+				00DDA3741E159E2700B8820C /* PgpRequest.swift */,
+				00DDA3751E159E2700B8820C /* PgpUIRequest.swift */,
+				00DDA3761E159E2700B8820C /* Process.swift */,
+				00DDA3771E159E2700B8820C /* ProcessRequest.swift */,
+				00DDA3781E159E2700B8820C /* Prove.swift */,
+				00DDA3791E159E2700B8820C /* ProveCommon.swift */,
+				00DDA37A1E159E2700B8820C /* ProveCommonRequest.swift */,
+				00DDA37B1E159E2700B8820C /* ProveRequest.swift */,
+				00DDA37C1E159E2700B8820C /* ProveUI.swift */,
+				00DDA37D1E159E2700B8820C /* ProveUIRequest.swift */,
+				00DDA37E1E159E2700B8820C /* ProvisionUI.swift */,
+				00DDA37F1E159E2700B8820C /* ProvisionUIRequest.swift */,
+				00DDA3801E159E2700B8820C /* Quota.swift */,
+				00DDA3811E159E2700B8820C /* QuotaRequest.swift */,
+				00DDA3821E159E2700B8820C /* Reachability.swift */,
+				00DDA3831E159E2700B8820C /* ReachabilityRequest.swift */,
+				00DDA3841E159E2700B8820C /* Rekey.swift */,
+				00DDA3851E159E2700B8820C /* RekeyRequest.swift */,
+				00DDA3861E159E2700B8820C /* RekeyUI.swift */,
+				00DDA3871E159E2700B8820C /* RekeyUIRequest.swift */,
+				00DDA3881E159E2700B8820C /* RevokeRequest.swift */,
+				00DDA3891E159E2700B8820C /* Saltpack.swift */,
+				00DDA38A1E159E2700B8820C /* SaltpackRequest.swift */,
+				00DDA38B1E159E2700B8820C /* SaltpackUI.swift */,
+				00DDA38C1E159E2700B8820C /* SaltpackUIRequest.swift */,
+				00DDA38D1E159E2700B8820C /* ScanProofsRequest.swift */,
+				00DDA38E1E159E2700B8820C /* SecretKeys.swift */,
+				00DDA38F1E159E2700B8820C /* SecretKeysRequest.swift */,
+				00DDA3901E159E2700B8820C /* SecretUI.swift */,
+				00DDA3911E159E2700B8820C /* SecretUIRequest.swift */,
+				00DDA3921E159E2700B8820C /* Session.swift */,
+				00DDA3931E159E2700B8820C /* SessionRequest.swift */,
+				00DDA3941E159E2700B8820C /* Signup.swift */,
+				00DDA3951E159E2700B8820C /* SignupRequest.swift */,
+				00DDA3961E159E2700B8820C /* Sigs.swift */,
+				00DDA3971E159E2700B8820C /* SigsRequest.swift */,
+				00DDA3981E159E2700B8820C /* StreamUIRequest.swift */,
+				00DDA3991E159E2700B8820C /* Test.swift */,
+				00DDA39A1E159E2700B8820C /* TestRequest.swift */,
+				00DDA39B1E159E2700B8820C /* TlfKeys.swift */,
+				00DDA39C1E159E2700B8820C /* TlfKeysRequest.swift */,
+				00DDA39D1E159E2700B8820C /* TlfRequest.swift */,
+				00DDA39E1E159E2700B8820C /* TrackRequest.swift */,
+				00DDA39F1E159E2700B8820C /* UI.swift */,
+				00DDA3A01E159E2700B8820C /* UIRequest.swift */,
+				00DDA3A11E159E2700B8820C /* User.swift */,
+				00DDA3A21E159E2700B8820C /* UserRequest.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,7 +520,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Gabriel Handford";
 				TargetAttributes = {
 					002AA1121CC41B71004885A5 = {
@@ -485,108 +560,133 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				002AA1B61CC41BBC004885A5 /* Log.swift in Sources */,
-				002AA1961CC41BBC004885A5 /* BTC.swift in Sources */,
-				002AA1AF1CC41BBC004885A5 /* InstallRequest.swift in Sources */,
-				002AA1E91CC41BBC004885A5 /* StreamUiRequest.swift in Sources */,
-				002AA1971CC41BBC004885A5 /* BTCRequest.swift in Sources */,
-				002AA1DD1CC41BBC004885A5 /* SaltpackUiRequest.swift in Sources */,
-				002AA1CA1CC41BBC004885A5 /* NotifyUsers.swift in Sources */,
-				002AA1E31CC41BBC004885A5 /* SessionRequest.swift in Sources */,
-				002AA1C21CC41BBC004885A5 /* NotifyCtl.swift in Sources */,
-				002AA1EB1CC41BBC004885A5 /* TestRequest.swift in Sources */,
-				002AA1A91CC41BBC004885A5 /* GpgUiRequest.swift in Sources */,
-				002AA1E51CC41BBC004885A5 /* SignupRequest.swift in Sources */,
-				002AA1941CC41BBC004885A5 /* Block.swift in Sources */,
-				002AA1F21CC41BBC004885A5 /* UpdateUi.swift in Sources */,
-				002AA1F31CC41BBC004885A5 /* UpdateUiRequest.swift in Sources */,
-				002AA19E1CC41BBC004885A5 /* Ctl.swift in Sources */,
-				002AA1BE1CC41BBC004885A5 /* Metadata.swift in Sources */,
-				002AA1AD1CC41BBC004885A5 /* IdentifyUiRequest.swift in Sources */,
-				002AA1DA1CC41BBC004885A5 /* Saltpack.swift in Sources */,
-				002AA1AB1CC41BBC004885A5 /* IdentifyRequest.swift in Sources */,
-				002AA19B1CC41BBC004885A5 /* ConstantsRequest.swift in Sources */,
-				002AA1DB1CC41BBC004885A5 /* SaltpackRequest.swift in Sources */,
-				002AA1D61CC41BBC004885A5 /* Quota.swift in Sources */,
-				002AA1BD1CC41BBC004885A5 /* LogUiRequest.swift in Sources */,
-				002AA1F01CC41BBC004885A5 /* Update.swift in Sources */,
-				002AA1AA1CC41BBC004885A5 /* Identify.swift in Sources */,
-				002AA19F1CC41BBC004885A5 /* CtlRequest.swift in Sources */,
-				002AA1AE1CC41BBC004885A5 /* Install.swift in Sources */,
-				002AA1B71CC41BBC004885A5 /* Login.swift in Sources */,
-				002AA1A11CC41BBC004885A5 /* DebuggingRequest.swift in Sources */,
-				002AA1DC1CC41BBC004885A5 /* SaltpackUi.swift in Sources */,
+				00DDA3D21E159E2700B8820C /* Kex2Provisionee2.swift in Sources */,
 				002AA1FB1CC41F9B004885A5 /* Extensions.swift in Sources */,
-				002AA1EA1CC41BBC004885A5 /* Test.swift in Sources */,
-				002AA1F41CC41BBC004885A5 /* User.swift in Sources */,
-				002AA1B91CC41BBC004885A5 /* LoginUi.swift in Sources */,
-				002AA1B31CC41BBC004885A5 /* Kex2ProvisioneeRequest.swift in Sources */,
-				002AA1C01CC41BBC004885A5 /* MetadataUpdate.swift in Sources */,
-				002AA1EE1CC41BBC004885A5 /* Ui.swift in Sources */,
-				002AA1C71CC41BBC004885A5 /* NotifySessionRequest.swift in Sources */,
-				002AA1C41CC41BBC004885A5 /* NotifyFS.swift in Sources */,
+				00DDA3A61E159E2700B8820C /* ApiserverRequest.swift in Sources */,
+				00DDA3BA1E159E2700B8820C /* DelegateUICtlRequest.swift in Sources */,
+				00DDA3BD1E159E2700B8820C /* Favorite.swift in Sources */,
+				00DDA3CE1E159E2700B8820C /* KbfsCommonRequest.swift in Sources */,
+				00DDA41A1E159E2700B8820C /* TlfRequest.swift in Sources */,
+				00DDA3BB1E159E2700B8820C /* Device.swift in Sources */,
+				00DDA3F41E159E2700B8820C /* ProcessRequest.swift in Sources */,
+				00DDA4071E159E2700B8820C /* SaltpackRequest.swift in Sources */,
+				00DDA3A71E159E2700B8820C /* BackendCommon.swift in Sources */,
+				00DDA3AE1E159E2700B8820C /* Config.swift in Sources */,
+				00DDA40A1E159E2700B8820C /* ScanProofsRequest.swift in Sources */,
+				00DDA3B51E159E2700B8820C /* CryptoRequest.swift in Sources */,
+				00DDA3B61E159E2700B8820C /* Ctl.swift in Sources */,
+				00DDA3A41E159E2700B8820C /* AccountRequest.swift in Sources */,
+				00DDA4141E159E2700B8820C /* SigsRequest.swift in Sources */,
+				00DDA3AC1E159E2700B8820C /* Common.swift in Sources */,
+				00DDA3ED1E159E2700B8820C /* PaperprovisionRequest.swift in Sources */,
+				00DDA3EB1E159E2700B8820C /* NotifyTrackingRequest.swift in Sources */,
+				00DDA3F11E159E2700B8820C /* PgpRequest.swift in Sources */,
+				00DDA3F61E159E2700B8820C /* ProveCommon.swift in Sources */,
+				00DDA3DB1E159E2700B8820C /* Metadata.swift in Sources */,
+				00DDA3CB1E159E2700B8820C /* Install.swift in Sources */,
+				00DDA3A51E159E2700B8820C /* Apiserver.swift in Sources */,
+				00DDA3D61E159E2700B8820C /* Login.swift in Sources */,
+				00DDA3DA1E159E2700B8820C /* LogUIRequest.swift in Sources */,
+				00DDA3C01E159E2700B8820C /* FsRequest.swift in Sources */,
+				00DDA3C81E159E2700B8820C /* IdentifyRequest.swift in Sources */,
+				00DDA3F31E159E2700B8820C /* Process.swift in Sources */,
+				00DDA3B01E159E2700B8820C /* Constants.swift in Sources */,
+				00DDA3FC1E159E2700B8820C /* ProvisionUIRequest.swift in Sources */,
+				00DDA3FE1E159E2700B8820C /* QuotaRequest.swift in Sources */,
+				00DDA3DD1E159E2700B8820C /* MetadataUpdateRequest.swift in Sources */,
+				00DDA3CA1E159E2700B8820C /* IdentifyUIRequest.swift in Sources */,
+				00DDA3DC1E159E2700B8820C /* MetadataRequest.swift in Sources */,
+				00DDA4161E159E2700B8820C /* Test.swift in Sources */,
+				00DDA3B71E159E2700B8820C /* CtlRequest.swift in Sources */,
+				00DDA3B31E159E2700B8820C /* Cryptocurrency.swift in Sources */,
+				00DDA3B91E159E2700B8820C /* DebuggingRequest.swift in Sources */,
+				00DDA40E1E159E2700B8820C /* SecretUIRequest.swift in Sources */,
+				00DDA40C1E159E2700B8820C /* SecretKeysRequest.swift in Sources */,
+				00DDA3EA1E159E2700B8820C /* NotifySessionRequest.swift in Sources */,
+				00DDA3AA1E159E2700B8820C /* BlockRequest.swift in Sources */,
+				00DDA3E01E159E2700B8820C /* NotifyBadgesRequest.swift in Sources */,
+				00DDA4131E159E2700B8820C /* Sigs.swift in Sources */,
+				00DDA4111E159E2700B8820C /* Signup.swift in Sources */,
+				00DDA3F51E159E2700B8820C /* Prove.swift in Sources */,
+				00DDA3AD1E159E2700B8820C /* CommonRequest.swift in Sources */,
+				00DDA4091E159E2700B8820C /* SaltpackUIRequest.swift in Sources */,
+				00DDA4021E159E2700B8820C /* RekeyRequest.swift in Sources */,
+				00DDA3B41E159E2700B8820C /* CryptocurrencyRequest.swift in Sources */,
+				00DDA3EE1E159E2700B8820C /* PassphraseCommon.swift in Sources */,
+				00DDA4051E159E2700B8820C /* RevokeRequest.swift in Sources */,
+				00DDA3E51E159E2700B8820C /* NotifyFSRequestRequest.swift in Sources */,
+				00DDA3C61E159E2700B8820C /* IdentifyCommon.swift in Sources */,
+				00DDA3AF1E159E2700B8820C /* ConfigRequest.swift in Sources */,
+				00DDA4041E159E2700B8820C /* RekeyUIRequest.swift in Sources */,
+				00DDA3F21E159E2700B8820C /* PgpUIRequest.swift in Sources */,
+				00DDA4001E159E2700B8820C /* ReachabilityRequest.swift in Sources */,
+				00DDA3FB1E159E2700B8820C /* ProvisionUI.swift in Sources */,
+				00DDA3BC1E159E2700B8820C /* DeviceRequest.swift in Sources */,
+				00DDA3AB1E159E2700B8820C /* BTCRequest.swift in Sources */,
+				00DDA3DE1E159E2700B8820C /* NotifyAppRequest.swift in Sources */,
+				00DDA41D1E159E2700B8820C /* UIRequest.swift in Sources */,
+				00DDA3C71E159E2700B8820C /* IdentifyCommonRequest.swift in Sources */,
+				00DDA3E61E159E2700B8820C /* NotifyKeyfamilyRequest.swift in Sources */,
+				00DDA3D91E159E2700B8820C /* LogRequest.swift in Sources */,
+				00DDA3FD1E159E2700B8820C /* Quota.swift in Sources */,
+				00DDA3EF1E159E2700B8820C /* PassphraseCommonRequest.swift in Sources */,
+				00DDA3D81E159E2700B8820C /* LoginUIRequest.swift in Sources */,
+				00DDA40F1E159E2700B8820C /* Session.swift in Sources */,
+				00DDA3C51E159E2700B8820C /* Identify.swift in Sources */,
+				00DDA3E31E159E2700B8820C /* NotifyFavoritesRequest.swift in Sources */,
+				00DDA4011E159E2700B8820C /* Rekey.swift in Sources */,
+				00DDA3FA1E159E2700B8820C /* ProveUIRequest.swift in Sources */,
+				00DDA3B21E159E2700B8820C /* Crypto.swift in Sources */,
+				00DDA3CD1E159E2700B8820C /* KbfsCommon.swift in Sources */,
+				00DDA3D41E159E2700B8820C /* Kex2ProvisioneeRequest.swift in Sources */,
+				00DDA4081E159E2700B8820C /* SaltpackUI.swift in Sources */,
+				00DDA3CF1E159E2700B8820C /* KbfsMountRequest.swift in Sources */,
 				002AA1F91CC41D52004885A5 /* Request.swift in Sources */,
-				002AA19D1CC41BBC004885A5 /* CryptoRequest.swift in Sources */,
-				002AA1CF1CC41BBC004885A5 /* PgpUiRequest.swift in Sources */,
-				002AA1E71CC41BBC004885A5 /* SigsRequest.swift in Sources */,
-				002AA1C31CC41BBC004885A5 /* NotifyCtlRequest.swift in Sources */,
-				002AA1BC1CC41BBC004885A5 /* LogUi.swift in Sources */,
-				002AA1A81CC41BBC004885A5 /* GpgUi.swift in Sources */,
-				002AA1CC1CC41BBC004885A5 /* Pgp.swift in Sources */,
-				002AA1C81CC41BBC004885A5 /* NotifyTracking.swift in Sources */,
-				002AA1B01CC41BBC004885A5 /* Kbfs.swift in Sources */,
-				002AA1DF1CC41BBC004885A5 /* SecretKeysRequest.swift in Sources */,
-				002AA1D01CC41BBC004885A5 /* Prove.swift in Sources */,
-				002AA1B41CC41BBC004885A5 /* Kex2Provisioner.swift in Sources */,
-				002AA1EF1CC41BBC004885A5 /* UiRequest.swift in Sources */,
-				002AA1D11CC41BBC004885A5 /* ProveRequest.swift in Sources */,
-				002AA1ED1CC41BBC004885A5 /* TrackRequest.swift in Sources */,
-				002AA1B51CC41BBC004885A5 /* Kex2ProvisionerRequest.swift in Sources */,
-				002AA1A21CC41BBC004885A5 /* DelegateUiCtl.swift in Sources */,
-				002AA1A01CC41BBC004885A5 /* Debugging.swift in Sources */,
-				002AA1E21CC41BBC004885A5 /* Session.swift in Sources */,
-				002AA1E61CC41BBC004885A5 /* Sigs.swift in Sources */,
-				002AA1981CC41BBC004885A5 /* Config.swift in Sources */,
-				002AA1D81CC41BBC004885A5 /* Revoke.swift in Sources */,
-				002AA1F11CC41BBC004885A5 /* UpdateRequest.swift in Sources */,
-				002AA1E01CC41BBC004885A5 /* SecretUi.swift in Sources */,
-				002AA1CB1CC41BBC004885A5 /* NotifyUsersRequest.swift in Sources */,
-				002AA1951CC41BBC004885A5 /* BlockRequest.swift in Sources */,
-				002AA1991CC41BBC004885A5 /* ConfigRequest.swift in Sources */,
-				002AA1A41CC41BBC004885A5 /* Device.swift in Sources */,
-				002AA1D41CC41BBC004885A5 /* ProvisionUi.swift in Sources */,
-				002AA1B81CC41BBC004885A5 /* LoginRequest.swift in Sources */,
-				002AA1D21CC41BBC004885A5 /* ProveUi.swift in Sources */,
-				002AA1EC1CC41BBC004885A5 /* Track.swift in Sources */,
-				002AA1BF1CC41BBC004885A5 /* MetadataRequest.swift in Sources */,
-				002AA1921CC41BBC004885A5 /* Account.swift in Sources */,
-				002AA1DE1CC41BBC004885A5 /* SecretKeys.swift in Sources */,
-				002AA1C11CC41BBC004885A5 /* MetadataUpdateRequest.swift in Sources */,
-				002AA1C61CC41BBC004885A5 /* NotifySession.swift in Sources */,
-				002AA1A61CC41BBC004885A5 /* Favorite.swift in Sources */,
-				002AA1AC1CC41BBC004885A5 /* IdentifyUi.swift in Sources */,
-				002AA1E11CC41BBC004885A5 /* SecretUiRequest.swift in Sources */,
-				002AA1A51CC41BBC004885A5 /* DeviceRequest.swift in Sources */,
-				002AA19C1CC41BBC004885A5 /* Crypto.swift in Sources */,
-				002AA1B11CC41BBC004885A5 /* KbfsRequest.swift in Sources */,
-				002AA1D51CC41BBC004885A5 /* ProvisionUiRequest.swift in Sources */,
-				002AA1BA1CC41BBC004885A5 /* LoginUiRequest.swift in Sources */,
-				002AA1D91CC41BBC004885A5 /* RevokeRequest.swift in Sources */,
-				002AA1CD1CC41BBC004885A5 /* PgpRequest.swift in Sources */,
-				002AA1931CC41BBC004885A5 /* AccountRequest.swift in Sources */,
-				002AA1CE1CC41BBC004885A5 /* PgpUi.swift in Sources */,
-				002AA1F51CC41BBC004885A5 /* UserRequest.swift in Sources */,
-				002AA1A71CC41BBC004885A5 /* FavoriteRequest.swift in Sources */,
-				002AA1C51CC41BBC004885A5 /* NotifyFSRequest.swift in Sources */,
-				002AA1D31CC41BBC004885A5 /* ProveUiRequest.swift in Sources */,
-				002AA1D71CC41BBC004885A5 /* QuotaRequest.swift in Sources */,
-				002AA1C91CC41BBC004885A5 /* NotifyTrackingRequest.swift in Sources */,
-				002AA1E81CC41BBC004885A5 /* StreamUi.swift in Sources */,
-				002AA1E41CC41BBC004885A5 /* Signup.swift in Sources */,
-				002AA1B21CC41BBC004885A5 /* Kex2Provisionee.swift in Sources */,
-				002AA1A31CC41BBC004885A5 /* DelegateUiCtlRequest.swift in Sources */,
-				002AA1BB1CC41BBC004885A5 /* LogRequest.swift in Sources */,
-				002AA19A1CC41BBC004885A5 /* Constants.swift in Sources */,
+				00DDA4151E159E2700B8820C /* StreamUIRequest.swift in Sources */,
+				00DDA3F91E159E2700B8820C /* ProveUI.swift in Sources */,
+				00DDA3BF1E159E2700B8820C /* Fs.swift in Sources */,
+				00DDA3C11E159E2700B8820C /* GpgCommon.swift in Sources */,
+				00DDA3D51E159E2700B8820C /* Kex2ProvisionerRequest.swift in Sources */,
+				00DDA3D31E159E2700B8820C /* Kex2Provisionee2Request.swift in Sources */,
+				00DDA3B11E159E2700B8820C /* ConstantsRequest.swift in Sources */,
+				00DDA3E41E159E2700B8820C /* NotifyFSRequest.swift in Sources */,
+				00DDA3C91E159E2700B8820C /* IdentifyUI.swift in Sources */,
+				00DDA3D71E159E2700B8820C /* LoginRequest.swift in Sources */,
+				00DDA4031E159E2700B8820C /* RekeyUI.swift in Sources */,
+				00DDA3CC1E159E2700B8820C /* InstallRequest.swift in Sources */,
+				00DDA4061E159E2700B8820C /* Saltpack.swift in Sources */,
+				00DDA3EC1E159E2700B8820C /* NotifyUsersRequest.swift in Sources */,
+				00DDA4171E159E2700B8820C /* TestRequest.swift in Sources */,
+				00DDA4191E159E2700B8820C /* TlfKeysRequest.swift in Sources */,
+				00DDA3A91E159E2700B8820C /* Block.swift in Sources */,
+				00DDA3E81E159E2700B8820C /* NotifyPGPRequest.swift in Sources */,
+				00DDA3A31E159E2700B8820C /* Account.swift in Sources */,
+				00DDA4101E159E2700B8820C /* SessionRequest.swift in Sources */,
+				00DDA40B1E159E2700B8820C /* SecretKeys.swift in Sources */,
+				00DDA3FF1E159E2700B8820C /* Reachability.swift in Sources */,
+				00DDA41E1E159E2700B8820C /* User.swift in Sources */,
+				00DDA3D11E159E2700B8820C /* Kex2Provisionee.swift in Sources */,
+				00DDA3C41E159E2700B8820C /* GpgUIRequest.swift in Sources */,
+				00DDA3F81E159E2700B8820C /* ProveRequest.swift in Sources */,
+				00DDA4121E159E2700B8820C /* SignupRequest.swift in Sources */,
+				00DDA3F71E159E2700B8820C /* ProveCommonRequest.swift in Sources */,
+				00DDA3BE1E159E2700B8820C /* FavoriteRequest.swift in Sources */,
+				00DDA3D01E159E2700B8820C /* KbfsRequest.swift in Sources */,
+				00DDA3DF1E159E2700B8820C /* NotifyBadges.swift in Sources */,
+				00DDA3E21E159E2700B8820C /* NotifyCtlRequest.swift in Sources */,
+				00DDA3E11E159E2700B8820C /* NotifyCtl.swift in Sources */,
+				00DDA3E71E159E2700B8820C /* NotifyPaperKeyRequest.swift in Sources */,
+				00DDA40D1E159E2700B8820C /* SecretUI.swift in Sources */,
+				00DDA3E91E159E2700B8820C /* NotifyServiceRequest.swift in Sources */,
+				00DDA4181E159E2700B8820C /* TlfKeys.swift in Sources */,
+				00DDA41C1E159E2700B8820C /* UI.swift in Sources */,
+				00DDA3F01E159E2700B8820C /* Pgp.swift in Sources */,
+				00DDA41F1E159E2700B8820C /* UserRequest.swift in Sources */,
+				00DDA3B81E159E2700B8820C /* Debugging.swift in Sources */,
+				00DDA3A81E159E2700B8820C /* BackendCommonRequest.swift in Sources */,
+				00DDA3C21E159E2700B8820C /* GpgCommonRequest.swift in Sources */,
+				00DDA3C31E159E2700B8820C /* GpgUI.swift in Sources */,
+				00DDA41B1E159E2700B8820C /* TrackRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,8 +707,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -636,6 +738,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -655,8 +758,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -676,6 +781,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

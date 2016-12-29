@@ -3,9 +3,9 @@
 //
 
 //
-//  IdentifyUiRequest.swift
+//  IdentifyUIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,78 +14,93 @@ import SwiftyJSON
 
 
 //
-// IdentifyUi
+// IdentifyUI
 //
 
-public class IdentifyUiRequest: Request {
+public class IdentifyUIRequest: Request {
+
+  public func displayTLFCreateWithInvite(folderName: String, isPrivate: Bool, assertion: String, socialAssertion: SocialAssertion, inviteLink: String, throttled: Bool) throws {
+    let args: [String: Any] = ["folderName": folderName, "isPrivate": isPrivate, "assertion": assertion, "socialAssertion": socialAssertion, "inviteLink": inviteLink, "throttled": throttled]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.displayTLFCreateWithInvite", args: args)
+  }
 
   public func delegateIdentifyUI() throws -> Int {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.identifyUi.delegateIdentifyUI", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.identifyUi.delegateIdentifyUI", args: args)
+    try checkNull(response: response)
     return JSON(response).intValue
   }
 
-  public func start(username: String, reason: IdentifyReason) throws {
-    let args: [String: AnyObject] = ["username": username, "reason": reason]
-    try self.sendRequest("keybase.1.identifyUi.start", args: args)
+  public func start(username: String, reason: IdentifyReason, forceDisplay: Bool) throws {
+    let args: [String: Any] = ["username": username, "reason": reason, "forceDisplay": forceDisplay]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.start", args: args)
   }
 
   public func displayKey(key: IdentifyKey) throws {
-    let args: [String: AnyObject] = ["key": key]
-    try self.sendRequest("keybase.1.identifyUi.displayKey", args: args)
+    let args: [String: Any] = ["key": key]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.displayKey", args: args)
   }
 
   public func reportLastTrack(track: TrackSummary?) throws {
-    let args: [String: AnyObject] = ["track": wrapNull(track)]
-    try self.sendRequest("keybase.1.identifyUi.reportLastTrack", args: args)
+    let args: [String: Any] = ["track": wrapNull(track)]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.reportLastTrack", args: args)
   }
 
   public func launchNetworkChecks(identity: Identity, user: User) throws {
-    let args: [String: AnyObject] = ["identity": identity, "user": user]
-    try self.sendRequest("keybase.1.identifyUi.launchNetworkChecks", args: args)
+    let args: [String: Any] = ["identity": identity, "user": user]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.launchNetworkChecks", args: args)
   }
 
   public func displayTrackStatement(stmt: String) throws {
-    let args: [String: AnyObject] = ["stmt": stmt]
-    try self.sendRequest("keybase.1.identifyUi.displayTrackStatement", args: args)
+    let args: [String: Any] = ["stmt": stmt]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.displayTrackStatement", args: args)
   }
 
   public func finishWebProofCheck(rp: RemoteProof, lcr: LinkCheckResult) throws {
-    let args: [String: AnyObject] = ["rp": rp, "lcr": lcr]
-    try self.sendRequest("keybase.1.identifyUi.finishWebProofCheck", args: args)
+    let args: [String: Any] = ["rp": rp, "lcr": lcr]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.finishWebProofCheck", args: args)
   }
 
   public func finishSocialProofCheck(rp: RemoteProof, lcr: LinkCheckResult) throws {
-    let args: [String: AnyObject] = ["rp": rp, "lcr": lcr]
-    try self.sendRequest("keybase.1.identifyUi.finishSocialProofCheck", args: args)
+    let args: [String: Any] = ["rp": rp, "lcr": lcr]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.finishSocialProofCheck", args: args)
   }
 
   public func displayCryptocurrency(c: Cryptocurrency) throws {
-    let args: [String: AnyObject] = ["c": c]
-    try self.sendRequest("keybase.1.identifyUi.displayCryptocurrency", args: args)
+    let args: [String: Any] = ["c": c]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.displayCryptocurrency", args: args)
   }
 
   public func reportTrackToken(trackToken: String) throws {
-    let args: [String: AnyObject] = ["trackToken": trackToken]
-    try self.sendRequest("keybase.1.identifyUi.reportTrackToken", args: args)
+    let args: [String: Any] = ["trackToken": trackToken]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.reportTrackToken", args: args)
   }
 
   public func displayUserCard(card: UserCard) throws {
-    let args: [String: AnyObject] = ["card": card]
-    try self.sendRequest("keybase.1.identifyUi.displayUserCard", args: args)
+    let args: [String: Any] = ["card": card]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.displayUserCard", args: args)
   }
 
   public func confirm(outcome: IdentifyOutcome) throws -> ConfirmResult {
-    let args: [String: AnyObject] = ["outcome": outcome]
-    let response = try self.sendRequest("keybase.1.identifyUi.confirm", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["outcome": outcome]
+    let response = try self.sendRequest(method: "keybase.1.identifyUi.confirm", args: args)
+    try checkNull(response: response)
     return ConfirmResult.fromJSON(JSON(response))
   }
 
+  public func cancel() throws {
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.cancel", args: args)
+  }
+
   public func finish() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.identifyUi.finish", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.finish", args: args)
+  }
+
+  public func dismiss(username: String, reason: DismissReason) throws {
+    let args: [String: Any] = ["username": username, "reason": reason]
+    _ = try self.sendRequest(method: "keybase.1.identifyUi.dismiss", args: args)
   }
 
 }

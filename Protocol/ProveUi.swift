@@ -3,9 +3,9 @@
 //
 
 //
-//  ProveUi.swift
+//  ProveUI.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,10 +14,10 @@ import SwiftyJSON
 
 
 //
-// ProveUi
+// ProveUI
 //
 
 public enum PromptOverwriteType: Int {
-	case Social = 0
-	case Site = 1
+	case social = 0
+	case site = 1
 }

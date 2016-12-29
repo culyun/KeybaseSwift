@@ -5,7 +5,7 @@
 //
 //  MetadataUpdateRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,13 +20,13 @@ import SwiftyJSON
 public class MetadataUpdateRequest: Request {
 
   public func metadataUpdate(folderID: String, revision: Int64) throws {
-    let args: [String: AnyObject] = ["folderID": folderID, "revision": NSNumber(longLong: revision)]
-    try self.sendRequest("keybase.1.metadataUpdate.metadataUpdate", args: args)
+    let args: [String: Any] = ["folderID": folderID, "revision": NSNumber(value: revision)]
+    _ = try self.sendRequest(method: "keybase.1.metadataUpdate.metadataUpdate", args: args)
   }
 
   public func folderNeedsRekey(folderID: String, revision: Int64) throws {
-    let args: [String: AnyObject] = ["folderID": folderID, "revision": NSNumber(longLong: revision)]
-    try self.sendRequest("keybase.1.metadataUpdate.folderNeedsRekey", args: args)
+    let args: [String: Any] = ["folderID": folderID, "revision": NSNumber(value: revision)]
+    _ = try self.sendRequest(method: "keybase.1.metadataUpdate.folderNeedsRekey", args: args)
   }
 
 }

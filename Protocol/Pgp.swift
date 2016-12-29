@@ -5,7 +5,7 @@
 //
 //  Pgp.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -18,18 +18,18 @@ import SwiftyJSON
 //
 
 public enum SignMode: Int {
-	case Attached = 0
-	case Detached = 1
-	case Clear = 2
+	case attached = 0
+	case detached = 1
+	case clear = 2
 }
 
 
 public class PGPSignOptions {
 
-	public let keyQuery: String
-	public let mode: SignMode
-	public let binaryIn: Bool
-	public let binaryOut: Bool
+	public let keyQuery: String?
+	public let mode: SignMode?
+	public let binaryIn: Bool?
+	public let binaryOut: Bool?
 
   public init(keyQuery: String, mode: SignMode, binaryIn: Bool, binaryOut: Bool) {
     self.keyQuery = keyQuery
@@ -38,23 +38,25 @@ public class PGPSignOptions {
 		self.binaryOut = binaryOut
   }
 
-  public class func fromJSON(json: JSON) -> PGPSignOptions {
+  public class func fromJSON(_ json: JSON) -> PGPSignOptions {
     return PGPSignOptions(keyQuery: json["keyQuery"].stringValue, mode: SignMode(rawValue: json["mode"].intValue)!, binaryIn: json["binaryIn"].boolValue, binaryOut: json["binaryOut"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [PGPSignOptions] {
+  public class func fromJSONArray(_ json: [JSON]) -> [PGPSignOptions] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class PGPEncryptOptions {
 
-	public let recipients: [String]
-	public let noSign: Bool
-	public let noSelf: Bool
-	public let binaryOut: Bool
-	public let keyQuery: String
+	public let recipients: [String]?
+	public let noSign: Bool?
+	public let noSelf: Bool?
+	public let binaryOut: Bool?
+	public let keyQuery: String?
 
   public init(recipients: [String], noSign: Bool, noSelf: Bool, binaryOut: Bool, keyQuery: String) {
     self.recipients = recipients
@@ -64,22 +66,24 @@ public class PGPEncryptOptions {
 		self.keyQuery = keyQuery
   }
 
-  public class func fromJSON(json: JSON) -> PGPEncryptOptions {
+  public class func fromJSON(_ json: JSON) -> PGPEncryptOptions {
     return PGPEncryptOptions(recipients: String.fromJSONArray(json["recipients"].arrayValue), noSign: json["noSign"].boolValue, noSelf: json["noSelf"].boolValue, binaryOut: json["binaryOut"].boolValue, keyQuery: json["keyQuery"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [PGPEncryptOptions] {
+  public class func fromJSONArray(_ json: [JSON]) -> [PGPEncryptOptions] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class PGPSigVerification {
 
-	public let isSigned: Bool
-	public let verified: Bool
-	public let signer: User
-	public let signKey: PublicKey
+	public let isSigned: Bool?
+	public let verified: Bool?
+	public let signer: User?
+	public let signKey: PublicKey?
 
   public init(isSigned: Bool, verified: Bool, signer: User, signKey: PublicKey) {
     self.isSigned = isSigned
@@ -88,61 +92,67 @@ public class PGPSigVerification {
 		self.signKey = signKey
   }
 
-  public class func fromJSON(json: JSON) -> PGPSigVerification {
+  public class func fromJSON(_ json: JSON) -> PGPSigVerification {
     return PGPSigVerification(isSigned: json["isSigned"].boolValue, verified: json["verified"].boolValue, signer: User.fromJSON(json["signer"]), signKey: PublicKey.fromJSON(json["signKey"]))
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [PGPSigVerification] {
+  public class func fromJSONArray(_ json: [JSON]) -> [PGPSigVerification] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class PGPDecryptOptions {
 
-	public let assertSigned: Bool
-	public let signedBy: String
+	public let assertSigned: Bool?
+	public let signedBy: String?
 
   public init(assertSigned: Bool, signedBy: String) {
     self.assertSigned = assertSigned
 		self.signedBy = signedBy
   }
 
-  public class func fromJSON(json: JSON) -> PGPDecryptOptions {
+  public class func fromJSON(_ json: JSON) -> PGPDecryptOptions {
     return PGPDecryptOptions(assertSigned: json["assertSigned"].boolValue, signedBy: json["signedBy"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [PGPDecryptOptions] {
+  public class func fromJSONArray(_ json: [JSON]) -> [PGPDecryptOptions] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class PGPVerifyOptions {
 
-	public let signedBy: String
-	public let signature: NSData
+	public let signedBy: String?
+	public let signature: NSData?
 
   public init(signedBy: String, signature: NSData) {
     self.signedBy = signedBy
 		self.signature = signature
   }
 
-  public class func fromJSON(json: JSON) -> PGPVerifyOptions {
+  public class func fromJSON(_ json: JSON) -> PGPVerifyOptions {
     return PGPVerifyOptions(signedBy: json["signedBy"].stringValue, signature: json["signature"].object as! NSData)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [PGPVerifyOptions] {
+  public class func fromJSONArray(_ json: [JSON]) -> [PGPVerifyOptions] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class KeyInfo {
 
-	public let fingerprint: String
-	public let key: String
-	public let desc: String
+	public let fingerprint: String?
+	public let key: String?
+	public let desc: String?
 
   public init(fingerprint: String, key: String, desc: String) {
     self.fingerprint = fingerprint
@@ -150,21 +160,23 @@ public class KeyInfo {
 		self.desc = desc
   }
 
-  public class func fromJSON(json: JSON) -> KeyInfo {
+  public class func fromJSON(_ json: JSON) -> KeyInfo {
     return KeyInfo(fingerprint: json["fingerprint"].stringValue, key: json["key"].stringValue, desc: json["desc"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [KeyInfo] {
+  public class func fromJSONArray(_ json: [JSON]) -> [KeyInfo] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class PGPQuery {
 
-	public let secret: Bool
-	public let query: String
-	public let exactMatch: Bool
+	public let secret: Bool?
+	public let query: String?
+	public let exactMatch: Bool?
 
   public init(secret: Bool, query: String, exactMatch: Bool) {
     self.secret = secret
@@ -172,31 +184,55 @@ public class PGPQuery {
 		self.exactMatch = exactMatch
   }
 
-  public class func fromJSON(json: JSON) -> PGPQuery {
+  public class func fromJSON(_ json: JSON) -> PGPQuery {
     return PGPQuery(secret: json["secret"].boolValue, query: json["query"].stringValue, exactMatch: json["exactMatch"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [PGPQuery] {
+  public class func fromJSONArray(_ json: [JSON]) -> [PGPQuery] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class PGPCreateUids {
 
-	public let useDefault: Bool
-	public let ids: [PGPIdentity]
+	public let useDefault: Bool?
+	public let ids: [PGPIdentity]?
 
   public init(useDefault: Bool, ids: [PGPIdentity]) {
     self.useDefault = useDefault
 		self.ids = ids
   }
 
-  public class func fromJSON(json: JSON) -> PGPCreateUids {
+  public class func fromJSON(_ json: JSON) -> PGPCreateUids {
     return PGPCreateUids(useDefault: json["useDefault"].boolValue, ids: PGPIdentity.fromJSONArray(json["ids"].arrayValue))
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [PGPCreateUids] {
+  public class func fromJSONArray(_ json: [JSON]) -> [PGPCreateUids] {
     return json.map { fromJSON($0) }
   }
+
 }
+
+
+
+public class PGPPurgeRes {
+
+	public let filenames: [String]?
+
+  public init(filenames: [String]) {
+    self.filenames = filenames
+  }
+
+  public class func fromJSON(_ json: JSON) -> PGPPurgeRes {
+    return PGPPurgeRes(filenames: String.fromJSONArray(json["filenames"].arrayValue))
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [PGPPurgeRes] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+

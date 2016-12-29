@@ -11,7 +11,7 @@ import SwiftyJSON
 
 extension String {
 
-  static func fromJSONArray(json: [JSON]) -> [String] {
+  static func fromJSONArray(_ json: [JSON]) -> [String] {
     return json.map { $0.stringValue }
   }
 
@@ -32,7 +32,7 @@ extension JSON {
 
 extension NSData {
 
-  static func fromJSONArray(json: [JSON]) -> [NSData] {
+  static func fromJSONArray(_ json: [JSON]) -> [NSData] {
     //return json?.map { $0 as NSData }
     return []
   }

@@ -3,9 +3,9 @@
 //
 
 //
-//  GpgUiRequest.swift
+//  GpgUIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,43 +14,50 @@ import SwiftyJSON
 
 
 //
-// GpgUi
+// GpgUI
 //
 
-public class GpgUiRequest: Request {
+public class GpgUIRequest: Request {
 
   public func wantToAddGPGKey() throws -> Bool {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.gpgUi.wantToAddGPGKey", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.gpgUi.wantToAddGPGKey", args: args)
+    try checkNull(response: response)
     return JSON(response).boolValue
   }
 
   public func confirmDuplicateKeyChosen() throws -> Bool {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.gpgUi.confirmDuplicateKeyChosen", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.gpgUi.confirmDuplicateKeyChosen", args: args)
+    try checkNull(response: response)
     return JSON(response).boolValue
   }
 
   public func selectKeyAndPushOption(keys: [GPGKey]) throws -> SelectKeyRes {
-    let args: [String: AnyObject] = ["keys": keys]
-    let response = try self.sendRequest("keybase.1.gpgUi.selectKeyAndPushOption", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["keys": keys]
+    let response = try self.sendRequest(method: "keybase.1.gpgUi.selectKeyAndPushOption", args: args)
+    try checkNull(response: response)
     return SelectKeyRes.fromJSON(JSON(response))
   }
 
   public func selectKey(keys: [GPGKey]) throws -> String {
-    let args: [String: AnyObject] = ["keys": keys]
-    let response = try self.sendRequest("keybase.1.gpgUi.selectKey", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["keys": keys]
+    let response = try self.sendRequest(method: "keybase.1.gpgUi.selectKey", args: args)
+    try checkNull(response: response)
     return JSON(response).stringValue
   }
 
   public func sign(msg: NSData, fingerprint: NSData) throws -> String {
-    let args: [String: AnyObject] = ["msg": msg, "fingerprint": fingerprint]
-    let response = try self.sendRequest("keybase.1.gpgUi.sign", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["msg": msg, "fingerprint": fingerprint]
+    let response = try self.sendRequest(method: "keybase.1.gpgUi.sign", args: args)
+    try checkNull(response: response)
+    return JSON(response).stringValue
+  }
+
+  public func getTTY() throws -> String {
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.gpgUi.getTTY", args: args)
+    try checkNull(response: response)
     return JSON(response).stringValue
   }
 

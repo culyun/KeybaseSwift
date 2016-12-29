@@ -5,7 +5,7 @@
 //
 //  LoginRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -25,9 +25,9 @@ public class LoginRequest: Request {
  secrets, but this definition may be expanded in the future.
  */
   public func getConfiguredAccounts() throws -> [ConfiguredAccount] {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.login.getConfiguredAccounts", args: args)
-  try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.login.getConfiguredAccounts", args: args)
+  try checkNull(response: response)
   return ConfiguredAccount.fromJSONArray(JSON(response).arrayValue)
   }
 
@@ -42,8 +42,8 @@ public class LoginRequest: Request {
  via email address does not work.
  */
   public func login(deviceType: String, usernameOrEmail: String, clientType: ClientType) throws {
-    let args: [String: AnyObject] = ["deviceType": deviceType, "usernameOrEmail": usernameOrEmail, "clientType": clientType.rawValue]
-    try self.sendRequest("keybase.1.login.login", args: args)
+    let args: [String: Any] = ["deviceType": deviceType, "usernameOrEmail": usernameOrEmail, "clientType": clientType.rawValue]
+    _ = try self.sendRequest(method: "keybase.1.login.login", args: args)
   }
 
 /*!
@@ -51,23 +51,23 @@ public class LoginRequest: Request {
  loginWithStoredSecret(_, username) will fail after this is called.
  */
   public func clearStoredSecret(username: String) throws {
-    let args: [String: AnyObject] = ["username": username]
-    try self.sendRequest("keybase.1.login.clearStoredSecret", args: args)
+    let args: [String: Any] = ["username": username]
+    _ = try self.sendRequest(method: "keybase.1.login.clearStoredSecret", args: args)
   }
 
   public func logout() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.login.logout", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.login.logout", args: args)
   }
 
   public func deprovision(username: String, doRevoke: Bool) throws {
-    let args: [String: AnyObject] = ["username": username, "doRevoke": doRevoke]
-    try self.sendRequest("keybase.1.login.deprovision", args: args)
+    let args: [String: Any] = ["username": username, "doRevoke": doRevoke]
+    _ = try self.sendRequest(method: "keybase.1.login.deprovision", args: args)
   }
 
   public func recoverAccountFromEmailAddress(email: String) throws {
-    let args: [String: AnyObject] = ["email": email]
-    try self.sendRequest("keybase.1.login.recoverAccountFromEmailAddress", args: args)
+    let args: [String: Any] = ["email": email]
+    _ = try self.sendRequest(method: "keybase.1.login.recoverAccountFromEmailAddress", args: args)
   }
 
 /*!
@@ -75,21 +75,47 @@ public class LoginRequest: Request {
  It calls login_ui.displayPaperKeyPhrase with the phrase.
  */
   public func paperKey() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.login.paperKey", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.login.paperKey", args: args)
+  }
+
+/*!
+ paperKeySubmit checks that paperPhrase is a valid paper key
+ for the logged in user, caches the keys, and sends a notification.
+ */
+  public func paperKeySubmit(paperPhrase: String) throws {
+    let args: [String: Any] = ["paperPhrase": paperPhrase]
+    _ = try self.sendRequest(method: "keybase.1.login.paperKeySubmit", args: args)
   }
 
 /*!
  Unlock restores access to local key store by priming passphrase stream cache.
  */
   public func unlock() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.login.unlock", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.login.unlock", args: args)
   }
 
   public func unlockWithPassphrase(passphrase: String) throws {
-    let args: [String: AnyObject] = ["passphrase": passphrase]
-    try self.sendRequest("keybase.1.login.unlockWithPassphrase", args: args)
+    let args: [String: Any] = ["passphrase": passphrase]
+    _ = try self.sendRequest(method: "keybase.1.login.unlockWithPassphrase", args: args)
+  }
+
+/*!
+ pgpProvision is for devel/testing to provision a device via pgp using CLI
+ with no user interaction.
+ */
+  public func pgpProvision(username: String, passphrase: String, deviceName: String) throws {
+    let args: [String: Any] = ["username": username, "passphrase": passphrase, "deviceName": deviceName]
+    _ = try self.sendRequest(method: "keybase.1.login.pgpProvision", args: args)
+  }
+
+/*!
+ accountDelete is for devel/testing to delete the current user's account.
+ */
+  public func accountDelete() throws {
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.login.accountDelete", args: args)
   }
 
 }

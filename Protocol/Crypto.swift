@@ -5,7 +5,7 @@
 //
 //  Crypto.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -22,34 +22,35 @@ public typealias ED25519Signature = [UInt8] // Size: 64
 
 public class ED25519SignatureInfo {
 
-	public let sig: NSData
-	public let publicKey: NSData
+	public let sig: NSData?
+	public let publicKey: NSData?
 
   public init(sig: NSData, publicKey: NSData) {
     self.sig = sig
 		self.publicKey = publicKey
   }
 
-  public class func fromJSON(json: JSON) -> ED25519SignatureInfo {
+  public class func fromJSON(_ json: JSON) -> ED25519SignatureInfo {
     return ED25519SignatureInfo(sig: json["sig"].object as! NSData, publicKey: json["publicKey"].object as! NSData)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [ED25519SignatureInfo] {
+  public class func fromJSONArray(_ json: [JSON]) -> [ED25519SignatureInfo] {
     return json.map { fromJSON($0) }
   }
+
 }
 
-public typealias Bytes32 = [UInt8] // Size: 32
+
 public typealias EncryptedBytes32 = [UInt8] // Size: 48
 public typealias BoxNonce = [UInt8] // Size: 24
 public typealias BoxPublicKey = [UInt8] // Size: 32
 
 public class CiphertextBundle {
 
-	public let kid: String
-	public let ciphertext: NSData
-	public let nonce: NSData
-	public let publicKey: NSData
+	public let kid: String?
+	public let ciphertext: NSData?
+	public let nonce: NSData?
+	public let publicKey: NSData?
 
   public init(kid: String, ciphertext: NSData, nonce: NSData, publicKey: NSData) {
     self.kid = kid
@@ -58,21 +59,23 @@ public class CiphertextBundle {
 		self.publicKey = publicKey
   }
 
-  public class func fromJSON(json: JSON) -> CiphertextBundle {
+  public class func fromJSON(_ json: JSON) -> CiphertextBundle {
     return CiphertextBundle(kid: json["kid"].stringValue, ciphertext: json["ciphertext"].object as! NSData, nonce: json["nonce"].object as! NSData, publicKey: json["publicKey"].object as! NSData)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [CiphertextBundle] {
+  public class func fromJSONArray(_ json: [JSON]) -> [CiphertextBundle] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class UnboxAnyRes {
 
-	public let kid: String
-	public let plaintext: NSData
-	public let index: Int
+	public let kid: String?
+	public let plaintext: NSData?
+	public let index: Int?
 
   public init(kid: String, plaintext: NSData, index: Int) {
     self.kid = kid
@@ -80,11 +83,13 @@ public class UnboxAnyRes {
 		self.index = index
   }
 
-  public class func fromJSON(json: JSON) -> UnboxAnyRes {
+  public class func fromJSON(_ json: JSON) -> UnboxAnyRes {
     return UnboxAnyRes(kid: json["kid"].stringValue, plaintext: json["plaintext"].object as! NSData, index: json["index"].intValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [UnboxAnyRes] {
+  public class func fromJSONArray(_ json: [JSON]) -> [UnboxAnyRes] {
     return json.map { fromJSON($0) }
   }
+
 }
+

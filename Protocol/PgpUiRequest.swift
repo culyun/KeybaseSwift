@@ -3,9 +3,9 @@
 //
 
 //
-//  PgpUiRequest.swift
+//  PgpUIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,14 +14,36 @@ import SwiftyJSON
 
 
 //
-// PgpUi
+// PgpUI
 //
 
-public class PgpUiRequest: Request {
+public class PgpUIRequest: Request {
 
   public func outputSignatureSuccess(fingerprint: String, username: String, signedAt: Int64) throws {
-    let args: [String: AnyObject] = ["fingerprint": fingerprint, "username": username, "signedAt": NSNumber(longLong: signedAt)]
-    try self.sendRequest("keybase.1.pgpUi.outputSignatureSuccess", args: args)
+    let args: [String: Any] = ["fingerprint": fingerprint, "username": username, "signedAt": NSNumber(value: signedAt)]
+    _ = try self.sendRequest(method: "keybase.1.pgpUi.outputSignatureSuccess", args: args)
+  }
+
+  public func outputSignatureSuccessNonKeybase(keyID: String, signedAt: Int64) throws {
+    let args: [String: Any] = ["keyID": keyID, "signedAt": NSNumber(value: signedAt)]
+    _ = try self.sendRequest(method: "keybase.1.pgpUi.outputSignatureSuccessNonKeybase", args: args)
+  }
+
+  public func keyGenerated(kid: String, key: KeyInfo) throws {
+    let args: [String: Any] = ["kid": kid, "key": key]
+    _ = try self.sendRequest(method: "keybase.1.pgpUi.keyGenerated", args: args)
+  }
+
+  public func shouldPushPrivate() throws -> Bool {
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.pgpUi.shouldPushPrivate", args: args)
+    try checkNull(response: response)
+    return JSON(response).boolValue
+  }
+
+  public func finished() throws {
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.pgpUi.finished", args: args)
   }
 
 }

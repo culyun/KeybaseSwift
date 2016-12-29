@@ -3,9 +3,9 @@
 //
 
 //
-//  ProvisionUi.swift
+//  ProvisionUI.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,49 +14,46 @@ import SwiftyJSON
 
 
 //
-// ProvisionUi
+// ProvisionUI
 //
 
 public enum ProvisionMethod: Int {
-	case Device = 0
-	case PaperKey = 1
-	case Passphrase = 2
-	case GpgImport = 3
-	case GpgSign = 4
+	case device = 0
+	case paperKey = 1
+	case passphrase = 2
+	case gpgImport = 3
+	case gpgSign = 4
 }
 
 public enum GPGMethod: Int {
-	case GpgNone = 0
-	case GpgImport = 1
-	case GpgSign = 2
-}
-
-public enum DeviceType: Int {
-	case Desktop = 0
-	case Mobile = 1
+	case gpgNone = 0
+	case gpgImport = 1
+	case gpgSign = 2
 }
 
 public enum ChooseType: Int {
-	case ExistingDevice = 0
-	case NewDevice = 1
+	case existingDevice = 0
+	case newDevice = 1
 }
 
 
 public class SecretResponse {
 
-	public let secret: NSData
-	public let phrase: String
+	public let secret: NSData?
+	public let phrase: String?
 
   public init(secret: NSData, phrase: String) {
     self.secret = secret
 		self.phrase = phrase
   }
 
-  public class func fromJSON(json: JSON) -> SecretResponse {
+  public class func fromJSON(_ json: JSON) -> SecretResponse {
     return SecretResponse(secret: json["secret"].object as! NSData, phrase: json["phrase"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SecretResponse] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SecretResponse] {
     return json.map { fromJSON($0) }
   }
+
 }
+

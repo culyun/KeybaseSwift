@@ -3,9 +3,9 @@
 //
 
 //
-//  SaltpackUiRequest.swift
+//  SaltpackUIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,19 +14,19 @@ import SwiftyJSON
 
 
 //
-// SaltpackUi
+// SaltpackUI
 //
 
-public class SaltpackUiRequest: Request {
+public class SaltpackUIRequest: Request {
 
-  public func saltpackPromptForDecrypt(sender: SaltpackSender) throws {
-    let args: [String: AnyObject] = ["sender": sender]
-    try self.sendRequest("keybase.1.saltpackUi.saltpackPromptForDecrypt", args: args)
+  public func saltpackPromptForDecrypt(sender: SaltpackSender, usedDelegateUI: Bool) throws {
+    let args: [String: Any] = ["sender": sender, "usedDelegateUI": usedDelegateUI]
+    _ = try self.sendRequest(method: "keybase.1.saltpackUi.saltpackPromptForDecrypt", args: args)
   }
 
   public func saltpackVerifySuccess(signingKID: String, sender: SaltpackSender) throws {
-    let args: [String: AnyObject] = ["signingKID": signingKID, "sender": sender]
-    try self.sendRequest("keybase.1.saltpackUi.saltpackVerifySuccess", args: args)
+    let args: [String: Any] = ["signingKID": signingKID, "sender": sender]
+    _ = try self.sendRequest(method: "keybase.1.saltpackUi.saltpackVerifySuccess", args: args)
   }
 
 }

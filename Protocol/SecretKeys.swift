@@ -5,7 +5,7 @@
 //
 //  SecretKeys.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -24,19 +24,21 @@ public typealias NaclDHKeyPrivate = [UInt8] // Size: 32
 
 public class SecretKeys {
 
-	public let signing: NSData
-	public let encryption: NSData
+	public let signing: NSData?
+	public let encryption: NSData?
 
   public init(signing: NSData, encryption: NSData) {
     self.signing = signing
 		self.encryption = encryption
   }
 
-  public class func fromJSON(json: JSON) -> SecretKeys {
+  public class func fromJSON(_ json: JSON) -> SecretKeys {
     return SecretKeys(signing: json["signing"].object as! NSData, encryption: json["encryption"].object as! NSData)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SecretKeys] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SecretKeys] {
     return json.map { fromJSON($0) }
   }
+
 }
+

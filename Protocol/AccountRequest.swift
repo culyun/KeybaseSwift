@@ -5,7 +5,7 @@
 //
 //  AccountRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -25,15 +25,34 @@ public class AccountRequest: Request {
  try to force a passphrase change.
  */
   public func passphraseChange(oldPassphrase: String, passphrase: String, force: Bool) throws {
-    let args: [String: AnyObject] = ["oldPassphrase": oldPassphrase, "passphrase": passphrase, "force": force]
-    try self.sendRequest("keybase.1.account.passphraseChange", args: args)
+    let args: [String: Any] = ["oldPassphrase": oldPassphrase, "passphrase": passphrase, "force": force]
+    _ = try self.sendRequest(method: "keybase.1.account.passphraseChange", args: args)
   }
 
   public func passphrasePrompt(guiArg: GUIEntryArg) throws -> GetPassphraseRes {
-    let args: [String: AnyObject] = ["guiArg": guiArg]
-    let response = try self.sendRequest("keybase.1.account.passphrasePrompt", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["guiArg": guiArg]
+    let response = try self.sendRequest(method: "keybase.1.account.passphrasePrompt", args: args)
+    try checkNull(response: response)
     return GetPassphraseRes.fromJSON(JSON(response))
+  }
+
+/*!
+ * change email to the new given email by signing a statement.
+ */
+  public func emailChange(newEmail: String) throws {
+    let args: [String: Any] = ["newEmail": newEmail]
+    _ = try self.sendRequest(method: "keybase.1.account.emailChange", args: args)
+  }
+
+/*!
+ * Whether the logged-in user has uploaded private keys
+ * Will error if not logged in.
+ */
+  public func hasServerKeys() throws -> HasServerKeysRes {
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.account.hasServerKeys", args: args)
+    try checkNull(response: response)
+    return HasServerKeysRes.fromJSON(JSON(response))
   }
 
 }

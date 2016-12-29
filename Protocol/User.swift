@@ -5,7 +5,7 @@
 //
 //  User.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,9 +20,9 @@ import SwiftyJSON
 
 public class Tracker {
 
-	public let tracker: String
-	public let status: Int
-	public let mTime: Int64
+	public let tracker: String?
+	public let status: Int?
+	public let mTime: Int64?
 
   public init(tracker: String, status: Int, mTime: Int64) {
     self.tracker = tracker
@@ -30,21 +30,23 @@ public class Tracker {
 		self.mTime = mTime
   }
 
-  public class func fromJSON(json: JSON) -> Tracker {
+  public class func fromJSON(_ json: JSON) -> Tracker {
     return Tracker(tracker: json["tracker"].stringValue, status: json["status"].intValue, mTime: json["mTime"].int64Value)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [Tracker] {
+  public class func fromJSONArray(_ json: [JSON]) -> [Tracker] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class TrackProof {
 
-	public let proofType: String
-	public let proofName: String
-	public let idString: String
+	public let proofType: String?
+	public let proofName: String?
+	public let idString: String?
 
   public init(proofType: String, proofName: String, idString: String) {
     self.proofType = proofType
@@ -52,41 +54,45 @@ public class TrackProof {
 		self.idString = idString
   }
 
-  public class func fromJSON(json: JSON) -> TrackProof {
+  public class func fromJSON(_ json: JSON) -> TrackProof {
     return TrackProof(proofType: json["proofType"].stringValue, proofName: json["proofName"].stringValue, idString: json["idString"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [TrackProof] {
+  public class func fromJSONArray(_ json: [JSON]) -> [TrackProof] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class WebProof {
 
-	public let hostname: String
-	public let protocols: [String]
+	public let hostname: String?
+	public let protocols: [String]?
 
   public init(hostname: String, protocols: [String]) {
     self.hostname = hostname
 		self.protocols = protocols
   }
 
-  public class func fromJSON(json: JSON) -> WebProof {
+  public class func fromJSON(_ json: JSON) -> WebProof {
     return WebProof(hostname: json["hostname"].stringValue, protocols: String.fromJSONArray(json["protocols"].arrayValue))
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [WebProof] {
+  public class func fromJSONArray(_ json: [JSON]) -> [WebProof] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class Proofs {
 
-	public let social: [TrackProof]
-	public let web: [WebProof]
-	public let publicKeys: [PublicKey]
+	public let social: [TrackProof]?
+	public let web: [WebProof]?
+	public let publicKeys: [PublicKey]?
 
   public init(social: [TrackProof], web: [WebProof], publicKeys: [PublicKey]) {
     self.social = social
@@ -94,27 +100,29 @@ public class Proofs {
 		self.publicKeys = publicKeys
   }
 
-  public class func fromJSON(json: JSON) -> Proofs {
+  public class func fromJSON(_ json: JSON) -> Proofs {
     return Proofs(social: TrackProof.fromJSONArray(json["social"].arrayValue), web: WebProof.fromJSONArray(json["web"].arrayValue), publicKeys: PublicKey.fromJSONArray(json["publicKeys"].arrayValue))
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [Proofs] {
+  public class func fromJSONArray(_ json: [JSON]) -> [Proofs] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class UserSummary {
 
-	public let uid: String
-	public let username: String
-	public let thumbnail: String
-	public let idVersion: Int
-	public let fullName: String
-	public let bio: String
-	public let proofs: Proofs
-	public let sigIDDisplay: String
-	public let trackTime: Int64
+	public let uid: String?
+	public let username: String?
+	public let thumbnail: String?
+	public let idVersion: Int?
+	public let fullName: String?
+	public let bio: String?
+	public let proofs: Proofs?
+	public let sigIDDisplay: String?
+	public let trackTime: Int64?
 
   public init(uid: String, username: String, thumbnail: String, idVersion: Int, fullName: String, bio: String, proofs: Proofs, sigIDDisplay: String, trackTime: Int64) {
     self.uid = uid
@@ -128,21 +136,65 @@ public class UserSummary {
 		self.trackTime = trackTime
   }
 
-  public class func fromJSON(json: JSON) -> UserSummary {
+  public class func fromJSON(_ json: JSON) -> UserSummary {
     return UserSummary(uid: json["uid"].stringValue, username: json["username"].stringValue, thumbnail: json["thumbnail"].stringValue, idVersion: json["idVersion"].intValue, fullName: json["fullName"].stringValue, bio: json["bio"].stringValue, proofs: Proofs.fromJSON(json["proofs"]), sigIDDisplay: json["sigIDDisplay"].stringValue, trackTime: json["trackTime"].int64Value)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [UserSummary] {
+  public class func fromJSONArray(_ json: [JSON]) -> [UserSummary] {
     return json.map { fromJSON($0) }
   }
+
 }
+
+
+
+public class Email {
+
+	public let email: String?
+	public let isVerified: Bool?
+
+  public init(email: String, isVerified: Bool) {
+    self.email = email
+		self.isVerified = isVerified
+  }
+
+  public class func fromJSON(_ json: JSON) -> Email {
+    return Email(email: json["email"].stringValue, isVerified: json["isVerified"].boolValue)
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [Email] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+
+
+
+public class UserSettings {
+
+	public let emails: [Email]?
+
+  public init(emails: [Email]) {
+    self.emails = emails
+  }
+
+  public class func fromJSON(_ json: JSON) -> UserSettings {
+    return UserSettings(emails: Email.fromJSONArray(json["emails"].arrayValue))
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [UserSettings] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+
 
 
 public class SearchComponent {
 
-	public let key: String
-	public let value: String
-	public let score: Double
+	public let key: String?
+	public let value: String?
+	public let score: Double?
 
   public init(key: String, value: String, score: Double) {
     self.key = key
@@ -150,22 +202,24 @@ public class SearchComponent {
 		self.score = score
   }
 
-  public class func fromJSON(json: JSON) -> SearchComponent {
+  public class func fromJSON(_ json: JSON) -> SearchComponent {
     return SearchComponent(key: json["key"].stringValue, value: json["value"].stringValue, score: json["score"].doubleValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SearchComponent] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SearchComponent] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class SearchResult {
 
-	public let uid: String
-	public let username: String
-	public let components: [SearchComponent]
-	public let score: Double
+	public let uid: String?
+	public let username: String?
+	public let components: [SearchComponent]?
+	public let score: Double?
 
   public init(uid: String, username: String, components: [SearchComponent], score: Double) {
     self.uid = uid
@@ -174,11 +228,67 @@ public class SearchResult {
 		self.score = score
   }
 
-  public class func fromJSON(json: JSON) -> SearchResult {
+  public class func fromJSON(_ json: JSON) -> SearchResult {
     return SearchResult(uid: json["uid"].stringValue, username: json["username"].stringValue, components: SearchComponent.fromJSONArray(json["components"].arrayValue), score: json["score"].doubleValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SearchResult] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SearchResult] {
     return json.map { fromJSON($0) }
   }
+
 }
+
+
+
+public class UserSummary2 {
+
+	public let uid: String?
+	public let username: String?
+	public let thumbnail: String?
+	public let fullName: String?
+	public let isFollower: Bool?
+	public let isFollowee: Bool?
+
+  public init(uid: String, username: String, thumbnail: String, fullName: String, isFollower: Bool, isFollowee: Bool) {
+    self.uid = uid
+		self.username = username
+		self.thumbnail = thumbnail
+		self.fullName = fullName
+		self.isFollower = isFollower
+		self.isFollowee = isFollowee
+  }
+
+  public class func fromJSON(_ json: JSON) -> UserSummary2 {
+    return UserSummary2(uid: json["uid"].stringValue, username: json["username"].stringValue, thumbnail: json["thumbnail"].stringValue, fullName: json["fullName"].stringValue, isFollower: json["isFollower"].boolValue, isFollowee: json["isFollowee"].boolValue)
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [UserSummary2] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+
+
+
+public class UserSummary2Set {
+
+	public let users: [UserSummary2]?
+	public let time: Int64?
+	public let version: Int?
+
+  public init(users: [UserSummary2], time: Int64, version: Int) {
+    self.users = users
+		self.time = time
+		self.version = version
+  }
+
+  public class func fromJSON(_ json: JSON) -> UserSummary2Set {
+    return UserSummary2Set(users: UserSummary2.fromJSONArray(json["users"].arrayValue), time: json["time"].int64Value, version: json["version"].intValue)
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [UserSummary2Set] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+

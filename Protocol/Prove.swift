@@ -5,7 +5,7 @@
 //
 //  Prove.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,39 +20,45 @@ import SwiftyJSON
 
 public class CheckProofStatus {
 
-	public let found: Bool
-	public let status: ProofStatus
-	public let proofText: String
+	public let found: Bool?
+	public let status: ProofStatus?
+	public let proofText: String?
+	public let state: ProofState?
 
-  public init(found: Bool, status: ProofStatus, proofText: String) {
+  public init(found: Bool, status: ProofStatus, proofText: String, state: ProofState) {
     self.found = found
 		self.status = status
 		self.proofText = proofText
+		self.state = state
   }
 
-  public class func fromJSON(json: JSON) -> CheckProofStatus {
-    return CheckProofStatus(found: json["found"].boolValue, status: ProofStatus(rawValue: json["status"].intValue)!, proofText: json["proofText"].stringValue)
+  public class func fromJSON(_ json: JSON) -> CheckProofStatus {
+    return CheckProofStatus(found: json["found"].boolValue, status: ProofStatus(rawValue: json["status"].intValue)!, proofText: json["proofText"].stringValue, state: ProofState(rawValue: json["state"].intValue)!)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [CheckProofStatus] {
+  public class func fromJSONArray(_ json: [JSON]) -> [CheckProofStatus] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class StartProofResult {
 
-	public let sigID: String
+	public let sigID: String?
 
   public init(sigID: String) {
     self.sigID = sigID
   }
 
-  public class func fromJSON(json: JSON) -> StartProofResult {
+  public class func fromJSON(_ json: JSON) -> StartProofResult {
     return StartProofResult(sigID: json["sigID"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [StartProofResult] {
+  public class func fromJSONArray(_ json: [JSON]) -> [StartProofResult] {
     return json.map { fromJSON($0) }
   }
+
 }
+

@@ -5,7 +5,7 @@
 //
 //  DebuggingRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,23 +20,23 @@ import SwiftyJSON
 public class DebuggingRequest: Request {
 
   public func firstStep(val: Int) throws -> FirstStepResult {
-    let args: [String: AnyObject] = ["val": NSNumber(integer: val)]
-    let response = try self.sendRequest("keybase.1.debugging.firstStep", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["val": NSNumber(value: val)]
+    let response = try self.sendRequest(method: "keybase.1.debugging.firstStep", args: args)
+    try checkNull(response: response)
     return FirstStepResult.fromJSON(JSON(response))
   }
 
   public func secondStep(val: Int) throws -> Int {
-    let args: [String: AnyObject] = ["val": NSNumber(integer: val)]
-    let response = try self.sendRequest("keybase.1.debugging.secondStep", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["val": NSNumber(value: val)]
+    let response = try self.sendRequest(method: "keybase.1.debugging.secondStep", args: args)
+    try checkNull(response: response)
     return JSON(response).intValue
   }
 
   public func increment(val: Int) throws -> Int {
-    let args: [String: AnyObject] = ["val": NSNumber(integer: val)]
-    let response = try self.sendRequest("keybase.1.debugging.increment", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["val": NSNumber(value: val)]
+    let response = try self.sendRequest(method: "keybase.1.debugging.increment", args: args)
+    try checkNull(response: response)
     return JSON(response).intValue
   }
 

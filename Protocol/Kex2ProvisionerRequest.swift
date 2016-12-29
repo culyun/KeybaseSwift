@@ -5,7 +5,7 @@
 //
 //  Kex2ProvisionerRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,8 @@ import SwiftyJSON
 public class Kex2ProvisionerRequest: Request {
 
   public func kexStart() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.Kex2Provisioner.kexStart", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.Kex2Provisioner.kexStart", args: args)
   }
 
 }

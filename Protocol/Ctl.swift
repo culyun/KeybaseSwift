@@ -5,7 +5,7 @@
 //
 //  Ctl.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -18,7 +18,7 @@ import SwiftyJSON
 //
 
 public enum ExitCode: Int {
-	case Ok = 0
-	case Notok = 2
-	case Restart = 4
+	case ok = 0
+	case notok = 2
+	case restart = 4
 }

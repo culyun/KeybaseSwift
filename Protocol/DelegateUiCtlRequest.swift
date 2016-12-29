@@ -3,9 +3,9 @@
 //
 
 //
-//  DelegateUiCtlRequest.swift
+//  DelegateUICtlRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,24 +14,34 @@ import SwiftyJSON
 
 
 //
-// DelegateUiCtl
+// DelegateUICtl
 //
 
-public class DelegateUiCtlRequest: Request {
+public class DelegateUICtlRequest: Request {
 
   public func registerIdentifyUI() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.delegateUiCtl.registerIdentifyUI", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.delegateUiCtl.registerIdentifyUI", args: args)
   }
 
   public func registerSecretUI() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.delegateUiCtl.registerSecretUI", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.delegateUiCtl.registerSecretUI", args: args)
   }
 
   public func registerUpdateUI() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.delegateUiCtl.registerUpdateUI", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.delegateUiCtl.registerUpdateUI", args: args)
+  }
+
+  public func registerRekeyUI() throws {
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.delegateUiCtl.registerRekeyUI", args: args)
+  }
+
+  public func registerGregorFirehose() throws {
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.delegateUiCtl.registerGregorFirehose", args: args)
   }
 
 }

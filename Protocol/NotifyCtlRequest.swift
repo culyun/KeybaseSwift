@@ -5,7 +5,7 @@
 //
 //  NotifyCtlRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,8 @@ import SwiftyJSON
 public class NotifyCtlRequest: Request {
 
   public func setNotifications(channels: NotificationChannels) throws {
-    let args: [String: AnyObject] = ["channels": channels]
-    try self.sendRequest("keybase.1.notifyCtl.setNotifications", args: args)
+    let args: [String: Any] = ["channels": channels]
+    _ = try self.sendRequest(method: "keybase.1.notifyCtl.setNotifications", args: args)
   }
 
 }

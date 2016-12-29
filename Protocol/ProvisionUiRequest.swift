@@ -3,9 +3,9 @@
 //
 
 //
-//  ProvisionUiRequest.swift
+//  ProvisionUIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,10 +14,10 @@ import SwiftyJSON
 
 
 //
-// ProvisionUi
+// ProvisionUI
 //
 
-public class ProvisionUiRequest: Request {
+public class ProvisionUIRequest: Request {
 
 /*!
  DEPRECATED:
@@ -26,19 +26,19 @@ public class ProvisionUiRequest: Request {
  should be offered as an option.
  */
   public func chooseProvisioningMethod(gpgOption: Bool) throws -> ProvisionMethod {
-    let args: [String: AnyObject] = ["gpgOption": gpgOption]
-    let response = try self.sendRequest("keybase.1.provisionUi.chooseProvisioningMethod", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["gpgOption": gpgOption]
+    let response = try self.sendRequest(method: "keybase.1.provisionUi.chooseProvisioningMethod", args: args)
+    try checkNull(response: response)
     return ProvisionMethod(rawValue: JSON(response).intValue)!
   }
 
 /*!
- Called during device provisioning for the user to select a 
+ Called during device provisioning for the user to select a
  GPG method, either import the key into keybase's local keyring
  or use GPG to sign a provisioning statement.
 
- The keys are provided for display purposes, so the UI can 
- do something like "We found the following GPG keys on this 
+ The keys are provided for display purposes, so the UI can
+ do something like "We found the following GPG keys on this
  machine. How would you like to use one of them to provision
  this device?"
 
@@ -46,29 +46,29 @@ public class ProvisionUiRequest: Request {
  multiple keys available).
  */
   public func chooseGPGMethod(keys: [GPGKey]) throws -> GPGMethod {
-    let args: [String: AnyObject] = ["keys": keys]
-    let response = try self.sendRequest("keybase.1.provisionUi.chooseGPGMethod", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["keys": keys]
+    let response = try self.sendRequest(method: "keybase.1.provisionUi.chooseGPGMethod", args: args)
+    try checkNull(response: response)
     return GPGMethod(rawValue: JSON(response).intValue)!
   }
 
 /*!
  If there was an error importing a gpg key into the local
  keyring, tell the user and offer to switch to GPG signing
- with this key. Return true to switch to GPG signing, 
+ with this key. Return true to switch to GPG signing,
  false to abort provisioning.
  */
   public func switchToGPGSignOK(key: GPGKey, importError: String) throws -> Bool {
-    let args: [String: AnyObject] = ["key": key, "importError": importError]
-    let response = try self.sendRequest("keybase.1.provisionUi.switchToGPGSignOK", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["key": key, "importError": importError]
+    let response = try self.sendRequest(method: "keybase.1.provisionUi.switchToGPGSignOK", args: args)
+    try checkNull(response: response)
     return JSON(response).boolValue
   }
 
   public func chooseDevice(devices: [Device]) throws -> String {
-    let args: [String: AnyObject] = ["devices": devices]
-    let response = try self.sendRequest("keybase.1.provisionUi.chooseDevice", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["devices": devices]
+    let response = try self.sendRequest(method: "keybase.1.provisionUi.chooseDevice", args: args)
+    try checkNull(response: response)
     return JSON(response).stringValue
   }
 
@@ -78,9 +78,9 @@ public class ProvisionUiRequest: Request {
  If selecting the new device type, set kind to NEW_DEVICE_1.
  */
   public func chooseDeviceType(kind: ChooseType) throws -> DeviceType {
-    let args: [String: AnyObject] = ["kind": kind.rawValue]
-    let response = try self.sendRequest("keybase.1.provisionUi.chooseDeviceType", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["kind": kind.rawValue]
+    let response = try self.sendRequest(method: "keybase.1.provisionUi.chooseDeviceType", args: args)
+    try checkNull(response: response)
     return DeviceType(rawValue: JSON(response).intValue)!
   }
 
@@ -90,9 +90,9 @@ public class ProvisionUiRequest: Request {
  If it does not return a secret, it will be canceled when this device receives the secret via kex2.
  */
   public func displayAndPromptSecret(secret: NSData, phrase: String, otherDeviceType: DeviceType) throws -> SecretResponse {
-    let args: [String: AnyObject] = ["secret": secret, "phrase": phrase, "otherDeviceType": otherDeviceType.rawValue]
-    let response = try self.sendRequest("keybase.1.provisionUi.DisplayAndPromptSecret", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["secret": secret, "phrase": phrase, "otherDeviceType": otherDeviceType.rawValue]
+    let response = try self.sendRequest(method: "keybase.1.provisionUi.DisplayAndPromptSecret", args: args)
+    try checkNull(response: response)
     return SecretResponse.fromJSON(JSON(response))
   }
 
@@ -101,8 +101,8 @@ public class ProvisionUiRequest: Request {
  devices.
  */
   public func displaySecretExchanged() throws {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    try self.sendRequest("keybase.1.provisionUi.DisplaySecretExchanged", args: args)
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.provisionUi.DisplaySecretExchanged", args: args)
   }
 
 /*!
@@ -112,9 +112,9 @@ public class ProvisionUiRequest: Request {
  taken, it will call this again with an error message in errorMessage.
  */
   public func promptNewDeviceName(existingDevices: [String], errorMessage: String) throws -> String {
-    let args: [String: AnyObject] = ["existingDevices": existingDevices, "errorMessage": errorMessage]
-    let response = try self.sendRequest("keybase.1.provisionUi.PromptNewDeviceName", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["existingDevices": existingDevices, "errorMessage": errorMessage]
+    let response = try self.sendRequest(method: "keybase.1.provisionUi.PromptNewDeviceName", args: args)
+    try checkNull(response: response)
     return JSON(response).stringValue
   }
 
@@ -122,16 +122,16 @@ public class ProvisionUiRequest: Request {
  ProvisioneeSuccess is called on provisionee when it is successfully provisioned.
  */
   public func provisioneeSuccess(username: String, deviceName: String) throws {
-    let args: [String: AnyObject] = ["username": username, "deviceName": deviceName]
-    try self.sendRequest("keybase.1.provisionUi.ProvisioneeSuccess", args: args)
+    let args: [String: Any] = ["username": username, "deviceName": deviceName]
+    _ = try self.sendRequest(method: "keybase.1.provisionUi.ProvisioneeSuccess", args: args)
   }
 
 /*!
  ProvisionerSuccess is called on provisioner when it successfully provisions another device.
  */
   public func provisionerSuccess(deviceName: String, deviceType: String) throws {
-    let args: [String: AnyObject] = ["deviceName": deviceName, "deviceType": deviceType]
-    try self.sendRequest("keybase.1.provisionUi.ProvisionerSuccess", args: args)
+    let args: [String: Any] = ["deviceName": deviceName, "deviceType": deviceType]
+    _ = try self.sendRequest(method: "keybase.1.provisionUi.ProvisionerSuccess", args: args)
   }
 
 }

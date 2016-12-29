@@ -5,7 +5,7 @@
 //
 //  Quota.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,10 +20,10 @@ import SwiftyJSON
 
 public class VerifySessionRes {
 
-	public let uid: String
-	public let sid: String
-	public let generated: Int
-	public let lifetime: Int
+	public let uid: String?
+	public let sid: String?
+	public let generated: Int?
+	public let lifetime: Int?
 
   public init(uid: String, sid: String, generated: Int, lifetime: Int) {
     self.uid = uid
@@ -32,11 +32,13 @@ public class VerifySessionRes {
 		self.lifetime = lifetime
   }
 
-  public class func fromJSON(json: JSON) -> VerifySessionRes {
+  public class func fromJSON(_ json: JSON) -> VerifySessionRes {
     return VerifySessionRes(uid: json["uid"].stringValue, sid: json["sid"].stringValue, generated: json["generated"].intValue, lifetime: json["lifetime"].intValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [VerifySessionRes] {
+  public class func fromJSONArray(_ json: [JSON]) -> [VerifySessionRes] {
     return json.map { fromJSON($0) }
   }
+
 }
+

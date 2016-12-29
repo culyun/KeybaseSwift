@@ -5,7 +5,7 @@
 //
 //  SessionRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,10 +20,15 @@ import SwiftyJSON
 public class SessionRequest: Request {
 
   public func currentSession() throws -> Session {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.session.currentSession", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.session.currentSession", args: args)
+    try checkNull(response: response)
     return Session.fromJSON(JSON(response))
+  }
+
+  public func sessionPing() throws {
+    let args: [String: Any] = [String: Any]()
+    _ = try self.sendRequest(method: "keybase.1.session.sessionPing", args: args)
   }
 
 }

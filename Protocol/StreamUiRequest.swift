@@ -3,9 +3,9 @@
 //
 
 //
-//  StreamUiRequest.swift
+//  StreamUIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,27 +14,32 @@ import SwiftyJSON
 
 
 //
-// StreamUi
+// StreamUI
 //
 
-public class StreamUiRequest: Request {
+public class StreamUIRequest: Request {
 
   public func close(s: Stream) throws {
-    let args: [String: AnyObject] = ["s": s]
-    try self.sendRequest("keybase.1.streamUi.close", args: args)
+    let args: [String: Any] = ["s": s]
+    _ = try self.sendRequest(method: "keybase.1.streamUi.close", args: args)
   }
 
   public func read(s: Stream, sz: Int) throws -> NSData {
-    let args: [String: AnyObject] = ["s": s, "sz": NSNumber(integer: sz)]
-    let response = try self.sendRequest("keybase.1.streamUi.read", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["s": s, "sz": NSNumber(value: sz)]
+    let response = try self.sendRequest(method: "keybase.1.streamUi.read", args: args)
+    try checkNull(response: response)
     return JSON(response).object as! NSData
   }
 
+  public func reset(s: Stream) throws {
+    let args: [String: Any] = ["s": s]
+    _ = try self.sendRequest(method: "keybase.1.streamUi.reset", args: args)
+  }
+
   public func write(s: Stream, buf: NSData) throws -> Int {
-    let args: [String: AnyObject] = ["s": s, "buf": buf]
-    let response = try self.sendRequest("keybase.1.streamUi.write", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["s": s, "buf": buf]
+    let response = try self.sendRequest(method: "keybase.1.streamUi.write", args: args)
+    try checkNull(response: response)
     return JSON(response).intValue
   }
 

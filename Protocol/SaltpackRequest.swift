@@ -5,7 +5,7 @@
 //
 //  SaltpackRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,25 +20,25 @@ import SwiftyJSON
 public class SaltpackRequest: Request {
 
   public func saltpackEncrypt(source: Stream, sink: Stream, opts: SaltpackEncryptOptions) throws {
-    let args: [String: AnyObject] = ["source": source, "sink": sink, "opts": opts]
-    try self.sendRequest("keybase.1.saltpack.saltpackEncrypt", args: args)
+    let args: [String: Any] = ["source": source, "sink": sink, "opts": opts]
+    _ = try self.sendRequest(method: "keybase.1.saltpack.saltpackEncrypt", args: args)
   }
 
   public func saltpackDecrypt(source: Stream, sink: Stream, opts: SaltpackDecryptOptions) throws -> SaltpackEncryptedMessageInfo {
-    let args: [String: AnyObject] = ["source": source, "sink": sink, "opts": opts]
-    let response = try self.sendRequest("keybase.1.saltpack.saltpackDecrypt", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["source": source, "sink": sink, "opts": opts]
+    let response = try self.sendRequest(method: "keybase.1.saltpack.saltpackDecrypt", args: args)
+    try checkNull(response: response)
     return SaltpackEncryptedMessageInfo.fromJSON(JSON(response))
   }
 
   public func saltpackSign(source: Stream, sink: Stream, opts: SaltpackSignOptions) throws {
-    let args: [String: AnyObject] = ["source": source, "sink": sink, "opts": opts]
-    try self.sendRequest("keybase.1.saltpack.saltpackSign", args: args)
+    let args: [String: Any] = ["source": source, "sink": sink, "opts": opts]
+    _ = try self.sendRequest(method: "keybase.1.saltpack.saltpackSign", args: args)
   }
 
   public func saltpackVerify(source: Stream, sink: Stream, opts: SaltpackVerifyOptions) throws {
-    let args: [String: AnyObject] = ["source": source, "sink": sink, "opts": opts]
-    try self.sendRequest("keybase.1.saltpack.saltpackVerify", args: args)
+    let args: [String: Any] = ["source": source, "sink": sink, "opts": opts]
+    _ = try self.sendRequest(method: "keybase.1.saltpack.saltpackVerify", args: args)
   }
 
 }

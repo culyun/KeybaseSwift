@@ -5,7 +5,7 @@
 //
 //  NotifyCtl.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,23 +20,45 @@ import SwiftyJSON
 
 public class NotificationChannels {
 
-	public let session: Bool
-	public let users: Bool
-	public let kbfs: Bool
-	public let tracking: Bool
+	public let session: Bool?
+	public let users: Bool?
+	public let kbfs: Bool?
+	public let tracking: Bool?
+	public let favorites: Bool?
+	public let paperkeys: Bool?
+	public let keyfamily: Bool?
+	public let service: Bool?
+	public let app: Bool?
+	public let chat: Bool?
+	public let pgp: Bool?
+	public let kbfsrequest: Bool?
+	public let badges: Bool?
+	public let reachability: Bool?
 
-  public init(session: Bool, users: Bool, kbfs: Bool, tracking: Bool) {
+  public init(session: Bool, users: Bool, kbfs: Bool, tracking: Bool, favorites: Bool, paperkeys: Bool, keyfamily: Bool, service: Bool, app: Bool, chat: Bool, pgp: Bool, kbfsrequest: Bool, badges: Bool, reachability: Bool) {
     self.session = session
 		self.users = users
 		self.kbfs = kbfs
 		self.tracking = tracking
+		self.favorites = favorites
+		self.paperkeys = paperkeys
+		self.keyfamily = keyfamily
+		self.service = service
+		self.app = app
+		self.chat = chat
+		self.pgp = pgp
+		self.kbfsrequest = kbfsrequest
+		self.badges = badges
+		self.reachability = reachability
   }
 
-  public class func fromJSON(json: JSON) -> NotificationChannels {
-    return NotificationChannels(session: json["session"].boolValue, users: json["users"].boolValue, kbfs: json["kbfs"].boolValue, tracking: json["tracking"].boolValue)
+  public class func fromJSON(_ json: JSON) -> NotificationChannels {
+    return NotificationChannels(session: json["session"].boolValue, users: json["users"].boolValue, kbfs: json["kbfs"].boolValue, tracking: json["tracking"].boolValue, favorites: json["favorites"].boolValue, paperkeys: json["paperkeys"].boolValue, keyfamily: json["keyfamily"].boolValue, service: json["service"].boolValue, app: json["app"].boolValue, chat: json["chat"].boolValue, pgp: json["pgp"].boolValue, kbfsrequest: json["kbfsrequest"].boolValue, badges: json["badges"].boolValue, reachability: json["reachability"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [NotificationChannels] {
+  public class func fromJSONArray(_ json: [JSON]) -> [NotificationChannels] {
     return json.map { fromJSON($0) }
   }
+
 }
+

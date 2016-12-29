@@ -3,9 +3,9 @@
 //
 
 //
-//  LogUiRequest.swift
+//  LogUIRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,14 +14,14 @@ import SwiftyJSON
 
 
 //
-// LogUi
+// LogUI
 //
 
-public class LogUiRequest: Request {
+public class LogUIRequest: Request {
 
   public func log(level: LogLevel, text: Text) throws {
-    let args: [String: AnyObject] = ["level": level.rawValue, "text": text]
-    try self.sendRequest("keybase.1.logUi.log", args: args)
+    let args: [String: Any] = ["level": level.rawValue, "text": text]
+    _ = try self.sendRequest(method: "keybase.1.logUi.log", args: args)
   }
 
 }

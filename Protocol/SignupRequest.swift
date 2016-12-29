@@ -5,7 +5,7 @@
 //
 //  SignupRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,25 +20,25 @@ import SwiftyJSON
 public class SignupRequest: Request {
 
   public func checkUsernameAvailable(username: String) throws {
-    let args: [String: AnyObject] = ["username": username]
-    try self.sendRequest("keybase.1.signup.checkUsernameAvailable", args: args)
+    let args: [String: Any] = ["username": username]
+    _ = try self.sendRequest(method: "keybase.1.signup.checkUsernameAvailable", args: args)
   }
 
-  public func signup(email: String, inviteCode: String, passphrase: String, username: String, deviceName: String, storeSecret: Bool, skipMail: Bool) throws -> SignupRes {
-    let args: [String: AnyObject] = ["email": email, "inviteCode": inviteCode, "passphrase": passphrase, "username": username, "deviceName": deviceName, "storeSecret": storeSecret, "skipMail": skipMail]
-    let response = try self.sendRequest("keybase.1.signup.signup", args: args)
-    try checkNull(response)
+  public func signup(email: String, inviteCode: String, passphrase: String, username: String, deviceName: String, deviceType: DeviceType, storeSecret: Bool, skipMail: Bool, genPGPBatch: Bool) throws -> SignupRes {
+    let args: [String: Any] = ["email": email, "inviteCode": inviteCode, "passphrase": passphrase, "username": username, "deviceName": deviceName, "deviceType": deviceType.rawValue, "storeSecret": storeSecret, "skipMail": skipMail, "genPGPBatch": genPGPBatch]
+    let response = try self.sendRequest(method: "keybase.1.signup.signup", args: args)
+    try checkNull(response: response)
     return SignupRes.fromJSON(JSON(response))
   }
 
   public func inviteRequest(email: String, fullname: String, notes: String) throws {
-    let args: [String: AnyObject] = ["email": email, "fullname": fullname, "notes": notes]
-    try self.sendRequest("keybase.1.signup.inviteRequest", args: args)
+    let args: [String: Any] = ["email": email, "fullname": fullname, "notes": notes]
+    _ = try self.sendRequest(method: "keybase.1.signup.inviteRequest", args: args)
   }
 
   public func checkInvitationCode(invitationCode: String) throws {
-    let args: [String: AnyObject] = ["invitationCode": invitationCode]
-    try self.sendRequest("keybase.1.signup.checkInvitationCode", args: args)
+    let args: [String: Any] = ["invitationCode": invitationCode]
+    _ = try self.sendRequest(method: "keybase.1.signup.checkInvitationCode", args: args)
   }
 
 }

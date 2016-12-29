@@ -5,7 +5,7 @@
 //
 //  UserRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,23 +20,23 @@ import SwiftyJSON
 public class UserRequest: Request {
 
   public func listTrackers(uid: String) throws -> [Tracker] {
-    let args: [String: AnyObject] = ["uid": uid]
-    let response = try self.sendRequest("keybase.1.user.listTrackers", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["uid": uid]
+    let response = try self.sendRequest(method: "keybase.1.user.listTrackers", args: args)
+  try checkNull(response: response)
   return Tracker.fromJSONArray(JSON(response).arrayValue)
   }
 
   public func listTrackersByName(username: String) throws -> [Tracker] {
-    let args: [String: AnyObject] = ["username": username]
-    let response = try self.sendRequest("keybase.1.user.listTrackersByName", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["username": username]
+    let response = try self.sendRequest(method: "keybase.1.user.listTrackersByName", args: args)
+  try checkNull(response: response)
   return Tracker.fromJSONArray(JSON(response).arrayValue)
   }
 
   public func listTrackersSelf() throws -> [Tracker] {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.user.listTrackersSelf", args: args)
-  try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.user.listTrackersSelf", args: args)
+  try checkNull(response: response)
   return Tracker.fromJSONArray(JSON(response).arrayValue)
   }
 
@@ -46,9 +46,9 @@ public class UserRequest: Request {
  If len(uids) > 500, the first 500 will be returned.
  */
   public func loadUncheckedUserSummaries(uids: [String]) throws -> [UserSummary] {
-    let args: [String: AnyObject] = ["uids": uids]
-    let response = try self.sendRequest("keybase.1.user.loadUncheckedUserSummaries", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["uids": uids]
+    let response = try self.sendRequest(method: "keybase.1.user.loadUncheckedUserSummaries", args: args)
+  try checkNull(response: response)
   return UserSummary.fromJSONArray(JSON(response).arrayValue)
   }
 
@@ -56,9 +56,16 @@ public class UserRequest: Request {
  Load a user from the server.
  */
   public func loadUser(uid: String) throws -> User {
-    let args: [String: AnyObject] = ["uid": uid]
-    let response = try self.sendRequest("keybase.1.user.loadUser", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["uid": uid]
+    let response = try self.sendRequest(method: "keybase.1.user.loadUser", args: args)
+    try checkNull(response: response)
+    return User.fromJSON(JSON(response))
+  }
+
+  public func loadUserByName(username: String) throws -> User {
+    let args: [String: Any] = ["username": username]
+    let response = try self.sendRequest(method: "keybase.1.user.loadUserByName", args: args)
+    try checkNull(response: response)
     return User.fromJSON(JSON(response))
   }
 
@@ -66,9 +73,9 @@ public class UserRequest: Request {
  Load a user + device keys from the server.
  */
   public func loadUserPlusKeys(uid: String) throws -> UserPlusKeys {
-    let args: [String: AnyObject] = ["uid": uid]
-    let response = try self.sendRequest("keybase.1.user.loadUserPlusKeys", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["uid": uid]
+    let response = try self.sendRequest(method: "keybase.1.user.loadUserPlusKeys", args: args)
+    try checkNull(response: response)
     return UserPlusKeys.fromJSON(JSON(response))
   }
 
@@ -76,27 +83,49 @@ public class UserRequest: Request {
  Load public keys for a user.
  */
   public func loadPublicKeys(uid: String) throws -> [PublicKey] {
-    let args: [String: AnyObject] = ["uid": uid]
-    let response = try self.sendRequest("keybase.1.user.loadPublicKeys", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["uid": uid]
+    let response = try self.sendRequest(method: "keybase.1.user.loadPublicKeys", args: args)
+  try checkNull(response: response)
   return PublicKey.fromJSONArray(JSON(response).arrayValue)
   }
 
 /*!
- The list-tracking function get verified data from the tracking statements
- in the user's own sigchain.
+ Load my public keys (for logged in user).
  */
-  public func listTracking(filter: String) throws -> [UserSummary] {
-    let args: [String: AnyObject] = ["filter": filter]
-    let response = try self.sendRequest("keybase.1.user.listTracking", args: args)
-  try checkNull(response)
+  public func loadMyPublicKeys() throws -> [PublicKey] {
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.user.loadMyPublicKeys", args: args)
+  try checkNull(response: response)
+  return PublicKey.fromJSONArray(JSON(response).arrayValue)
+  }
+
+/*!
+ Load user settings (for logged in user).
+ */
+  public func loadMySettings() throws -> UserSettings {
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.user.loadMySettings", args: args)
+    try checkNull(response: response)
+    return UserSettings.fromJSON(JSON(response))
+  }
+
+/*!
+ The list-tracking functions get verified data from the tracking statements
+ in the user's sigchain.
+
+ If assertion is empty, it will use the current logged in user.
+ */
+  public func listTracking(filter: String, assertion: String) throws -> [UserSummary] {
+    let args: [String: Any] = ["filter": filter, "assertion": assertion]
+    let response = try self.sendRequest(method: "keybase.1.user.listTracking", args: args)
+  try checkNull(response: response)
   return UserSummary.fromJSONArray(JSON(response).arrayValue)
   }
 
-  public func listTrackingJSON(filter: String, verbose: Bool) throws -> String {
-    let args: [String: AnyObject] = ["filter": filter, "verbose": verbose]
-    let response = try self.sendRequest("keybase.1.user.listTrackingJSON", args: args)
-    try checkNull(response)
+  public func listTrackingJSON(filter: String, verbose: Bool, assertion: String) throws -> String {
+    let args: [String: Any] = ["filter": filter, "verbose": verbose, "assertion": assertion]
+    let response = try self.sendRequest(method: "keybase.1.user.listTrackingJSON", args: args)
+    try checkNull(response: response)
     return JSON(response).stringValue
   }
 
@@ -104,10 +133,28 @@ public class UserRequest: Request {
  Search for users who match a given query.
  */
   public func search(query: String) throws -> [SearchResult] {
-    let args: [String: AnyObject] = ["query": query]
-    let response = try self.sendRequest("keybase.1.user.search", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["query": query]
+    let response = try self.sendRequest(method: "keybase.1.user.search", args: args)
+  try checkNull(response: response)
   return SearchResult.fromJSONArray(JSON(response).arrayValue)
+  }
+
+/*!
+ Load all the user's public keys (even those in reset key families)
+ from the server with no verification
+ */
+  public func loadAllPublicKeysUnverified(uid: String) throws -> [PublicKey] {
+    let args: [String: Any] = ["uid": uid]
+    let response = try self.sendRequest(method: "keybase.1.user.loadAllPublicKeysUnverified", args: args)
+  try checkNull(response: response)
+  return PublicKey.fromJSONArray(JSON(response).arrayValue)
+  }
+
+  public func listTrackers2(assertion: String, reverse: Bool) throws -> UserSummary2Set {
+    let args: [String: Any] = ["assertion": assertion, "reverse": reverse]
+    let response = try self.sendRequest(method: "keybase.1.user.listTrackers2", args: args)
+    try checkNull(response: response)
+    return UserSummary2Set.fromJSON(JSON(response))
   }
 
 }

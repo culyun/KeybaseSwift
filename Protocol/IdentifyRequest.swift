@@ -5,7 +5,7 @@
 //
 //  IdentifyRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -24,9 +24,9 @@ public class IdentifyRequest: Request {
  an error.
  */
   public func resolve(assertion: String) throws -> String {
-    let args: [String: AnyObject] = ["assertion": assertion]
-    let response = try self.sendRequest("keybase.1.identify.Resolve", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["assertion": assertion]
+    let response = try self.sendRequest(method: "keybase.1.identify.Resolve", args: args)
+    try checkNull(response: response)
     return JSON(response).stringValue
   }
 
@@ -34,27 +34,29 @@ public class IdentifyRequest: Request {
  Resolve an assertion to a (UID,username). On failure, returns an error.
  */
   public func resolve2(assertion: String) throws -> User {
-    let args: [String: AnyObject] = ["assertion": assertion]
-    let response = try self.sendRequest("keybase.1.identify.Resolve2", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["assertion": assertion]
+    let response = try self.sendRequest(method: "keybase.1.identify.Resolve2", args: args)
+    try checkNull(response: response)
     return User.fromJSON(JSON(response))
   }
 
 /*!
+ DEPRECATED: use identify2
+
  Identify a user from a username or assertion (e.g. kbuser, twuser@twitter).
  If forceRemoteCheck is true, we force all remote proofs to be checked (otherwise a cache is used).
  */
   public func identify(userAssertion: String, forceRemoteCheck: Bool, useDelegateUI: Bool, reason: IdentifyReason, source: ClientType) throws -> IdentifyRes {
-    let args: [String: AnyObject] = ["userAssertion": userAssertion, "forceRemoteCheck": forceRemoteCheck, "useDelegateUI": useDelegateUI, "reason": reason, "source": source.rawValue]
-    let response = try self.sendRequest("keybase.1.identify.identify", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["userAssertion": userAssertion, "forceRemoteCheck": forceRemoteCheck, "useDelegateUI": useDelegateUI, "reason": reason, "source": source.rawValue]
+    let response = try self.sendRequest(method: "keybase.1.identify.identify", args: args)
+    try checkNull(response: response)
     return IdentifyRes.fromJSON(JSON(response))
   }
 
-  public func identify2(uid: String, userAssertion: String, reason: IdentifyReason, useDelegateUI: Bool, alwaysBlock: Bool, noErrorOnTrackFailure: Bool, forceRemoteCheck: Bool, needProofSet: Bool, allowEmptySelfID: Bool, noSkipSelf: Bool) throws -> Identify2Res {
-    let args: [String: AnyObject] = ["uid": uid, "userAssertion": userAssertion, "reason": reason, "useDelegateUI": useDelegateUI, "alwaysBlock": alwaysBlock, "noErrorOnTrackFailure": noErrorOnTrackFailure, "forceRemoteCheck": forceRemoteCheck, "needProofSet": needProofSet, "allowEmptySelfID": allowEmptySelfID, "noSkipSelf": noSkipSelf]
-    let response = try self.sendRequest("keybase.1.identify.identify2", args: args)
-    try checkNull(response)
+  public func identify2(uid: String, userAssertion: String, reason: IdentifyReason, useDelegateUI: Bool, alwaysBlock: Bool, noErrorOnTrackFailure: Bool, forceRemoteCheck: Bool, needProofSet: Bool, allowEmptySelfID: Bool, noSkipSelf: Bool, canSuppressUI: Bool, chatGUIMode: Bool, forceDisplay: Bool) throws -> Identify2Res {
+    let args: [String: Any] = ["uid": uid, "userAssertion": userAssertion, "reason": reason, "useDelegateUI": useDelegateUI, "alwaysBlock": alwaysBlock, "noErrorOnTrackFailure": noErrorOnTrackFailure, "forceRemoteCheck": forceRemoteCheck, "needProofSet": needProofSet, "allowEmptySelfID": allowEmptySelfID, "noSkipSelf": noSkipSelf, "canSuppressUI": canSuppressUI, "chatGUIMode": chatGUIMode, "forceDisplay": forceDisplay]
+    let response = try self.sendRequest(method: "keybase.1.identify.identify2", args: args)
+    try checkNull(response: response)
     return Identify2Res.fromJSON(JSON(response))
   }
 

@@ -3,9 +3,9 @@
 //
 
 //
-//  IdentifyUi.swift
+//  IdentifyUI.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -14,15 +14,15 @@ import SwiftyJSON
 
 
 //
-// IdentifyUi
+// IdentifyUI
 //
 
 
 public class ProofResult {
 
-	public let state: ProofState
-	public let status: ProofStatus
-	public let desc: String
+	public let state: ProofState?
+	public let status: ProofStatus?
+	public let desc: String?
 
   public init(state: ProofState, status: ProofStatus, desc: String) {
     self.state = state
@@ -30,21 +30,23 @@ public class ProofResult {
 		self.desc = desc
   }
 
-  public class func fromJSON(json: JSON) -> ProofResult {
+  public class func fromJSON(_ json: JSON) -> ProofResult {
     return ProofResult(state: ProofState(rawValue: json["state"].intValue)!, status: ProofStatus(rawValue: json["status"].intValue)!, desc: json["desc"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [ProofResult] {
+  public class func fromJSONArray(_ json: [JSON]) -> [ProofResult] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class IdentifyRow {
 
-	public let rowId: Int
-	public let proof: RemoteProof
-	public let trackDiff: TrackDiff?
+	public let rowId: Int?
+	public let proof: RemoteProof?
+	public let trackDiff: TrackDiff??
 
   public init(rowId: Int, proof: RemoteProof, trackDiff: TrackDiff?) {
     self.rowId = rowId
@@ -52,22 +54,24 @@ public class IdentifyRow {
 		self.trackDiff = trackDiff
   }
 
-  public class func fromJSON(json: JSON) -> IdentifyRow {
+  public class func fromJSON(_ json: JSON) -> IdentifyRow {
     return IdentifyRow(rowId: json["rowId"].intValue, proof: RemoteProof.fromJSON(json["proof"]), trackDiff: TrackDiff.fromJSON(json["trackDiff"]))
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [IdentifyRow] {
+  public class func fromJSONArray(_ json: [JSON]) -> [IdentifyRow] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class IdentifyKey {
 
-	public let pgpFingerprint: NSData
-	public let kid: String
-	public let trackDiff: TrackDiff?
-	public let breaksTracking: Bool
+	public let pgpFingerprint: NSData?
+	public let kid: String?
+	public let trackDiff: TrackDiff??
+	public let breaksTracking: Bool?
 
   public init(pgpFingerprint: NSData, kid: String, trackDiff: TrackDiff?, breaksTracking: Bool) {
     self.pgpFingerprint = pgpFingerprint
@@ -76,67 +80,79 @@ public class IdentifyKey {
 		self.breaksTracking = breaksTracking
   }
 
-  public class func fromJSON(json: JSON) -> IdentifyKey {
+  public class func fromJSON(_ json: JSON) -> IdentifyKey {
     return IdentifyKey(pgpFingerprint: json["pgpFingerprint"].object as! NSData, kid: json["kid"].stringValue, trackDiff: TrackDiff.fromJSON(json["trackDiff"]), breaksTracking: json["breaksTracking"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [IdentifyKey] {
+  public class func fromJSONArray(_ json: [JSON]) -> [IdentifyKey] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class Cryptocurrency {
 
-	public let rowId: Int
-	public let pkhash: NSData
-	public let address: String
+	public let rowId: Int?
+	public let pkhash: NSData?
+	public let address: String?
+	public let sigID: String?
+	public let type: String?
+	public let family: String?
 
-  public init(rowId: Int, pkhash: NSData, address: String) {
+  public init(rowId: Int, pkhash: NSData, address: String, sigID: String, type: String, family: String) {
     self.rowId = rowId
 		self.pkhash = pkhash
 		self.address = address
+		self.sigID = sigID
+		self.type = type
+		self.family = family
   }
 
-  public class func fromJSON(json: JSON) -> Cryptocurrency {
-    return Cryptocurrency(rowId: json["rowId"].intValue, pkhash: json["pkhash"].object as! NSData, address: json["address"].stringValue)
+  public class func fromJSON(_ json: JSON) -> Cryptocurrency {
+    return Cryptocurrency(rowId: json["rowId"].intValue, pkhash: json["pkhash"].object as! NSData, address: json["address"].stringValue, sigID: json["sigID"].stringValue, type: json["type"].stringValue, family: json["family"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [Cryptocurrency] {
+  public class func fromJSONArray(_ json: [JSON]) -> [Cryptocurrency] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class RevokedProof {
 
-	public let proof: RemoteProof
-	public let diff: TrackDiff
+	public let proof: RemoteProof?
+	public let diff: TrackDiff?
 
   public init(proof: RemoteProof, diff: TrackDiff) {
     self.proof = proof
 		self.diff = diff
   }
 
-  public class func fromJSON(json: JSON) -> RevokedProof {
+  public class func fromJSON(_ json: JSON) -> RevokedProof {
     return RevokedProof(proof: RemoteProof.fromJSON(json["proof"]), diff: TrackDiff.fromJSON(json["diff"]))
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [RevokedProof] {
+  public class func fromJSONArray(_ json: [JSON]) -> [RevokedProof] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class Identity {
 
-	public let status: Status?
-	public let whenLastTracked: Int64
-	public let proofs: [IdentifyRow]
-	public let cryptocurrency: [Cryptocurrency]
-	public let revoked: [TrackDiff]
-	public let revokedDetails: [RevokedProof]
-	public let breaksTracking: Bool
+	public let status: Status??
+	public let whenLastTracked: Int64?
+	public let proofs: [IdentifyRow]?
+	public let cryptocurrency: [Cryptocurrency]?
+	public let revoked: [TrackDiff]?
+	public let revokedDetails: [RevokedProof]?
+	public let breaksTracking: Bool?
 
   public init(status: Status?, whenLastTracked: Int64, proofs: [IdentifyRow], cryptocurrency: [Cryptocurrency], revoked: [TrackDiff], revokedDetails: [RevokedProof], breaksTracking: Bool) {
     self.status = status
@@ -148,22 +164,24 @@ public class Identity {
 		self.breaksTracking = breaksTracking
   }
 
-  public class func fromJSON(json: JSON) -> Identity {
+  public class func fromJSON(_ json: JSON) -> Identity {
     return Identity(status: Status.fromJSON(json["status"]), whenLastTracked: json["whenLastTracked"].int64Value, proofs: IdentifyRow.fromJSONArray(json["proofs"].arrayValue), cryptocurrency: Cryptocurrency.fromJSONArray(json["cryptocurrency"].arrayValue), revoked: TrackDiff.fromJSONArray(json["revoked"].arrayValue), revokedDetails: RevokedProof.fromJSONArray(json["revokedDetails"].arrayValue), breaksTracking: json["breaksTracking"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [Identity] {
+  public class func fromJSONArray(_ json: [JSON]) -> [Identity] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class SigHint {
 
-	public let remoteId: String
-	public let humanUrl: String
-	public let apiUrl: String
-	public let checkText: String
+	public let remoteId: String?
+	public let humanUrl: String?
+	public let apiUrl: String?
+	public let checkText: String?
 
   public init(remoteId: String, humanUrl: String, apiUrl: String, checkText: String) {
     self.remoteId = remoteId
@@ -172,27 +190,29 @@ public class SigHint {
 		self.checkText = checkText
   }
 
-  public class func fromJSON(json: JSON) -> SigHint {
+  public class func fromJSON(_ json: JSON) -> SigHint {
     return SigHint(remoteId: json["remoteId"].stringValue, humanUrl: json["humanUrl"].stringValue, apiUrl: json["apiUrl"].stringValue, checkText: json["checkText"].stringValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [SigHint] {
+  public class func fromJSONArray(_ json: [JSON]) -> [SigHint] {
     return json.map { fromJSON($0) }
   }
+
 }
 
+
 public enum CheckResultFreshness: Int {
-	case Fresh = 0
-	case Aged = 1
-	case Rancid = 2
+	case fresh = 0
+	case aged = 1
+	case rancid = 2
 }
 
 
 public class CheckResult {
 
-	public let proofResult: ProofResult
-	public let time: Int64
-	public let freshness: CheckResultFreshness
+	public let proofResult: ProofResult?
+	public let time: Int64?
+	public let freshness: CheckResultFreshness?
 
   public init(proofResult: ProofResult, time: Int64, freshness: CheckResultFreshness) {
     self.proofResult = proofResult
@@ -200,28 +220,30 @@ public class CheckResult {
 		self.freshness = freshness
   }
 
-  public class func fromJSON(json: JSON) -> CheckResult {
+  public class func fromJSON(_ json: JSON) -> CheckResult {
     return CheckResult(proofResult: ProofResult.fromJSON(json["proofResult"]), time: json["time"].int64Value, freshness: CheckResultFreshness(rawValue: json["freshness"].intValue)!)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [CheckResult] {
+  public class func fromJSONArray(_ json: [JSON]) -> [CheckResult] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class LinkCheckResult {
 
-	public let proofId: Int
-	public let proofResult: ProofResult
-	public let snoozedResult: ProofResult
-	public let torWarning: Bool
-	public let tmpTrackExpireTime: Int64
-	public let cached: CheckResult?
-	public let diff: TrackDiff?
-	public let remoteDiff: TrackDiff?
-	public let hint: SigHint?
-	public let breaksTracking: Bool
+	public let proofId: Int?
+	public let proofResult: ProofResult?
+	public let snoozedResult: ProofResult?
+	public let torWarning: Bool?
+	public let tmpTrackExpireTime: Int64?
+	public let cached: CheckResult??
+	public let diff: TrackDiff??
+	public let remoteDiff: TrackDiff??
+	public let hint: SigHint??
+	public let breaksTracking: Bool?
 
   public init(proofId: Int, proofResult: ProofResult, snoozedResult: ProofResult, torWarning: Bool, tmpTrackExpireTime: Int64, cached: CheckResult?, diff: TrackDiff?, remoteDiff: TrackDiff?, hint: SigHint?, breaksTracking: Bool) {
     self.proofId = proofId
@@ -236,28 +258,30 @@ public class LinkCheckResult {
 		self.breaksTracking = breaksTracking
   }
 
-  public class func fromJSON(json: JSON) -> LinkCheckResult {
+  public class func fromJSON(_ json: JSON) -> LinkCheckResult {
     return LinkCheckResult(proofId: json["proofId"].intValue, proofResult: ProofResult.fromJSON(json["proofResult"]), snoozedResult: ProofResult.fromJSON(json["snoozedResult"]), torWarning: json["torWarning"].boolValue, tmpTrackExpireTime: json["tmpTrackExpireTime"].int64Value, cached: CheckResult.fromJSON(json["cached"]), diff: TrackDiff.fromJSON(json["diff"]), remoteDiff: TrackDiff.fromJSON(json["remoteDiff"]), hint: SigHint.fromJSON(json["hint"]), breaksTracking: json["breaksTracking"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [LinkCheckResult] {
+  public class func fromJSONArray(_ json: [JSON]) -> [LinkCheckResult] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class UserCard {
 
-	public let following: Int
-	public let followers: Int
-	public let uid: String
-	public let fullName: String
-	public let location: String
-	public let bio: String
-	public let website: String
-	public let twitter: String
-	public let youFollowThem: Bool
-	public let theyFollowYou: Bool
+	public let following: Int?
+	public let followers: Int?
+	public let uid: String?
+	public let fullName: String?
+	public let location: String?
+	public let bio: String?
+	public let website: String?
+	public let twitter: String?
+	public let youFollowThem: Bool?
+	public let theyFollowYou: Bool?
 
   public init(following: Int, followers: Int, uid: String, fullName: String, location: String, bio: String, website: String, twitter: String, youFollowThem: Bool, theyFollowYou: Bool) {
     self.following = following
@@ -272,21 +296,23 @@ public class UserCard {
 		self.theyFollowYou = theyFollowYou
   }
 
-  public class func fromJSON(json: JSON) -> UserCard {
+  public class func fromJSON(_ json: JSON) -> UserCard {
     return UserCard(following: json["following"].intValue, followers: json["followers"].intValue, uid: json["uid"].stringValue, fullName: json["fullName"].stringValue, location: json["location"].stringValue, bio: json["bio"].stringValue, website: json["website"].stringValue, twitter: json["twitter"].stringValue, youFollowThem: json["youFollowThem"].boolValue, theyFollowYou: json["theyFollowYou"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [UserCard] {
+  public class func fromJSONArray(_ json: [JSON]) -> [UserCard] {
     return json.map { fromJSON($0) }
   }
+
 }
+
 
 
 public class ConfirmResult {
 
-	public let identityConfirmed: Bool
-	public let remoteConfirmed: Bool
-	public let expiringLocal: Bool
+	public let identityConfirmed: Bool?
+	public let remoteConfirmed: Bool?
+	public let expiringLocal: Bool?
 
   public init(identityConfirmed: Bool, remoteConfirmed: Bool, expiringLocal: Bool) {
     self.identityConfirmed = identityConfirmed
@@ -294,11 +320,42 @@ public class ConfirmResult {
 		self.expiringLocal = expiringLocal
   }
 
-  public class func fromJSON(json: JSON) -> ConfirmResult {
+  public class func fromJSON(_ json: JSON) -> ConfirmResult {
     return ConfirmResult(identityConfirmed: json["identityConfirmed"].boolValue, remoteConfirmed: json["remoteConfirmed"].boolValue, expiringLocal: json["expiringLocal"].boolValue)
   }
 
-  public class func fromJSONArray(json: [JSON]) -> [ConfirmResult] {
+  public class func fromJSONArray(_ json: [JSON]) -> [ConfirmResult] {
     return json.map { fromJSON($0) }
   }
+
 }
+
+
+public enum DismissReasonType: Int {
+	case none = 0
+	case handledElsewhere = 1
+}
+
+
+public class DismissReason {
+
+	public let type: DismissReasonType?
+	public let reason: String?
+	public let resource: String?
+
+  public init(type: DismissReasonType, reason: String, resource: String) {
+    self.type = type
+		self.reason = reason
+		self.resource = resource
+  }
+
+  public class func fromJSON(_ json: JSON) -> DismissReason {
+    return DismissReason(type: DismissReasonType(rawValue: json["type"].intValue)!, reason: json["reason"].stringValue, resource: json["resource"].stringValue)
+  }
+
+  public class func fromJSONArray(_ json: [JSON]) -> [DismissReason] {
+    return json.map { fromJSON($0) }
+  }
+
+}
+

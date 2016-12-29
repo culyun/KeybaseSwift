@@ -5,7 +5,7 @@
 //
 //  BlockRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,64 +20,64 @@ import SwiftyJSON
 public class BlockRequest: Request {
 
   public func getSessionChallenge() throws -> ChallengeInfo {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.block.getSessionChallenge", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.block.getSessionChallenge", args: args)
+    try checkNull(response: response)
     return ChallengeInfo.fromJSON(JSON(response))
   }
 
   public func authenticateSession(signature: String) throws {
-    let args: [String: AnyObject] = ["signature": signature]
-    try self.sendRequest("keybase.1.block.authenticateSession", args: args)
+    let args: [String: Any] = ["signature": signature]
+    _ = try self.sendRequest(method: "keybase.1.block.authenticateSession", args: args)
   }
 
   public func putBlock(bid: BlockIdCombo, folder: String, blockKey: String, buf: NSData) throws {
-    let args: [String: AnyObject] = ["bid": bid, "folder": folder, "blockKey": blockKey, "buf": buf]
-    try self.sendRequest("keybase.1.block.putBlock", args: args)
+    let args: [String: Any] = ["bid": bid, "folder": folder, "blockKey": blockKey, "buf": buf]
+    _ = try self.sendRequest(method: "keybase.1.block.putBlock", args: args)
   }
 
   public func getBlock(bid: BlockIdCombo, folder: String) throws -> GetBlockRes {
-    let args: [String: AnyObject] = ["bid": bid, "folder": folder]
-    let response = try self.sendRequest("keybase.1.block.getBlock", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["bid": bid, "folder": folder]
+    let response = try self.sendRequest(method: "keybase.1.block.getBlock", args: args)
+    try checkNull(response: response)
     return GetBlockRes.fromJSON(JSON(response))
   }
 
   public func addReference(folder: String, ref: BlockReference) throws {
-    let args: [String: AnyObject] = ["folder": folder, "ref": ref]
-    try self.sendRequest("keybase.1.block.addReference", args: args)
+    let args: [String: Any] = ["folder": folder, "ref": ref]
+    _ = try self.sendRequest(method: "keybase.1.block.addReference", args: args)
   }
 
   public func delReference(folder: String, ref: BlockReference) throws {
-    let args: [String: AnyObject] = ["folder": folder, "ref": ref]
-    try self.sendRequest("keybase.1.block.delReference", args: args)
+    let args: [String: Any] = ["folder": folder, "ref": ref]
+    _ = try self.sendRequest(method: "keybase.1.block.delReference", args: args)
   }
 
   public func archiveReference(folder: String, refs: [BlockReference]) throws -> [BlockReference] {
-    let args: [String: AnyObject] = ["folder": folder, "refs": refs]
-    let response = try self.sendRequest("keybase.1.block.archiveReference", args: args)
-  try checkNull(response)
+    let args: [String: Any] = ["folder": folder, "refs": refs]
+    let response = try self.sendRequest(method: "keybase.1.block.archiveReference", args: args)
+  try checkNull(response: response)
   return BlockReference.fromJSONArray(JSON(response).arrayValue)
   }
 
   public func delReferenceWithCount(folder: String, refs: [BlockReference]) throws -> DowngradeReferenceRes {
-    let args: [String: AnyObject] = ["folder": folder, "refs": refs]
-    let response = try self.sendRequest("keybase.1.block.delReferenceWithCount", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["folder": folder, "refs": refs]
+    let response = try self.sendRequest(method: "keybase.1.block.delReferenceWithCount", args: args)
+    try checkNull(response: response)
     return DowngradeReferenceRes.fromJSON(JSON(response))
   }
 
   public func archiveReferenceWithCount(folder: String, refs: [BlockReference]) throws -> DowngradeReferenceRes {
-    let args: [String: AnyObject] = ["folder": folder, "refs": refs]
-    let response = try self.sendRequest("keybase.1.block.archiveReferenceWithCount", args: args)
-    try checkNull(response)
+    let args: [String: Any] = ["folder": folder, "refs": refs]
+    let response = try self.sendRequest(method: "keybase.1.block.archiveReferenceWithCount", args: args)
+    try checkNull(response: response)
     return DowngradeReferenceRes.fromJSON(JSON(response))
   }
 
   public func getUserQuotaInfo() throws -> NSData {
-    let args: [String: AnyObject] = [String: AnyObject]()
-    let response = try self.sendRequest("keybase.1.block.getUserQuotaInfo", args: args)
-    try checkNull(response)
+    let args: [String: Any] = [String: Any]()
+    let response = try self.sendRequest(method: "keybase.1.block.getUserQuotaInfo", args: args)
+    try checkNull(response: response)
     return JSON(response).object as! NSData
   }
 

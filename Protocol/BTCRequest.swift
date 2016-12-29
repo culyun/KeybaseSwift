@@ -5,7 +5,7 @@
 //
 //  BTCRequest.swift
 //  Keybase
-//  Copyright © 2015 Keybase. All rights reserved.
+//  Copyright © 2016 Keybase. All rights reserved.
 //
 
 import Foundation
@@ -20,8 +20,8 @@ import SwiftyJSON
 public class BTCRequest: Request {
 
   public func registerBTC(address: String, force: Bool) throws {
-    let args: [String: AnyObject] = ["address": address, "force": force]
-    try self.sendRequest("keybase.1.BTC.registerBTC", args: args)
+    let args: [String: Any] = ["address": address, "force": force]
+    _ = try self.sendRequest(method: "keybase.1.BTC.registerBTC", args: args)
   }
 
 }
